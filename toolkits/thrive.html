@@ -1,113 +1,637 @@
-<!-- Hero Section -->
-<section class="hero">
-    <div class="container">
-        <h2>Thrive Tools</h2>
-        <p>Resources to elevate every aspect of your life with techniques to manage stress, cultivate resilience, and boost productivity.</p>
-        <a href="#tools" class="btn">Explore Tools</a>
-    </div>
-</section>
-
-<!-- Introduction Section -->
-<section class="content-section">
-    <div class="container">
-        <div class="section-title">
-            <h2>About Thriving</h2>
-            <p>Moving beyond survival to create a life of abundance and joy</p>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thrive Tools | Lumina Rise Self-Growth</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff7f30; /* Vibrant orange from your logo */
+            --secondary-color: #ffe577; /* Soft gold/yellow from your palette */
+            --accent-color: #fda63a; /* Warm amber accent */
+            --text-color: #333;
+            --light-color: #fff;
+            --dark-color: #333; /* Darker text for header */
+            --slate-blue: #5d6d7e; /* Slate blue for text on light backgrounds */
+            --soft-peach: #fff2d9; /* Soft peach background */
+            --soft-pink: #ffcfcf; /* Soft pink accent */
+            --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577); /* Orange to gold gradient */
+            --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb); /* Soft background gradient */
+            --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad); /* Pale orange/yellow gradient for header */
+        }
         
-        <div class="content-block">
-            <h3>What Does It Mean to Thrive?</h3>
-            <p>Thriving is the state of flourishing, prospering, and growing vigorously. It's about moving beyond merely coping or surviving to experiencing abundance, joy, and fulfillment across all areas of life.</p>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--header-gradient);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--dark-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: var(--dark-color);
+            color: var(--light-color);
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../images/thrive-bg.jpg') center/cover no-repeat;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--soft-peach);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gradient);
+            color: var(--light-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+        }
+        
+        /* Content Section */
+        .content-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--slate-blue);
+        }
+        
+        .content-block {
+            margin-bottom: 60px;
+        }
+        
+        .content-block h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .content-block p {
+            color: var(--slate-blue);
+            margin-bottom: 15px;
+        }
+        
+        .two-columns {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            margin-top: 40px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .image-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .image-container img {
+            width: 100%;
+            display: block;
+        }
+        
+        /* Toolbox Section */
+        .toolbox {
+            padding: 100px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .toolkits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .toolkit-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .toolkit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .toolkit-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .toolkit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .toolkit-card p {
+            color: var(--slate-blue);
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 80px;
+            padding: 60px 0;
+            background: var(--soft-gradient);
+            border-radius: 10px;
+        }
+        
+        .cta-section h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--slate-blue);
+        }
+        
+        .back-button {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--light-color);
+            background-color: rgba(255,255,255,0.1);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content, .two-columns {
+                flex-direction: column;
+            }
             
-            <p>At Lumina Rise, we believe that thriving is your birthright. While life inevitably includes challenges, you can develop the skills and mindset needed to navigate difficulties with grace while continuing to grow and find meaning.</p>
+            .about-image, .about-text, .column {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--header-gradient);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
             
-            <div class="two-columns">
-                <div class="column">
-                    <h3>Why Thriving Matters</h3>
-                    <p>Many women find themselves stuck in survival mode—constantly reacting to demands, putting out fires, and just making it through the day. This reactive existence can leave you feeling drained, unfulfilled, and disconnected from your deeper purpose.</p>
-                    
-                    <p>Research shows that people who move from surviving to thriving experience:</p>
-                    <ul style="margin-left: 20px; margin-bottom: 20px;">
-                        <li>Greater sense of purpose and meaning</li>
-                        <li>Enhanced ability to handle life's challenges</li>
-                        <li>More creativity and innovation</li>
-                        <li>Deeper, more satisfying relationships</li>
-                        <li>Improved work performance and satisfaction</li>
-                        <li>Higher overall life satisfaction and happiness</li>
-                    </ul>
-                    
-                    <p>By developing the tools to thrive, you not only transform your own experience but also create positive ripple effects for everyone around you.</p>
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Lumina Rise Logo">
+                    <div class="logo-text">
+                        <h1>Lumina Rise Self-Growth</h1>
+                        <p>Where Self-Care Meets Self-Growth</p>
+                    </div>
                 </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#toolbox">Toolbox</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#testimonials">Testimonials</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Thrive Tools</h2>
+            <p>Move beyond surviving to truly thriving with resources for abundance mindset, purpose discovery, flow state cultivation, and joyful living.</p>
+            <a href="#tools" class="btn">Explore Tools</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Thriving</h2>
+                <p>Understanding what it means to live a flourishing, abundant life</p>
+            </div>
+            
+            <div class="content-block">
+                <h3>What Does It Mean to Thrive?</h3>
+                <p>Thriving goes beyond basic survival or merely getting by—it's about flourishing in all dimensions of life. To thrive means to grow vigorously, to prosper, and to realize your full potential. It's characterized by a sense of vitality, purpose, fulfillment, and joy that permeates your daily experience.</p>
                 
-                <div class="column">
-                    <div class="image-container">
-                        <img src="../images/thriving.jpg" alt="Woman joyfully embracing life">
+                <p>At Lumina Rise, we believe that thriving is your birthright. Our approach to thriving is grounded in positive psychology principles that focus on cultivating strengths, nurturing positive emotions, and creating conditions for optimal human functioning and fulfillment.</p>
+                
+                <div class="two-columns">
+                    <div class="column">
+                        <h3>Why Thriving Matters</h3>
+                        <p>Many women find themselves caught in cycles of merely surviving—managing responsibilities, meeting expectations, and pushing through challenges without experiencing true joy or fulfillment. But life is meant to be more than an endless to-do list or a series of problems to solve.</p>
+                        
+                        <p>Research in positive psychology shows that people who thrive experience:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 20px;">
+                            <li>Greater creativity and problem-solving abilities</li>
+                            <li>Enhanced resilience during difficult times</li>
+                            <li>Stronger immune function and better physical health</li>
+                            <li>More meaningful connections and relationships</li>
+                            <li>Higher levels of engagement and productivity</li>
+                            <li>A deeper sense of meaning and purpose</li>
+                        </ul>
+                        
+                        <p>When we settle for merely surviving, we miss out on the richness and depth that life has to offer. By contrast, when we actively cultivate thriving, we not only enhance our own experience but also positively impact those around us through our energy, presence, and contributions.</p>
+                    </div>
+                    
+                    <div class="column">
+                        <div class="image-container">
+                            <img src="../images/thriving-woman.jpg" alt="Woman thriving and embracing life">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Tools Section -->
-<section class="toolbox" id="tools">
-    <div class="container">
-        <div class="section-title">
-            <h2>Thrive Tools</h2>
-            <p>Practical resources to help you move from surviving to thriving</p>
+    <!-- Tools Section -->
+    <section class="toolbox" id="tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Thrive Tools</h2>
+                <p>Practical resources to help you move from surviving to thriving in every dimension of life</p>
+            </div>
+            
+            <div class="toolkits">
+                <div class="toolkit-card">
+                    <i class="fas fa-infinity"></i>
+                    <h3>Abundance Mindset Activator</h3>
+                    <p>Transform your relationship with abundance through exercises that help you recognize opportunities, appreciate what you have, and open yourself to receiving more of what you desire in all areas of life.</p>
+                </div>
+                
+                <div class="toolkit-card">
+                    <i class="fas fa-compass"></i>
+                    <h3>Purpose Alignment Framework</h3>
+                    <p>Discover and articulate your unique purpose through guided reflection and visioning exercises. Learn to align your daily activities with your deeper sense of meaning and contribution.</p>
+                </div>
+                
+                <div class="toolkit-card">
+                    <i class="fas fa-water"></i>
+                    <h3>Flow State Cultivation</h3>
+                    <p>Learn to access the state of optimal experience where you're fully immersed, energized, and enjoying the process of an activity. These techniques help you identify and create the conditions for more flow in your life.</p>
+                </div>
+                
+                <div class="toolkit-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Strengths Amplifier</h3>
+                    <p>Identify your signature strengths and discover strategies for using them more intentionally in your daily life. This tool helps you leverage what you naturally do best to create more success and satisfaction.</p>
+                </div>
+                
+                <div class="toolkit-card">
+                    <i class="fas fa-laugh-beam"></i>
+                    <h3>Joy Practices Collection</h3>
+                    <p>Cultivate more moments of genuine joy through simple yet powerful daily practices. This collection helps you notice, savor, and create experiences that bring lightness, pleasure, and delight to your life.</p>
+                </div>
+                
+                <div class="toolkit-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Growth Opportunities Finder</h3>
+                    <p>Transform challenges into catalysts for growth with this reframing tool. Learn to identify the potential lessons and opportunities within difficult situations and use them as stepping stones to thriving.</p>
+                </div>
+            </div>
+            
+            <div class="content-block" style="margin-top: 80px;">
+                <h3>How to Use This Toolkit</h3>
+                <p>The Thrive Tools collection is designed to elevate your experience of life from merely functioning to genuinely flourishing. We recommend beginning with the Strengths Amplifier to identify and leverage your natural talents as a foundation for thriving.</p>
+                
+                <p>From there, explore the tools that most resonate with your current situation and aspirations. You might focus on cultivating more joy, aligning with your purpose, or developing an abundance mindset—whatever feels most relevant to your thriving journey right now.</p>
+                
+                <p>Remember that thriving is both a state and a practice. These tools are meant to be integrated into your life regularly, not just used once and set aside. The more consistently you engage with them, the more natural thriving will become.</p>
+            </div>
+            
+            <div class="cta-section">
+                <h3>Ready to Elevate Your Life?</h3>
+                <p>Join our Thrive Intensive program for a comprehensive, supported journey from surviving to thriving in every dimension of your life.</p>
+                <a href="../index.html#services" class="btn">Explore Programs</a>
+            </div>
         </div>
-        
-        <div class="toolkits">
-            <div class="toolkit-card">
-                <i class="fas fa-peace"></i>
-                <h3>Stress Management</h3>
-                <p>Advanced techniques for not just coping with stress but transforming your relationship with it, including mindfulness practices, cognitive reframing, and somatic approaches.</p>
-            </div>
-            
-            <div class="toolkit-card">
-                <i class="fas fa-seedling"></i>
-                <h3>Resilience Building</h3>
-                <p>Strategies to develop emotional flexibility, adapt to change, and bounce back stronger from setbacks, helping you maintain momentum toward your goals even during challenging times.</p>
-            </div>
-            
-            <div class="toolkit-card">
-                <i class="fas fa-tasks"></i>
-                <h3>Productivity Enhancement</h3>
-                <p>Systems and techniques to optimize your energy, focus, and time management, allowing you to accomplish more with less strain and create space for what truly matters.</p>
-            </div>
-            
-            <div class="toolkit-card">
-                <i class="fas fa-hand-holding-heart"></i>
-                <h3>Abundance Mindset</h3>
-                <p>Practices to shift from scarcity thinking to an abundance perspective, opening yourself to greater possibilities, generosity, and appreciation for life's gifts.</p>
-            </div>
-            
-            <div class="toolkit-card">
-                <i class="fas fa-rocket"></i>
-                <h3>Flow State Access</h3>
-                <p>Techniques to help you enter the state of optimal experience where you're fully immersed, energized, and enjoying the process of an activity—leading to greater creativity and satisfaction.</p>
-            </div>
-            
-            <div class="toolkit-card">
-                <i class="fas fa-balance-scale-right"></i>
-                <h3>Life Balance System</h3>
-                <p>A framework for creating harmony among the different areas of your life, ensuring that your energy and attention are aligned with your true priorities.</p>
-            </div>
-        </div>
-        
-        <div class="content-block" style="margin-top: 80px;">
-            <h3>How to Use This Toolkit</h3>
-            <p>This toolkit is designed to help you elevate from surviving to thriving in all areas of life. We recommend starting with the Stress Management and Resilience Building tools, as these create a foundation that makes the other tools more effective.</p>
-            
-            <p>From there, you might explore the Abundance Mindset practices to shift your perspective, and then move into the more practical tools like Productivity Enhancement and Life Balance System.</p>
-            
-            <p>Remember that thriving is both a journey and a practice—it requires ongoing attention and refinement as your life and circumstances evolve.</p>
-        </div>
-        
-        <div class="cta-section">
-            <h3>Ready to Level Up Your Life?</h3>
-            <p>Join our transformational programs designed to help you break through limitations and create a life of joy, purpose, and fulfillment.</p>
-            <a href="../index.html#services" class="btn">View Our Programs</a>
-        </div>
+    </section>
+
+    <!-- Back to Toolkits Button -->
+    <div class="back-button">
+        <a href="../index.html#toolbox" class="btn">Back to All Toolkits</a>
     </div>
-</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Lumina Rise Self-Growth</h4>
+                    <p>Empowering women through self-care and personal growth tools, resources, and community support.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#toolbox">Toolbox</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                        <li><a href="../index.html#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="../index.html#services">One-on-One Coaching</a></li>
+                        <li><a href="../index.html#services">Group Workshops</a></li>
+                        <li><a href="../index.html#services">Online Courses</a></li>
+                        <li><a href="../index.html#services">Self-Care Resources</a></li>
+                        <li><a href="../index.html#services">Community Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to receive self-care tips, growth resources, and event updates.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Lumina Rise Self-Growth. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+        
+        // Scroll Animation
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('header').style.background = 'linear-gradient(135deg, rgba(255,242,217,0.95), rgba(255,230,187,0.95), rgba(255,207,173,0.95))';
+                document.querySelector('header').style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                document.querySelector('header').style.background = 'linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad)';
+                document.querySelector('header').style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
