@@ -5,7 +5,659 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Personal Growth Toolkit | Lumina Rise Self-Growth</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- CSS styles from your template would be here -->
+    <style>
+        :root {
+            --primary-color: #ff7f30; /* Vibrant orange from your logo */
+            --secondary-color: #ffe577; /* Soft gold/yellow from your palette */
+            --accent-color: #fda63a; /* Warm amber accent */
+            --text-color: #333;
+            --light-color: #fff;
+            --dark-color: #333; /* Darker text for header */
+            --slate-blue: #5d6d7e; /* Slate blue for text on light backgrounds */
+            --soft-peach: #fff2d9; /* Soft peach background */
+            --soft-pink: #ffcfcf; /* Soft pink accent */
+            --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577); /* Orange to gold gradient */
+            --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb); /* Soft background gradient */
+            --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad); /* Pale orange/yellow gradient for header */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--header-gradient);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--dark-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: var(--dark-color);
+            color: var(--light-color);
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../images/personal-growth-bg.jpg') center/cover no-repeat;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--soft-peach);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gradient);
+            color: var(--light-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--slate-blue);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        
+        .about-image {
+            flex: 1;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            color: var(--slate-blue);
+            margin-bottom: 15px;
+        }
+        
+        /* Toolbox Section */
+        .toolbox {
+            padding: 100px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .toolkits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .toolkit-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .toolkit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .toolkit-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .toolkit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .toolkit-card p {
+            color: var(--slate-blue);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background: var(--soft-peach);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .service-content p {
+            color: var(--slate-blue);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial-card {
+            background: var(--light-color);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--slate-blue);
+        }
+        
+        .client {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .client-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 3px solid var(--accent-color);
+        }
+        
+        .client-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .client-info h4 {
+            color: var(--primary-color);
+        }
+        
+        .client-info p {
+            font-size: 0.9rem;
+            margin: 0;
+            font-style: normal;
+            color: var(--slate-blue);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 20px;
+            color: var(--slate-blue);
+        }
+        
+        .contact-info .info-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info i {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--light-color);
+            background-color: rgba(255,255,255,0.1);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        
+        /* Custom Styles for Toolkit Pages */
+        .content-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .content-block {
+            margin-bottom: 60px;
+        }
+        
+        .content-block h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .content-block p {
+            color: var(--slate-blue);
+            margin-bottom: 15px;
+        }
+        
+        .two-columns {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            margin-top: 40px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .image-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .image-container img {
+            width: 100%;
+            display: block;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .tool-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .tool-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .tool-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .tool-card p {
+            color: var(--slate-blue);
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 80px;
+            padding: 60px 0;
+            background: var(--soft-gradient);
+            border-radius: 10px;
+        }
+        
+        .cta-section h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--slate-blue);
+        }
+        
+        .back-button {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content, .two-columns {
+                flex-direction: column;
+            }
+            
+            .about-image, .about-text, .column {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--header-gradient);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -38,7 +690,7 @@
     <section class="hero">
         <div class="container">
             <h2>The Personal Growth Toolkit</h2>
-            <p>Discover your potential and evolve into your best self with goal-setting frameworks, mindset shifts, and transformative personal development strategies.</p>
+            <p>Discover your potential and expand your horizons with goal-setting frameworks, self-discovery exercises, and transformational practices.</p>
             <a href="#tools" class="btn">Explore Tools</a>
         </div>
     </section>
@@ -48,35 +700,36 @@
         <div class="container">
             <div class="section-title">
                 <h2>About Personal Growth</h2>
-                <p>Understanding the journey of continuous self-improvement and evolution</p>
+                <p>Understanding the journey of continuous self-improvement and development</p>
             </div>
             
             <div class="content-block">
                 <h3>What is Personal Growth?</h3>
-                <p>Personal growth is the ongoing process of understanding and developing yourself in order to achieve your fullest potential. It involves expanding your awareness, knowledge, and skills while working toward becoming the best version of yourself.</p>
+                <p>Personal growth is the ongoing process of understanding and developing yourself in order to achieve your fullest potential. It involves a commitment to becoming the best version of yourself through conscious effort, reflection, and action.</p>
                 
-                <p>At Lumina Rise, we view personal growth as a lifelong journey that encompasses all aspects of your being—mental, emotional, physical, and spiritual. It's about intentionally evolving and transforming in ways that align with your deepest values and aspirations.</p>
+                <p>At Lumina Rise, we believe personal growth is a lifelong journey that requires intention, courage, and consistency. When you commit to your personal development, you open doors to new possibilities, deeper connections, and a more fulfilling life experience.</p>
                 
                 <div class="two-columns">
                     <div class="column">
                         <h3>Why Personal Growth Matters</h3>
-                        <p>In a world of constant change and challenges, personal growth provides the foundation for resilience, fulfillment, and authentic success. When you commit to your own development, you:</p>
+                        <p>In a world of constant change and increasing complexity, personal growth isn't just beneficial—it's essential. Women who actively pursue personal development tend to experience greater satisfaction, resilience, and success in all areas of life.</p>
                         
+                        <p>Research and experience show that intentional personal growth leads to:</p>
                         <ul style="margin-left: 20px; margin-bottom: 20px;">
-                            <li>Increase self-awareness and emotional intelligence</li>
-                            <li>Develop greater confidence and self-efficacy</li>
-                            <li>Create more meaningful relationships</li>
-                            <li>Unlock creativity and innovation</li>
-                            <li>Build resilience to navigate life's challenges</li>
-                            <li>Align your actions with your deepest values</li>
+                            <li>Increased self-awareness and emotional intelligence</li>
+                            <li>Greater clarity about your values and purpose</li>
+                            <li>Enhanced confidence and self-efficacy</li>
+                            <li>Improved decision-making abilities</li>
+                            <li>More fulfilling relationships</li>
+                            <li>Greater adaptability to life's challenges</li>
                         </ul>
                         
-                        <p>Personal growth is not about perfection—it's about progress. Each step forward expands your capacity to live with purpose and joy, even during difficult times. By embracing personal growth as a priority, you empower yourself to create a life of meaning and fulfillment on your own terms.</p>
+                        <p>When we neglect our personal growth, we risk stagnation, missed opportunities, and a diminished sense of fulfillment. By contrast, when we actively engage in our development, we create the conditions for a life of meaning, purpose, and joy.</p>
                     </div>
                     
                     <div class="column">
                         <div class="image-container">
-                            <img src="../images/personal-growth-journey.jpg" alt="Woman on personal growth journey">
+                            <img src="../images/personal-growth-importance.jpg" alt="Woman on a personal growth journey">
                         </div>
                     </div>
                 </div>
@@ -89,59 +742,59 @@
         <div class="container">
             <div class="section-title">
                 <h2>Personal Growth Tools</h2>
-                <p>Practical resources to help you develop self-awareness, overcome limitations, and achieve your goals</p>
+                <p>Practical resources to help you expand your potential and live with greater purpose</p>
             </div>
             
             <div class="toolkits">
                 <div class="toolkit-card">
                     <i class="fas fa-compass"></i>
                     <h3>Values Clarification</h3>
-                    <p>Identify and prioritize your core values to create a life that aligns with what matters most to you. This foundational work guides decision-making and creates authentic motivation.</p>
+                    <p>Identify and prioritize your core values to create alignment between your daily choices and what matters most to you. This foundational exercise brings clarity to decision-making and life direction.</p>
                 </div>
                 
                 <div class="toolkit-card">
                     <i class="fas fa-bullseye"></i>
-                    <h3>Goal Setting Framework</h3>
-                    <p>Learn effective strategies for setting meaningful goals that inspire action. Discover how to break down big aspirations into achievable steps with built-in accountability.</p>
+                    <h3>Goal-Setting Framework</h3>
+                    <p>Learn a structured approach to setting meaningful goals that inspire action. This comprehensive framework helps you create specific, measurable objectives with clear action plans.</p>
                 </div>
                 
                 <div class="toolkit-card">
-                    <i class="fas fa-brain"></i>
+                    <i class="fas fa-lightbulb"></i>
                     <h3>Limiting Beliefs Transformation</h3>
-                    <p>Identify and reframe the subconscious beliefs that hold you back. Replace disempowering thoughts with perspectives that support your growth and potential.</p>
-                </div>
-                
-                <div class="toolkit-card">
-                    <i class="fas fa-journal-whills"></i>
-                    <h3>Reflection Practices</h3>
-                    <p>Develop the habit of meaningful self-reflection through journaling prompts, guided questions, and contemplative exercises that deepen self-awareness.</p>
+                    <p>Identify and reframe the unconscious beliefs that may be holding you back from reaching your full potential. This powerful tool helps you replace self-limiting thoughts with empowering alternatives.</p>
                 </div>
                 
                 <div class="toolkit-card">
                     <i class="fas fa-chart-line"></i>
-                    <h3>Progress Tracking</h3>
-                    <p>Create systems to monitor your growth journey, celebrate wins, and learn from challenges. Includes templates for habit tracking, milestone recognition, and course correction.</p>
+                    <h3>Growth Mindset Practices</h3>
+                    <p>Develop a mindset that embraces challenges and sees failures as opportunities for growth. These practical exercises help you cultivate resilience and persistence in pursuit of your goals.</p>
                 </div>
                 
                 <div class="toolkit-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Accountability Systems</h3>
-                    <p>Discover strategies for maintaining momentum through accountability partnerships, community support, and personal commitment practices.</p>
+                    <i class="fas fa-book"></i>
+                    <h3>Reflection Journal Prompts</h3>
+                    <p>Deepen your self-awareness through guided journaling exercises designed to uncover insights about your patterns, desires, and opportunities for growth.</p>
+                </div>
+                
+                <div class="toolkit-card">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <h3>Strengths Assessment</h3>
+                    <p>Discover and leverage your unique strengths to achieve greater success and satisfaction. This assessment helps you identify your natural talents and how to apply them effectively.</p>
                 </div>
             </div>
             
             <div class="content-block" style="margin-top: 80px;">
                 <h3>How to Use This Toolkit</h3>
-                <p>This toolkit is designed to support your unique personal growth journey. We recommend beginning with the Values Clarification tool to establish a strong foundation for your development work.</p>
+                <p>The Personal Growth Toolkit is designed to support you at any stage of your development journey. We recommend beginning with the Values Clarification exercise to establish a strong foundation for your growth work.</p>
                 
-                <p>From there, explore the tools that address your current growth edges and priorities. Remember that personal growth is not linear—it's cyclical and often involves revisiting certain areas as you evolve to new levels of awareness and capability.</p>
+                <p>From there, explore the tools that align with your current priorities and challenges. You might focus on setting meaningful goals, addressing limiting beliefs, or cultivating a growth mindset—whatever feels most relevant to your life right now.</p>
                 
-                <p>As you work with these tools, practice self-compassion and patience. Growth takes time and often includes moments of discomfort as you stretch beyond familiar patterns and comfort zones. Trust the process and celebrate each step of your journey.</p>
+                <p>Remember that personal growth is highly individualized. What works for someone else might not resonate with you, and what you need today might differ from what you'll need tomorrow. Trust your intuition as you engage with these tools, and feel free to adapt them to better suit your unique circumstances.</p>
             </div>
             
             <div class="cta-section">
                 <h3>Ready to Accelerate Your Growth?</h3>
-                <p>Explore our comprehensive personal development programs designed to help you break through limitations and create lasting transformation.</p>
+                <p>Explore our personalized coaching programs designed to help you overcome obstacles and create meaningful transformation in your life.</p>
                 <a href="../index.html#services" class="btn">View Our Programs</a>
             </div>
         </div>
@@ -186,7 +839,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>Newsletter</h4>
-                    <p>Subscribe to receive personal growth tips, resources, and event updates.</p>
+                    <p>Subscribe to receive self-care tips, growth resources, and event updates.</p>
                     <form>
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="Your Email" required>
@@ -228,8 +881,4 @@
                 document.querySelector('header').style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
             } else {
                 document.querySelector('header').style.background = 'linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad)';
-            }
-        });
-    </script>
-</body>
-</html>
+                document.querySelector('header').style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
