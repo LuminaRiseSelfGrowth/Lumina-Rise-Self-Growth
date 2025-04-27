@@ -5,7 +5,407 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empowerment Essentials | Lumina Rise Self-Growth</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- CSS styles from your template would be here -->
+    <style>
+        :root {
+            --primary-color: #ff7f30; /* Vibrant orange from your logo */
+            --secondary-color: #ffe577; /* Soft gold/yellow from your palette */
+            --accent-color: #fda63a; /* Warm amber accent */
+            --text-color: #333;
+            --light-color: #fff;
+            --dark-color: #333; /* Darker text for header */
+            --slate-blue: #5d6d7e; /* Slate blue for text on light backgrounds */
+            --soft-peach: #fff2d9; /* Soft peach background */
+            --soft-pink: #ffcfcf; /* Soft pink accent */
+            --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577); /* Orange to gold gradient */
+            --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb); /* Soft background gradient */
+            --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad); /* Pale orange/yellow gradient for header */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--header-gradient);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--dark-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: var(--dark-color);
+            color: var(--light-color);
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../images/empowerment-bg.jpg') center/cover no-repeat;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--soft-peach);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gradient);
+            color: var(--light-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+        }
+        
+        /* Content Section */
+        .content-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--slate-blue);
+        }
+        
+        .content-block {
+            margin-bottom: 60px;
+        }
+        
+        .content-block h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .content-block p {
+            color: var(--slate-blue);
+            margin-bottom: 15px;
+        }
+        
+        .two-columns {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            margin-top: 40px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .image-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .image-container img {
+            width: 100%;
+            display: block;
+        }
+        
+        /* Toolbox Section */
+        .toolbox {
+            padding: 100px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .toolkits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .toolkit-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .toolkit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .toolkit-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .toolkit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .toolkit-card p {
+            color: var(--slate-blue);
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 80px;
+            padding: 60px 0;
+            background: var(--soft-gradient);
+            border-radius: 10px;
+        }
+        
+        .cta-section h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--slate-blue);
+        }
+        
+        .back-button {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--light-color);
+            background-color: rgba(255,255,255,0.1);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content, .two-columns {
+                flex-direction: column;
+            }
+            
+            .about-image, .about-text, .column {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--header-gradient);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -38,7 +438,7 @@
     <section class="hero">
         <div class="container">
             <h2>Empowerment Essentials</h2>
-            <p>Reclaim your power and step into your authentic strength with tools for assertiveness, boundary-setting, and confidence building.</p>
+            <p>Reclaim your power and build unshakable confidence with assertiveness training, confidence-building exercises, and self-advocacy tools.</p>
             <a href="#tools" class="btn">Explore Tools</a>
         </div>
     </section>
@@ -48,36 +448,36 @@
         <div class="container">
             <div class="section-title">
                 <h2>About Empowerment</h2>
-                <p>Understanding the journey toward authentic power and self-determination</p>
+                <p>Understanding how to recognize and claim your inherent power and potential</p>
             </div>
             
             <div class="content-block">
                 <h3>What is Empowerment?</h3>
-                <p>Empowerment is the process of strengthening your sense of agency, confidence, and control over your life and choices. It involves recognizing your inherent worth and capabilities while developing the skills to express yourself authentically and advocate for your needs.</p>
+                <p>Empowerment is the process of becoming stronger, more confident, and claiming your agency to make choices that influence your life and contribute to positive change. It's about recognizing your inherent worth and power, and using that awareness to live authentically and purposefully.</p>
                 
-                <p>At Lumina Rise, we believe that true empowerment comes from within—it's about reconnecting with your inner wisdom and cultivating the courage to live in alignment with your values and desires. When you're empowered, you approach life from a place of choice rather than obligation or fear.</p>
+                <p>At Lumina Rise, we believe that every woman already possesses immense inner power. Our approach to empowerment focuses on removing barriers, challenging limiting beliefs, and providing practical tools that help you recognize, claim, and express your natural strength and brilliance.</p>
                 
                 <div class="two-columns">
                     <div class="column">
                         <h3>Why Empowerment Matters</h3>
-                        <p>Women frequently face unique challenges to their sense of power and agency. From subtle social conditioning to overt discrimination, various forces can disconnect us from our authentic voice and authority.</p>
+                        <p>Women often face unique challenges that can diminish their sense of power and agency—from societal expectations and gender biases to internal doubts and fears. Empowerment is essential for overcoming these obstacles and creating a life aligned with your true desires and capabilities.</p>
                         
-                        <p>Reclaiming your empowerment leads to:</p>
+                        <p>Research and experience show that empowered women experience:</p>
                         <ul style="margin-left: 20px; margin-bottom: 20px;">
-                            <li>Greater confidence in decision-making</li>
-                            <li>Healthier relationships with clear boundaries</li>
-                            <li>Reduced anxiety and people-pleasing behaviors</li>
-                            <li>Enhanced ability to pursue meaningful goals</li>
+                            <li>Increased confidence in decision-making</li>
+                            <li>Greater resilience in the face of challenges</li>
                             <li>More authentic self-expression</li>
-                            <li>Increased resilience when facing challenges</li>
+                            <li>Improved ability to set and maintain healthy boundaries</li>
+                            <li>Enhanced leadership abilities</li>
+                            <li>More fulfilling relationships based on mutual respect</li>
                         </ul>
                         
-                        <p>Empowerment is not about dominating others or adopting aggressive behaviors. Rather, it's about standing firmly in your truth, honoring your needs, and using your voice with clarity and conviction. When you're empowered, you lift others up rather than diminish them.</p>
+                        <p>When we lack empowerment, we often find ourselves living according to others' expectations, doubting our own wisdom, and settling for less than we deserve. By contrast, when we embrace our personal power, we create lives of authenticity, impact, and deep fulfillment.</p>
                     </div>
                     
                     <div class="column">
                         <div class="image-container">
-                            <img src="../images/empowerment-journey.jpg" alt="Empowered woman">
+                            <img src="../images/empowerment-importance.jpg" alt="Empowered woman standing confidently">
                         </div>
                     </div>
                 </div>
@@ -90,49 +490,148 @@
         <div class="container">
             <div class="section-title">
                 <h2>Empowerment Tools</h2>
-                <p>Practical resources to help you reclaim your power and live authentically</p>
+                <p>Practical resources to help you recognize, claim, and express your inherent power</p>
             </div>
             
             <div class="toolkits">
                 <div class="toolkit-card">
-                    <i class="fas fa-comment-dots"></i>
-                    <h3>Assertive Communication</h3>
-                    <p>Learn to express your needs, opinions, and boundaries clearly and respectfully. Includes scripts, practice scenarios, and feedback tools to build your confidence in various situations.</p>
-                </div>
-                
-                <div class="toolkit-card">
                     <i class="fas fa-shield-alt"></i>
-                    <h3>Boundary Blueprint</h3>
-                    <p>Create a personalized framework for establishing and maintaining healthy boundaries in relationships, work, and digital spaces. Includes boundary identification exercises and enforcement strategies.</p>
+                    <h3>Boundary Setting Blueprint</h3>
+                    <p>Learn to identify, communicate, and maintain healthy boundaries in all areas of your life. This comprehensive guide includes scripts, strategies, and practice scenarios to strengthen your boundary muscles.</p>
                 </div>
                 
                 <div class="toolkit-card">
-                    <i class="fas fa-star"></i>
-                    <h3>Confidence Building</h3>
-                    <p>Develop unshakable self-trust through evidence-based practices that strengthen your belief in your capabilities and worth, regardless of external validation or circumstances.</p>
+                    <i class="fas fa-comment-dots"></i>
+                    <h3>Assertive Communication Guide</h3>
+                    <p>Master the art of expressing yourself clearly, confidently, and respectfully. This practical toolkit provides frameworks for difficult conversations and techniques to ensure your voice is heard.</p>
                 </div>
                 
                 <div class="toolkit-card">
-                    <i class="fas fa-microphone"></i>
-                    <h3>Voice Reclamation</h3>
-                    <p>Reconnect with your authentic voice through exercises that help you identify when you're speaking from conditioning versus truth, and practices to express yourself more genuinely.</p>
+                    <i class="fas fa-crown"></i>
+                    <h3>Confidence Building Exercises</h3>
+                    <p>Develop unshakable self-belief through daily practices that reinforce your worth and capabilities. These evidence-based exercises help you cultivate authentic confidence from within.</p>
                 </div>
                 
                 <div class="toolkit-card">
-                    <i class="fas fa-user-shield"></i>
-                    <h3>People-Pleasing Recovery</h3>
-                    <p>Break free from the exhausting cycle of prioritizing others' needs and approval over your own well-being. Learn to recognize triggers and develop healthier response patterns.</p>
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Self-Advocacy Strategies</h3>
+                    <p>Learn to effectively represent your own interests, needs, and goals. This toolkit equips you with approaches for advocating for yourself in personal relationships, professional settings, and healthcare contexts.</p>
                 </div>
                 
                 <div class="toolkit-card">
-                    <i class="fas fa-hands"></i>
-                    <h3>Personal Power Practices</h3>
-                    <p>Daily rituals and exercises to strengthen your connection to your inner authority and maintain your sense of empowerment, even during challenging interactions.</p>
+                    <i class="fas fa-medal"></i>
+                    <h3>Personal Power Inventory</h3>
+                    <p>Identify and leverage your unique sources of power—from your skills and knowledge to your relationships and personal qualities. This assessment helps you recognize the multifaceted nature of your strength.</p>
+                </div>
+                
+                <div class="toolkit-card">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <h3>Inner Critic Transformation</h3>
+                    <p>Transform your relationship with your inner critic through compassionate awareness and powerful reframing techniques. Learn to recognize self-sabotaging thoughts and replace them with empowering alternatives.</p>
                 </div>
             </div>
             
             <div class="content-block" style="margin-top: 80px;">
                 <h3>How to Use This Toolkit</h3>
-                <p>This toolkit is designed to support you in reclaiming and strengthening your personal power. We recommend starting with the areas where you feel most challenged or disempowered in your current life.</p>
+                <p>The Empowerment Essentials toolkit is designed to meet you wherever you are on your journey to claiming your power. We recommend starting with the Personal Power Inventory to gain awareness of your current strengths and areas for growth.</p>
                 
-                <p>Remember that empowerment is a practice, not a destination. It requires consistent attention and reinforcement, especially when facing situations that trigger old patterns of self
+                <p>From there, you might focus on the tools that address your most pressing challenges—whether that's setting boundaries, communicating assertively, or quieting your inner critic. Remember that empowerment is a practice, not a destination, so approach these tools with patience and self-compassion.</p>
+                
+                <p>For maximum benefit, we suggest incorporating at least one empowerment practice into your daily routine. Small, consistent actions create meaningful shifts in how you perceive and express your power over time.</p>
+            </div>
+            
+            <div class="cta-section">
+                <h3>Ready to Deepen Your Empowerment Journey?</h3>
+                <p>Join our Empowered Living workshop series to connect with like-minded women and receive personalized guidance on your path to authentic power.</p>
+                <a href="../index.html#services" class="btn">Explore Workshops</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Toolkits Button -->
+    <div class="back-button">
+        <a href="../index.html#toolbox" class="btn">Back to All Toolkits</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Lumina Rise Self-Growth</h4>
+                    <p>Empowering women through self-care and personal growth tools, resources, and community support.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#toolbox">Toolbox</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                        <li><a href="../index.html#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="../index.html#services">One-on-One Coaching</a></li>
+                        <li><a href="../index.html#services">Group Workshops</a></li>
+                        <li><a href="../index.html#services">Online Courses</a></li>
+                        <li><a href="../index.html#services">Self-Care Resources</a></li>
+                        <li><a href="../index.html#services">Community Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to receive self-care tips, growth resources, and event updates.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Lumina Rise Self-Growth. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+        
+        // Scroll Animation
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('header').style.background = 'linear-gradient(135deg, rgba(255,242,217,0.95), rgba(255,230,187,0.95), rgba(255,207,173,0.95))';
+                document.querySelector('header').style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                document.querySelector('header').style.background = 'linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad)';
+                document.querySelector('header').style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
