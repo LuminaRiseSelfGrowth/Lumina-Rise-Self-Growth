@@ -29,22 +29,23 @@
     --small-font-size: 0.9rem;
 }
 
-/* Global paragraph styling */
+/* Replace your paragraph styling with this more forceful approach */
 p {
-    color: var(--slate-blue);
-    font-size: var(--body-font-size);
-    line-height: 1.6;
-    font-family: 'Montserrat', sans-serif;
+    color: var(--slate-blue) !important; /* Force consistent color */
+    font-size: var(--body-font-size) !important; /* Force consistent size */
+    line-height: 1.6 !important;
+    font-family: 'Montserrat', sans-serif !important; /* Force consistent font */
 }
 
-/* Only keep these specific overrides where different colors are needed */
+/* Only keep these exceptions with !important to ensure they take precedence */
 .hero p {
-    color: var(--soft-peach); /* Keep hero text light colored for visibility */
+    color: var(--soft-peach) !important; /* Light color for dark backgrounds */
 }
 
 .footer-col p, .copyright p {
-    color: #bbb; /* Keep footer text light colored for visibility */
+    color: #bbb !important; /* Light color for dark backgrounds */
 }
+
 
         * {
             margin: 0;
