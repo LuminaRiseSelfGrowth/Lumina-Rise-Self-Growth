@@ -1,0 +1,17 @@
+from zipfile import ZipFile
+import os
+
+# Define file paths for all templates created so far (as examples)
+file_paths = [
+    "/mnt/data/Daily_Self-Care_Planner_LuminaRise.pdf",
+    "/mnt/data/Daily_Self-Care_Planner_LuminaRise.png",
+]
+
+# Create a ZIP file containing all the templates
+zip_path = "/mnt/data/LuminaRise_Templates.zip"
+with ZipFile(zip_path, 'w') as zipf:
+    for file in file_paths:
+        if os.path.exists(file):
+            zipf.write(file, arcname=os.path.basename(file))
+
+zip_path  # Return path to download the ZIP file with all templates
