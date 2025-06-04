@@ -30,22 +30,51 @@
 }
 
 p {
-    color: var(--slate-blue) !important; /* Force consistent color */
-    font-size: var(--body-font-size) !important; /* Force consistent size */
-    line-height: 1.6 !important;
-    font-family: 'Montserrat', sans-serif !important; /* Force consistent font */
+  body {
+    color: var(--slate-blue) !important;
 }
 
-/* Only keep these exceptions with !important to ensure they take precedence */
+h1, h2, h3, h4, h5, h6, a, li, span, div, ul li {
+    color: var(--slate-blue) !important;
+}
+
+/* Override any specific color settings that might be causing issues */
+.logo-text h1 {
+    color: var(--primary-color) !important; /* Keep your logo text orange */
+}
+
+.logo-text p {
+    color: var(--dark-color) !important; /* Keep your slogan dark */
+}
+
+/* Keep hero section text colors as they are */
+.hero h2 {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .hero p {
-    color: var(--soft-peach) !important; /* Light color for dark backgrounds */
+    color: var(--soft-peach) !important;
 }
 
-.footer-col p, .copyright p {
-    color: #bbb !important; /* Light color for dark backgrounds */
+/* Keep section titles as they are */
+.section-title h2 {
+    color: var(--primary-color) !important;
 }
 
+.toolkit-card h3, .tool-card h3, .about-text h3, .content-block h3 {
+    color: var(--accent-color) !important;
+}
 
+/* Keep footer text light */
+.footer-col h4 {
+    color: var(--accent-color) !important;
+}
+
+.footer-col p, .footer-col ul li a, .copyright p {
+    color: #bbb !important;
+}
         * {
             margin: 0;
             padding: 0;
