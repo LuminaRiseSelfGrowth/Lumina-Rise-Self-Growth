@@ -29,12 +29,21 @@
     --small-font-size: 0.9rem;
 }
 
-p {
-  color: var(--slate-blue) !important; /* Force consistent color */
-    font-size: var(--body-font-size) !important; /* Force consistent size */
-    line-height: 1.6 !important;
-    font-family: 'Montserrat', sans-serif !important; /* Force consistent font */
+
+ul li {
+    color: var(--slate-blue) !important;
 }
+
+/* For specifically styled lists */
+.column ul li {
+    color: var(--slate-blue) !important;
+}
+
+/* This covers any other list variations */
+ul li, ol li, .content-block ul li, .about-text ul li {
+    color: var(--slate-blue) !important;
+}
+
 
 /* Only keep these exceptions with !important to ensure they take precedence */
 .hero p {
