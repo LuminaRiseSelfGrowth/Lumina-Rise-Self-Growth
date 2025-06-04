@@ -20,6 +20,50 @@
             --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb); /* Soft background gradient */
             --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad); /* Pale orange/yellow gradient for header */
         }
+
+ul li {
+    color: var(--slate-blue) !important;
+}
+
+/* For specifically styled lists */
+.column ul li {
+    color: var(--slate-blue) !important;
+}
+
+/* This covers any other list variations */
+ul li, ol li, .content-block ul li, .about-text ul li {
+    color: var(--slate-blue) !important;
+}
+
+
+/* Only keep these exceptions with !important to ensure they take precedence */
+.hero p {
+    color: var(--soft-peach) !important; /* Light color for dark backgrounds */
+}
+
+.footer-col p, .copyright p {
+    color: #bbb !important; /* Light color for dark backgrounds */
+}
+
+
+/* Keep section titles as they are */
+.section-title h2 {
+    color: var(--primary-color) !important;
+}
+
+.toolkit-card h3, .tool-card h3, .about-text h3, .content-block h3 {
+    color: var(--accent-color) !important;
+}
+
+/* Keep footer text light */
+.footer-col h4 {
+    color: var(--accent-color) !important;
+}
+
+.footer-col p, .footer-col ul li a, .copyright p {
+    color: #bbb !important;
+}
+
         
         * {
             margin: 0;
