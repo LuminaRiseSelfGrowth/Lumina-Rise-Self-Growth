@@ -29,7 +29,7 @@
     --small-font-size: 0.9rem;
 }
 
-/* Global paragraph styling - add this to your CSS */
+/* Global paragraph styling */
 p {
     color: var(--slate-blue);
     font-size: var(--body-font-size);
@@ -37,31 +37,13 @@ p {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Override specific paragraph styles that might be different */
+/* Only keep these specific overrides where different colors are needed */
 .hero p {
     color: var(--soft-peach); /* Keep hero text light colored for visibility */
 }
 
 .footer-col p, .copyright p {
     color: #bbb; /* Keep footer text light colored for visibility */
-}
-
-/* Make sure info-item paragraphs match */
-.info-item p {
-    color: var(--slate-blue);
-}
-
-/* Make sure all section paragraphs match */
-.section-title p,
-.content-block p,
-.toolkit-card p,
-.service-card p,
-.tool-card p,
-.cta-section p,
-.contact-info p,
-.about-text p,
-.column p {
-    color: var(--slate-blue);
 }
 
         * {
