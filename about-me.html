@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Lumina Rise Self-Growth</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff7f30; /* Vibrant orange from your logo */
+            --secondary-color: #ffe577; /* Soft gold/yellow from your palette */
+            --accent-color: #fda63a; /* Warm amber accent */
+            --text-color: #333;
+            --light-color: #fff;
+            --dark-color: #333; /* Darker text for header */
+            --slate-blue: #5d6d7e; /* Slate blue for text on light backgrounds */
+            --soft-peach: #fff2d9; /* Soft peach background */
+            --soft-pink: #ffcfcf; /* Soft pink accent */
+            --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577); /* Orange to gold gradient */
+            --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb); /* Soft background gradient */
+            --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad); /* Pale orange/yellow gradient for header */
+        }
+
+        ul li {
+            color: var(--slate-blue) !important;
+        }
+
+        /* For specifically styled lists */
+        .column ul li {
+            color: var(--slate-blue) !important;
+        }
+
+        /* This covers any other list variations */
+        ul li, ol li, .content-block ul li, .about-text ul li {
+            color: var(--slate-blue) !important;
+        }
+
+        /* Only keep these exceptions with !important to ensure they take precedence */
+        .hero p {
+            color: var(--soft-peach) !important; /* Light color for dark backgrounds */
+        }
+
+        .footer-col p, .copyright p {
+            color: #bbb !important; /* Light color for dark backgrounds */
+        }
+
+        /* Keep section titles as they are */
+        .section-title h2 {
+            color: var(--primary-color) !important;
+        }
+
+        .toolkit-card h3, .tool-card h3, .about-text h3, .content-block h3 {
+            color: var(--accent-color) !important;
+        }
+
+        /* Keep footer text light */
+        .footer-col h4 {
+            color: var(--accent-color) !important;
+        }
+
+        .footer-col p, .footer-col ul li a, .copyright p {
+            color: #bbb !important;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--header-gradient);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--dark-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: var(--dark-color);
+            color: var(--light-color);
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/about-me-bg.jpg') center/cover no-repeat;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--soft-peach);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gradient);
+            color: var(--light-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+        }
+        
+        /* Content Section */
+        .content-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--slate-blue);
+        }
+        
+        .content-block {
+            margin-bottom: 60px;
+        }
+        
+        .content-block h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .content-block p {
+            color: var(--slate-blue);
+            margin-bottom: 15px;
+        }
+        
+        .two-columns {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            margin-top: 40px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .image-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .image-container img {
+            width: 100%;
+            display: block;
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            padding: 80px 0;
+            background: var(--soft-gradient);
+        }
+        
+        /* Toolbox Section */
+        .toolbox-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .toolbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .toolbox-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .toolbox-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .toolbox-card h3 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .toolbox-card p {
+            color: var(--slate-blue);
+            margin-bottom: 20px;
+        }
+        
+        /* Education Section */
+        .education-section {
+            padding: 80px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .education-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .education-card h3 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .education-card p {
+            color: var(--slate-blue);
+            margin-bottom: 10px;
+        }
+        
+        /* Interests Section */
+        .interests-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .interest-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .interest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .interest-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .interest-card h4 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .interest-card p {
+            color: var(--slate-blue);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 60px 0;
+            background: var(--soft-gradient);
+            border-radius: 10px;
+            margin: 80px auto;
+            max-width: 1100px;
+        }
+        
+        .cta-section h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--slate-blue);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background-color: #fcf3e1;
+            padding: 60px 0;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h2, .contact-form h2 {
+            color: #e8a35c;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            color: #e8a35c;
+            font-size: 18px;
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            margin-bottom: 15px;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .send-btn {
+            background-color: #f8a44c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .send-btn:hover {
+            background-color: #e8943c;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--light-color);
+            background-color: rgba(255,255,255,0.1);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content, .two-columns {
+                flex-direction: column;
+            }
+            
+            .about-image, .about-text, .column {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--header-gradient);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="images/logo.png" alt="Lumina Rise Logo">
+                    <div class="logo-text">
+                        <h1>Lumina Rise Self-Growth</h1>
+                        <p>Where Self-Care Meets Self-Growth</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-me.html">About</a></li>
+                    <li><a href="index.html#toolbox">Toolbox</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Empowering women to discover their inner strength and transform their lives</p>
+            <a href="#mission" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Story</h2>
+                <p>The journey that led to Lumina Rise Self-Growth</p>
+            </div>
+            
+            <div class="content-block">
+                <div class="two-columns">
+                    <div class="column">
+                        <h3>Passion for Empowerment</h3>
+                        <p>Welcome to Lumina Rise Self-Growth! I'm dedicated to helping women believe in themselves and unlock their full potential. My journey in self-development began with a simple realization: when women have the right tools and support, they can transform not only their own lives but also influence positive change in their communities.</p>
+                        
+                        <p>As a certified positive psychology coach, I've witnessed firsthand how proper guidance and personalized strategies can help women overcome challenges, improve their mental health, and cultivate a deeper sense of self-worth. This experience has fueled my passion for creating a business exclusively focused on women's empowerment.</p>
+                        
+                        <p>At Lumina Rise, I believe that self-care and self-growth are interconnected journeys. My mission is to provide women with practical tools, evidence-based strategies, and a supportive community where they can explore, grow, and thrive together.</p>
+                    </div>
+                    
+                    <div class="column">
+                        <div class="image-container">
+                            <img src="images/about-founder.jpg" alt="Founder of Lumina Rise">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section" id="mission">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Mission & Vision</h2>
+                <p>The driving force behind Lumina Rise Self-Growth</p>
+            </div>
+            
+            <div class="content-block">
+                <div class="two-columns">
+                    <div class="column">
+                        <h3>Mission</h3>
+                        <p>To empower women through accessible, practical tools and supportive guidance that foster self-belief, improve mental well-being, and catalyze personal growth.</p>
+                        
+                        <h3>Vision</h3>
+                        <p>To create a world where every woman recognizes her inherent worth, harnesses her unique strengths, and feels equipped to design a life aligned with her authentic self.</p>
+                        
+                        <h3>Core Values</h3>
+                        <ul>
+                            <li>Authenticity - Encouraging genuine self-expression and growth</li>
+                            <li>Empowerment - Providing tools that build independence and confidence</li>
+                            <li>Compassion - Approaching all interactions with kindness and understanding</li>
+                            <li>Growth Mindset - Embracing challenges as opportunities for development</li>
+                            <li>Community - Fostering connection and collective wisdom</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="column">
+                        <div class="image-container">
+                            <img src="images/mission-vision.jpg" alt="Women supporting each other">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toolbox Section -->
+    <section class="toolbox-section" id="toolbox-concept">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Toolbox Concept</h2>
+                <p>Customized resources for every woman's unique journey</p>
+            </div>
+            
+            <div class="content-block">
+                <p>Just as you need different tools to work on your car or build your house, the journey of self-improvement requires various instruments tailored to specific challenges and goals. The Toolbox Concept at Lumina Rise provides women with diverse, practical resources they can use throughout their personal development journey.</p>
+            </div>
+            
+            <div class="toolbox-grid">
+                <div class="toolbox-card">
+                    <h3>The Self-Care Toolkit</h3>
+                    <p>Essential practices and strategies to nurture your physical, mental, and emotional well-being. Learn to prioritize yourself without guilt and create sustainable self-care routines.</p>
+                </div>
+                
+                <div class="toolbox-card">
+                    <h3>The Personal Growth Toolkit</h3>
+                    <p>Techniques and frameworks to identify your values, set meaningful goals, overcome limiting beliefs, and develop habits that support your evolution into your best self.</p>
+                </div>
+                
+                <div class="toolbox-card">
+                    <h3>Empowerment Essentials</h3>
+                    <p>Resources focused on building confidence, assertiveness, and resilience. Discover how to speak your truth, set boundaries, and navigate challenges with strength and grace.</p>
+                </div>
+                
+                <div class="toolbox-card">
+                    <h3>The Wellness Toolkit</h3>
+                    <p>Holistic approaches to health that integrate physical, mental, and spiritual well-being. Learn practices that promote balance and vitality in all areas of life.</p>
+                </div>
+                
+                <div class="toolbox-card">
+                    <h3>Thrive Tools</h3>
+                    <p>Advanced strategies for those ready to move beyond coping and into flourishing. Explore concepts like flow, meaning, and positive psychology to elevate your life experience.</p>
+                </div>
+                
+                <div class="toolbox-card">
+                    <h3>SelfWorks: Your Improvement Toolbox</h3>
+                    <p>Practical worksheets, exercises, and reflection prompts you can use independently to deepen your self-awareness and accelerate your growth journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section" id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education & Credentials</h2>
+                <p>My commitment to continuous learning and professional development</p>
+            </div>
+            
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Current Certification</h3>
+                    <p><strong>Positive Psychology Coach Certification</strong></p>
+                    <p>Specialized training in evidence-based approaches to well-being, strengths-based development, and positive interventions that foster growth and resilience.</p>
+                </div>
+                
+                <div class="education-card">
+                    <h3>Recommended Certifications</h3>
+                    <p><strong>International Coach Federation (ICF) Credentials</strong></p>
+                    <p>Globally recognized coaching certification that demonstrates commitment to professional standards, ethics, and ongoing education.</p>
+                    
+                    <p><strong>Certificate in Women's Leadership</strong></p>
+                    <p>Programs offered by universities like Cornell, Stanford, and Yale that focus on empowering women leaders and addressing gender-specific challenges.</p>
+                </div>
+                
+                <div class="education-card">
+                    <h3>Continuous Learning</h3>
+                    <p>I am passionate about expanding my knowledge in psychology, neuroscience, mindfulness, and emerging fields that can benefit the women I serve. This commitment to lifelong learning ensures that I bring the most effective, science-backed approaches to my work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section class="interests-section" id="interests">
+        <div class="container">
+            <div class="section-title">
+                <h2>Personal Interests</h2>
+                <p>The passions that fuel my creativity and perspective</p>
+            </div>
+            
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <i class="fas fa-book"></i>
+                    <h4>Reading</h4>
+                    <p>I'm an avid reader, constantly exploring new ideas through books on psychology, philosophy, personal development, and beyond.</p>
+                </div>
+                
+                <div class="interest-card">
+                    <i class="fas fa-palette"></i>
+                    <h4>Coloring & Art</h4>
+                    <p>I love the meditative practice of coloring, especially Johanna Basford's intricate designs, which helps me practice mindfulness and creativity.</p>
+                </div>
+                
+                <div class="interest-card">
+                    <i class="fas fa-brain"></i>
+                    <h4>Learning</h4>
+                    <p>I'm endlessly curious about the world, from space exploration to history, constantly seeking to expand my understanding of our universe.</p>
+                </div>
+                
+                <div class="interest-card">
+                    <i class="fas fa-robot"></i>
+                    <h4>Artificial Intelligence</h4>
+                    <p>I'm fascinated by AI's potential to transform how we learn, grow, and solve complex problems in personal development.</p>
+                </div>
+                
+                <div class="interest-card">
+                    <i class="fas fa-globe-americas"></i>
+                    <h4>Earth Sciences</h4>
+                    <p>Learning about our planet's natural systems and how they interconnect gives me perspective on our place in the world.</p>
+                </div>
+                
+                <div class="interest-card">
+                    <i class="fas fa-star"></i>
+                    <h4>Space Exploration</h4>
+                    <p>The cosmos inspires my sense of wonder and reminds me of the infinite possibilities that exist when we dream big.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h3>Ready to Begin Your Journey?</h3>
+            <p>Let's work together to unlock your potential and create the life you deserve.</p>
+            <a href="index.html#contact" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>hello@luminarise.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Virtual services available worldwide</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Send a Message</h2>
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject">
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit" class="send-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer
