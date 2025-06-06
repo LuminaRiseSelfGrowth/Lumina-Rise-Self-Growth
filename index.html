@@ -851,12 +851,40 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Don't interfere with regular page navigation links
-document.querySelectorAll('a:not([href^="#"])').forEach(link => {
-    // This ensures links to other pages work normally
-    link.addEventListener('click', function (e) {
-        // Don't prevent default for these links
-    });
+// Mobile Navigation Toggle
+document.querySelector('.hamburger').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+});
+
+// Only apply smooth scrolling to links that point to sections within the same page
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Make sure it's not just "#" by itself
+    if (anchor.getAttribute('href') !== "#") {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetElement = document.querySelector(this.getAttribute('href'));
+            if (targetElement) { // Make sure the target exists
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Close mobile menu if open
+            document.querySelector('.nav-links').classList.remove('active');
+        });
+    }
+});
+
+// Scroll Animation
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+        document.querySelector('header').style.background = 'linear-gradient(135deg, rgba(255,242,217,0.95), rgba(255,230,187,0.95), rgba(255,207,173,0.95))';
+        document.querySelector('header').style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+    } else {
+        document.querySelector('header').style.background = 'linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad)';
+        document.querySelector('header').style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+    }
 });
 
 
