@@ -749,9 +749,9 @@
                         <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
-              <div class="contact-form">
+<div class="contact-form">
     <h3>Send a Message</h3>
-    <form id="contactForm" method="POST" action="process_form.php">
+    <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST">
         <div class="form-group">
             <input type="text" name="name" class="form-control" placeholder="Your Name" required>
         </div>
@@ -764,6 +764,11 @@
         <div class="form-group">
             <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
         </div>
+        <!-- FormSubmit.co specific fields -->
+        <input type="hidden" name="_next" value="https://luminariseselfgrowth.github.io/Lumina-Rise-Self-Growth/index.html?message=success#contact">
+        <input type="hidden" name="_subject" value="New Contact Form Submission">
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_captcha" value="true">
         <button type="submit" class="btn">Send Message</button>
     </form>
     <div id="formMessages">
@@ -771,6 +776,8 @@
         <p class="error-message" style="display: none; color: red; padding: 10px; background-color: #ffebee; border-radius: 5px; margin-top: 20px;">There was a problem sending your message. Please try again.</p>
     </div>
 </div>
+
+        </div>
 
 <!-- Footer -->
 <footer>
