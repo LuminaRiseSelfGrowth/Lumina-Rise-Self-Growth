@@ -951,18 +951,7 @@ window.addEventListener('scroll', function() {
             }
         });
     </script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Check for URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const messageStatus = urlParams.get('message');
-        
-        // Show appropriate message
-        if (messageStatus === 'success') {
-            document.querySelector('.success-message').style.display = 'block';
-        } else if (messageStatus === 'error') {
-            document.querySelector('.error-message').style.display = 'block';
-        }
-    });
+
 </script>
 
 </body>
