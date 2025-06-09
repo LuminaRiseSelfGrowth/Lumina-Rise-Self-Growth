@@ -426,79 +426,56 @@
         </div>
     </section>
     
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h4>Lumina Rise Self-Growth</h4>
-                    <p>Empowering women through self-care and personal growth tools, resources, and community support.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/"><i class="fab fa-pinterest-p"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html#home">Home</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#toolbox">Toolbox</a></li>
-                        <li><a href="index.html#services">Services</a></li>
-                        <li><a href="index.html#testimonials">Testimonials</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><a href="#">One-on-One Coaching</a></li>
-                        <li><a href="#">Group Workshops</a></li>
-                        <li><a href="#">Online Courses</a></li>
-                        <li><a href="#">Self-Care Resources</a></li>
-                        <li><a href="#">Community Support</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Newsletter + Free Toolkit</h4>
-                    <p>Subscribe to receive self-care tips, growth resources, and our free Self-Care Starter Kit!</p>
-                    <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST">
-                        <div class="form-group">
-                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <!-- FormSubmit.co specific fields -->
-                        <input type="hidden" name="_next" value="https://luminariseselfgrowth.github.io/Lumina-Rise-Self-Growth/thank-you.html">
-                        <input type="hidden" name="_subject" value="New Newsletter Subscription">
-                        <input type="hidden" name="_template" value="box">
-                        <input type="text" name="_honey" style="display:none">
-                        <input type="hidden" name="_captcha" value="false">
-                        <button type="submit" class="btn">Subscribe & Get Free Toolkit</button>
-                    </form>
+  <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Lumina Rise Self-Growth</h4>
+                <p>Empowering women through self-care and personal growth tools, resources, and with support.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 Lumina Rise Self-Growth. All Rights Reserved.</p>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#toolbox">Toolbox</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="one-on-one-coaching.html">One-on-One Coaching</a></li>
+                    <li><a href="group-workshops.html">Group Workshops</a></li>
+                    <li><a href="online-courses.html">Online Courses</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter + Free Self-Care Tracker</h4>
+                <p>Subscribe to receive self-care tips, growth resources, and our free Self-Care Starter Kit!</p>
+                <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST">
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <!-- FormSubmit.co specific fields -->
+                    <input type="hidden" name="_next" value="https://luminariseselfgrowth.github.io/Lumina-Rise-Self-Growth/thank-you.html">
+                    <input type="hidden" name="_subject" value="New Newsletter Subscription">
+                    <input type="hidden" name="_template" value="box">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_captcha" value="false">
+                    <button type="submit" class="btn">Subscribe & Get Free Toolkit</button>
+                </form>
             </div>
         </div>
-    </footer>
+        <div class="copyright">
+            <p>&copy; 2025 Lumina Rise Self-Growth. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
 
-    <script>
-        // Mobile Navigation Toggle
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-        
-        // Scroll Animation
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                document.querySelector('header').style.background = 'linear-gradient(135deg, rgba(255,242,217,0.95), rgba(255,230,187,0.95), rgba(255,207,173,0.95))';
-                document.querySelector('header').style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            } else {
-                document.querySelector('header').style.background = 'linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad)';
-                document.querySelector('header').style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
-            }
-        });
-    </script>
-</body>
-</html>
