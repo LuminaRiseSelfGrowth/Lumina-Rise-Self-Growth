@@ -443,11 +443,32 @@
         }
         
         /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: var(--light-color);
-            padding: 60px 0 20px;
-        }
+   footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 60px 0 20px;
+    background-image: url('images/footer-bg.jpg'); /* Add this line */
+    background-size: cover; /* Add this line */
+    background-position: center; /* Add this line */
+    background-blend-mode: overlay; /* Add this line - blends with background color */
+    position: relative; /* Add this line if you want to add overlay */
+}
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.7); /* Adjust opacity as needed */
+    z-index: 0;
+}
+
+.footer-container, .copyright {
+    position: relative;
+    z-index: 1;
+}
+
         
         .footer-container {
             display: grid;
@@ -806,8 +827,6 @@
         <p class="error-message" style="display: none; color: red; padding: 10px; background-color: #ffebee; border-radius: 5px; margin-top: 20px;">There was a problem sending your message. Please try again.</p>
     </div>
 </div>
-
-
         </div>
 
 <!-- Footer -->
@@ -816,11 +835,9 @@
             <div class="footer-container">
                 <div class="footer-col">
                     <h4>Lumina Rise Self-Growth</h4>
-                    <p>Empowering women through self-care and personal growth tools, resources, and community support.</p>
+                    <p>Empowering women through self-care and personal growth tools, resources, and with support.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
@@ -839,13 +856,11 @@
                     <ul>
                         <li><a href="#">One-on-One Coaching</a></li>
                         <li><a href="#">Group Workshops</a></li>
-                        <li><a href="#">Online Courses</a></li>
-                        <li><a href="#">Self-Care Resources</a></li>
-                        <li><a href="#">Community Support</a></li>
+                        <li><a href="#">Online Courses</a></li>                   
                     </ul>
                 </div>
              <div class="footer-col">
-    <h4>Newsletter + Free Toolkit</h4>
+    <h4>Newsletter + Free Self-Care Tracker</h4>
     <p>Subscribe to receive self-care tips, growth resources, and our free Self-Care Starter Kit!</p>
     <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST">
         <div class="form-group">
@@ -860,7 +875,6 @@
         <button type="submit" class="btn">Subscribe & Get Free Toolkit</button>
     </form>
 </div>
-
             </div>
             <div class="copyright">
                 <p>&copy; 2025 Lumina Rise Self-Growth. All Rights Reserved.</p>
