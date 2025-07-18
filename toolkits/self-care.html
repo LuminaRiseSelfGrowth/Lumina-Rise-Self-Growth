@@ -29,46 +29,56 @@
     --small-font-size: 0.9rem;
 }
 
+
+/* Reset all paragraph styles first */
 p {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--slate-blue);
-    line-height: 1.6;
-    margin-bottom: 15px;
-    font-size: var(--body-font-size);
+    font-family: 'Montserrat', sans-serif !important;
+    color: var(--slate-blue) !important;
+    line-height: 1.6 !important;
+    font-size: var(--body-font-size) !important;
+    margin-bottom: 15px !important;
 }
 
-/* Override any specific paragraph styles that might be causing inconsistency */
-.about-text p, 
-.content-block p, 
-.toolkit-card p, 
-.tool-card p, 
-.section-title p,
-.hero p,
-.service-content p,
-.testimonial-card p,
-.contact-info p,
-.footer-col p {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--slate-blue);
-    line-height: 1.6;
-    font-size: var(--body-font-size);
-}
-
-/* Maintain special color exceptions but keep font consistent */
+/* Then add specific exceptions */
 .hero p {
     color: var(--soft-peach) !important;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
-    font-size: var(--body-font-size);
 }
 
 .footer-col p, .copyright p {
     color: #bbb !important;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
-    font-size: var(--body-font-size);
 }
 
+.logo-text p {
+    font-size: 0.8rem !important;
+    color: var(--dark-color) !important;
+    margin-bottom: 0 !important;
+}
+
+/* Handle spans that might be used instead of paragraphs */
+span {
+    font-family: 'Montserrat', sans-serif !important;
+    color: var(--slate-blue) !important;
+    line-height: 1.6 !important;
+    font-size: var(--body-font-size) !important;
+}
+
+/* Fix info-item spans */
+.info-item span {
+    color: var(--slate-blue) !important;
+}
+
+/* Make sure list items have consistent styling */
+li {
+    font-family: 'Montserrat', sans-serif !important;
+    color: var(--slate-blue) !important;
+    line-height: 1.6 !important;
+    font-size: var(--body-font-size) !important;
+}
+
+/* Footer list exceptions */
+.footer-col ul li a {
+    color: #bbb !important;
+}
 
         * {
             margin: 0;
