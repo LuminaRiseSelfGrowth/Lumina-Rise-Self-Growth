@@ -966,17 +966,19 @@ li {
  <div class="footer-col">
     <h4>Newsletter + Free Self-Care Tracker</h4>
     <p>Subscribe to receive self-care tips, growth resources, and our free Self-Care Starter Kit!</p>
-    <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST">
+    <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST" style="max-width: 500px; margin: 0 auto;">
         <div class="form-group">
-            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+            <input type="email" name="email" class="form-control" placeholder="Enter Your Email Address" required style="padding: 15px; border-radius: 30px; border: 1px solid #ddd; width: 100%; margin-bottom: 20px; font-size: 1rem;">
         </div>
+        
         <!-- FormSubmit.co specific fields -->
-        <input type="hidden" name="_next" value="../thank-you.html">
+        <input type="hidden" name="_next" value="https://luminariseselfgrowth.github.io/Lumina-Rise-Self-Growth/thank-you.html">
         <input type="hidden" name="_subject" value="New Newsletter Subscription">
-        <input type="hidden" name="_autoresponse" value="Thank you for subscribing to Lumina Rise Self-Growth! Your free Self-Care Starter Kit is on its way.">
+        <input type="hidden" name="_template" value="box">
         <input type="text" name="_honey" style="display:none">
         <input type="hidden" name="_captcha" value="false">
-        <button type="submit" class="btn">Subscribe & Get Free Toolkit</button>
+        
+        <button type="submit" class="btn" style="background: var(--primary-color); width: 100%; padding: 15px; font-size: 1.1rem; font-weight: 600; border-radius: 30px; transition: all 0.3s;">Subscribe to get your free Daily Self-Care Tracker</button>
     </form>
 </div>
 
