@@ -860,20 +860,10 @@ footer::before {
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Newsletter + Free Self-Care Tracker</h4>
-                <p>Subscribe to receive self-care tips, growth resources, and our free Self-Care Starter Kit!</p>
-                <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST">
-                    <div class="form-group">
-                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                    </div>
-                    <!-- FormSubmit.co specific fields -->
-                    <input type="hidden" name="_next" value="https://luminariseselfgrowth.github.io/Lumina-Rise-Self-Growth/thank-you.html">
-                    <input type="hidden" name="_subject" value="New Newsletter Subscription">
-                    <input type="hidden" name="_template" value="box">
-                    <input type="text" name="_honey" style="display:none">
-                    <input type="hidden" name="_captcha" value="false">
-                    <button type="submit" class="btn">Subscribe & Get Free Toolkit</button>
-                </form>
+                <h4>Newsletter</h4>
+                <p>Join our monthly Lumina Rise newsletter for curated self-care practices, exclusive growth tools, and transformative insights tailored to each month's theme.</p>
+
+
             </div>
         </div>
         <div class="copyright">
@@ -881,3 +871,15 @@ footer::before {
         </div>
     </div>
 </footer>
+<form action="https://formsubmit.co/LuminaRiseSelfGrowth@gmail.com" method="POST">
+    <div class="form-group">
+        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+    </div>
+    <!-- Hidden fields to match your main form configuration -->
+    <input type="hidden" name="_subject" value="Newsletter Subscription">
+    <input type="text" name="_honey" style="display:none">
+    <input type="hidden" name="_captcha" value="true">
+    <!-- This is the important part - use the same thank you page URL -->
+    <input type="hidden" name="_next" value="https://luminarise-selfgrowth.com/thanks.html">
+    <button type="submit" class="btn">Subscribe</button>
+</form>
