@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Personal Growth Toolkit | Lumina Rise Self-Growth</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-:root {
     --primary-color: #ff7f30; /* Vibrant orange from your logo */
     --secondary-color: #ffe577; /* Soft gold/yellow from your palette */
     --accent-color: #fda63a; /* Warm amber accent */
@@ -30,6 +31,29 @@
 }
 
 
+p {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--slate-blue);
+    line-height: 1.6;
+    font-size: var(--body-font-size);
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: var(--soft-peach);
+}
+
+.footer-col p, .copyright p {
+    color: #bbb;
+}
+
+
+.logo-text p {
+    font-size: 0.8rem !important;
+    color: var(--dark-color) !important;
+    margin-bottom: 0 !important;
+}
+
 /* Reset all paragraph styles first */
 p {
     font-family: 'Montserrat', sans-serif !important;
@@ -48,19 +72,6 @@ p {
     color: #bbb !important;
 }
 
-.logo-text p {
-    font-size: 0.8rem !important;
-    color: var(--dark-color) !important;
-    margin-bottom: 0 !important;
-}
-
-/* Handle spans that might be used instead of paragraphs */
-span {
-    font-family: 'Montserrat', sans-serif !important;
-    color: var(--slate-blue) !important;
-    line-height: 1.6 !important;
-    font-size: var(--body-font-size) !important;
-}
 
 /* Fix info-item spans */
 .info-item span {
@@ -751,8 +762,10 @@ li {
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h2>The Personal Growth Toolkit</h2>
-            <p>Discover your potential and expand your horizons with goal-setting frameworks, self-discovery exercises, and transformational practices.</p>
+          <!-- In Hero Section -->
+<h2>The Personal Growth Toolkit</h2>
+<p>Discover your potential and expand your horizons with goal-setting frameworks, self-discovery exercises, and transformational practices.</p>
+
             <a href="#tools" class="btn">Explore Tools</a>
         </div>
     </section>
@@ -760,10 +773,12 @@ li {
     <!-- Introduction Section -->
     <section class="content-section">
         <div class="container">
-            <div class="section-title">
-                <h2>About Personal Growth</h2>
-                <p>Understanding the journey of continuous self-improvement and development</p>
-            </div>
+           <!-- In Introduction Section -->
+<div class="section-title">
+    <h2>About Personal Growth</h2>
+    <p>Understanding the journey of continuous self-improvement and development</p>
+</div>
+
             
             <div class="content-block">
                 <h3>What is Personal Growth?</h3>
@@ -802,10 +817,11 @@ li {
     <!-- Tools Section -->
     <section class="toolbox" id="tools">
         <div class="container">
-            <div class="section-title">
-                <h2>Personal Growth Tools</h2>
-                <p>Practical resources to help you expand your potential and live with greater purpose</p>
-            </div>
+           <div class="section-title">
+    <h2>Personal Growth Tools</h2>
+    <p>Practical resources to help you expand your potential and live with greater purpose</p>
+</div>
+
             
             <div class="toolkits">
                 <div class="toolkit-card">
@@ -845,16 +861,16 @@ li {
                 </div>
             </div>
             
-<!-- Stripe Payment Button - Centered -->
 <div style="text-align: center; margin: 50px auto 30px; max-width: 250px;">
-    <a href="https://buy.stripe.com/00w4gz82kgTidd2343e3e00" class="btn" target="_blank">
-        Buy the Self-Care Toolkit – $28
+    <a href="https://buy.stripe.com/YOUR_PERSONAL_GROWTH_LINK" class="btn" target="_blank">
+        Buy the Personal Growth Toolkit – $28
     </a>
     <p style="font-size: 0.9rem; color: var(--slate-blue); margin-top: 10px; text-align: center;">
         Secure checkout powered by Stripe. Credit card, Apple Pay, and Google Pay accepted.<br>
         <strong>You will receive the toolkit by email within 24 hours after payment.</strong>
     </p>
 </div>
+
 
             <div class="content-block" style="margin-top: 80px;">
                 <h3>How to Use This Toolkit</h3>
@@ -984,6 +1000,9 @@ li {
     </form>
 </div>
 
+<div class="copyright">
+    <p>&copy; 2024 Lumina Rise Self-Growth. All rights reserved.</p>
+</div>
         </div>
     </footer>
 
