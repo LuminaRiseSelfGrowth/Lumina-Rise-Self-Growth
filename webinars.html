@@ -7,38 +7,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #ff7f30; /* Vibrant orange from your logo */
-            --secondary-color: #ffe577; /* Soft gold/yellow from your palette */
-            --accent-color: #fda63a; /* Warm amber accent */
+            --primary-color: #ff7f30;
+            --secondary-color: #ffe577;
+            --accent-color: #fda63a;
             --text-color: #333;
             --light-color: #fff;
-            --dark-color: #333; /* Darker text for header */
-            --slate-blue: #5d6d7e; /* Slate blue for text on light backgrounds */
-            --soft-peach: #fff2d9; /* Soft peach background */
-            --soft-pink: #ffcfcf; /* Soft pink accent */
-            --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577); /* Orange to gold gradient */
-            --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb); /* Soft background gradient */
-            --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad); /* Pale orange/yellow gradient for header */
+            --dark-color: #333;
+            --slate-blue: #5d6d7e;
+            --soft-peach: #fff2d9;
+            --soft-pink: #ffcfcf;
+            --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577);
+            --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb);
+            --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad);
         }
 
         ul li {
             color: var(--slate-blue) !important;
         }
 
-        .column ul li {
-            color: var(--slate-blue) !important;
-        }
-
-        ul li, ol li, .content-block ul li, .about-text ul li {
-            color: var(--slate-blue) !important;
-        }
-
         .hero p {
             color: var(--soft-peach) !important; 
-        }
-
-        .footer-col p, .copyright p {
-            color: #bbb !important; 
         }
 
         .section-title h2 {
@@ -281,11 +269,6 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-        
         .benefit-card i {
             font-size: 2.5rem;
             color: var(--primary-color);
@@ -322,11 +305,6 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
-        .experience-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-        
         .experience-card h4 {
             font-size: 1.5rem;
             color: var(--accent-color);
@@ -358,11 +336,6 @@
             text-align: center;
             position: relative;
             transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .package-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
         
         .package-card h4 {
@@ -400,10 +373,6 @@
         .package-card.featured {
             border: 2px solid var(--accent-color);
             transform: scale(1.05);
-        }
-        
-        .package-card.featured:hover {
-            transform: scale(1.05) translateY(-5px);
         }
         
         .featured-tag {
@@ -460,14 +429,9 @@
             align-items: center;
         }
         
-        .testimonial-author p {
-            margin: 0;
-            font-style: normal;
-        }
-        
         .cta-section {
             text-align: center;
-            margin-top: 80px;
+            margin: 80px 0;
             padding: 60px 0;
             background: var(--soft-gradient);
             border-radius: 10px;
@@ -478,11 +442,69 @@
             color: var(--primary-color);
             margin-bottom: 20px;
         }
-        
-        .cta-section p {
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: var(--slate-blue);
+
+        .contact-section {
+            background-color: #fcf3e1;
+            padding: 80px 0;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h2, .contact-form h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-item i {
+            color: var(--accent-color);
+            font-size: 20px;
+            margin-right: 15px;
+            width: 25px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .send-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s;
+            align-self: flex-start;
+        }
+
+        .send-btn:hover {
+            transform: translateY(-3px);
         }
         
         footer {
@@ -516,10 +538,6 @@
             color: #bbb;
             text-decoration: none;
             transition: color 0.3s;
-        }
-        
-        .footer-col ul a:hover {
-            color: var(--accent-color);
         }
         
         .social-links {
@@ -557,9 +575,7 @@
             .two-columns {
                 flex-direction: column;
             }
-            
             .column {
-                flex: none;
                 width: 100%;
             }
         }
@@ -574,21 +590,13 @@
                 background: var(--header-gradient);
                 flex-direction: column;
                 padding: 20px;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
             }
-            
             .nav-links.active {
                 display: flex;
             }
-            
-            .nav-links li {
-                margin: 10px 0;
-            }
-            
             .hamburger {
                 display: block;
             }
-            
             .hero h2 {
                 font-size: 2.5rem;
             }
@@ -596,7 +604,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <nav>
@@ -609,9 +616,8 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="#speaking">Topics</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
@@ -620,37 +626,30 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h2>Inspirational Speaking</h2>
-            <p>Empowering audiences through positive psychology and practical self-growth strategies, available in-person and online.</p>
+            <p>Empowering audiences through positive psychology and practical self-growth strategies.</p>
             <a href="#speaking" class="btn">Book an Engagement</a>
         </div>
     </section>
 
-    <!-- Introduction Section -->
     <section class="content-section">
         <div class="container">
             <div class="section-title">
                 <h2>Impactful Conversations</h2>
                 <p>Bringing evidence-based insights and heartfelt inspiration to your next event</p>
             </div>
-            
             <div class="content-block">
                 <div class="two-columns">
                     <div class="column">
                         <h3>Empowering Audiences</h3>
-                        <p>As a speaker, I bridge the gap between scientific positive psychology and the messy, beautiful reality of daily life. My sessions are designed to do more than just inspire; they provide the practical tools necessary for sustainable growth.</p>
-                        
-                        <p>Whether it's a corporate wellness retreat, a women's empowerment conference, or a virtual masterclass, I deliver high-energy, relatable, and transformative experiences tailored to your audience's needs.</p>
-                        
-                        <p>With a decade of experience in the self-development journey, I share the habits, skills, and mindsets that truly move the needle on personal flourishing and mental well-being.</p>
+                        <p>As a speaker, I bridge the gap between scientific positive psychology and the messy reality of daily life. My sessions provide the practical tools necessary for sustainable growth.</p>
+                        <p>Whether it's a corporate wellness retreat or a virtual masterclass, I deliver high-energy, relatable, and transformative experiences tailored to your audience.</p>
                     </div>
-                    
                     <div class="column">
                         <div class="image-container">
-                            <img src="images/speaking-event.jpg" alt="Gine speaking at an event">
+                            <img src="images/speaking-event.jpg" alt="Speaking Event">
                         </div>
                     </div>
                 </div>
@@ -658,79 +657,35 @@
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose Lumina Rise Speaking?</h2>
-                <p>Delivering value that resonates long after the session ends</p>
-            </div>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i class="fas fa-brain"></i>
-                    <h4>Science-Backed</h4>
-                    <p>Rooted in positive psychology principles that are proven to enhance well-being and performance.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <i class="fas fa-tools"></i>
-                    <h4>Practical Strategies</h4>
-                    <p>No "fluff"just actionable strategies that attendees can implement the very same day.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <i class="fas fa-laptop-house"></i>
-                    <h4>Flexible Formats</h4>
-                    <p>Available for dynamic in-person keynotes or interactive, high-quality virtual sessions.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <i class="fas fa-heart"></i>
-                    <h4>Authentic Connection</h4>
-                    <p>A relatable approach that fosters a safe space for vulnerability and genuine growth.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Speaking Topics Section -->
     <section class="experience-section" id="speaking">
         <div class="container">
             <div class="section-title">
                 <h2>Core Speaking Topics</h2>
-                <p>Specialized sessions covering the pillars of self-growth and positive psychology</p>
+                <p>Specialized sessions covering the pillars of self-growth</p>
             </div>
-            
             <div class="experience-grid">
                 <div class="experience-card">
                     <h4>You Matter: The Art of Putting Yourself First</h4>
-                    <p>Explore why you are the most important person in your own life. We discuss how prioritizing your own well-being isn't selfish—it's the foundation for everything else. By putting yourself first, you replenish your energy, set healthy boundaries, and gain the capacity to show up more authentically for the people and projects you love.</p>
+                    <p>Explore why you are the most important person in your own life. We discuss how prioritizing your own well-being isn't selfish—it's the foundation for everything else. By putting yourself first, you replenish your energy and show up more authentically.</p>
                 </div>
-                
                 <div class="experience-card">
                     <h4>The Power of Consistency: The 1% Rule</h4>
-                    <p>Success isn't built overnight; it's built in the daily quiet moments. Learn how to construct sustainable routines and habits using the 1% approach—making tiny, incremental improvements that lead to massive transformation over time. We focus on the psychology of building success through the compounding power of small, consistent actions.</p>
+                    <p>Learn how to construct sustainable routines using the 1% approach—making tiny, incremental improvements that lead to massive transformation. We focus on building success through the compounding power of small, consistent actions.</p>
                 </div>
-                
                 <div class="experience-card">
                     <h4>Designing a Fulfilling Life</h4>
-                    <p>Move beyond just "getting by" and start living with intention. This session covers the core pillars of a meaningful life, helping you align your daily actions with your deepest values. We explore practical strategies to bridge the gap between where you are and where you want to be, creating a life filled with purpose, joy, and lasting satisfaction.</p>
+                    <p>Move beyond just "getting by" and start living with intention. This session covers the core pillars of a meaningful life, helping you align your daily actions with your deepest values to create a life filled with purpose and joy.</p>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-    <!-- Engagement Types Section -->
     <section class="packages-section">
         <div class="container">
             <div class="section-title">
                 <h2>Engagement Types</h2>
-                <p>Choose the format that best suits your group or organization</p>
+                <p>Available in-person and online</p>
             </div>
-            
             <div class="packages-grid">
                 <div class="package-card">
                     <h4>Keynote Address</h4>
@@ -739,66 +694,79 @@
                         <li>High-impact inspirational talk</li>
                         <li>Core positive psychology insights</li>
                         <li>Q&A session included</li>
-                        <li>Available in-person or virtual</li>
                     </ul>
-                    <p>Perfect for conferences and large events</p>
-                    <a href="index.html#contact" class="btn">Inquire Now</a>
+                    <a href="#contact" class="btn">Inquire Now</a>
                 </div>
-                               
+                <div class="package-card featured">
+                    <div class="featured-tag">Most Impactful</div>
+                    <h4>Interactive Workshop</h4>
+                    <p class="package-price">2-4 Hours</p>
+                    <ul>
+                        <li>Deep dive into strategies</li>
+                        <li>Hands-on exercises</li>
+                        <li>Group discussions</li>
+                    </ul>
+                    <a href="#contact" class="btn">Inquire Now</a>
+                </div>
                 <div class="package-card">
                     <h4>Virtual Masterclass</h4>
                     <p class="package-price">90 Minutes</p>
                     <ul>
-                        <li>Focused digital learning session</li>
-                        <li>Interactive polls and chat engagement</li>
-                        <li>Digital toolkit for all attendees</li>
-                        <li>Recording access for participants</li>
+                        <li>Focused digital learning</li>
+                        <li>Interactive polls</li>
+                        <li>Digital toolkit included</li>
                     </ul>
-                    <p>Best for global teams and online communities</p>
-                    <a href="index.html#contact" class="btn">Inquire Now</a>
+                    <a href="#contact" class="btn">Inquire Now</a>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-    <!-- CTA Section -->
-    <section class="container">
-        <div class="cta-section">
-            <h3>Ready to Inspire Your Audience?</h3>
-            <p>Let's collaborate to create a memorable experience that sparks genuine growth and positive change for your group.</p>
-            <a href="index.html#contact" class="btn">Check Availability</a>
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Book Gine for Your Event</h2>
+                    <p>I'd love to hear about your event and how we can work together to inspire your audience.</p>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@luminarise.ca</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Available for Travel & Virtual Sessions</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Event Date & Location">
+                        <textarea placeholder="Tell me about your event..."></textarea>
+                        <button type="submit" class="send-btn">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col">
                     <h4>Lumina Rise</h4>
-                    <p>Empowering women to grow through the lens of positive psychology and intentional living.</p>
+                    <p>Where Self-Care Meets Self-Growth.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#about">About Gine</a></li>
-                        <li><a href="index.html#services">All Services</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> info@luminarise.ca</li>
-                        <li><i class="fas fa-globe"></i> www.luminarise.ca</li>
+                        <li><a href="#speaking">Topics</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -809,10 +777,8 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
-        
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
