@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspirational Speaking Engagements | Lumina Rise Self-Growth</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff7f30; /* Vibrant orange from your logo */
+            --secondary-color: #ffe577; /* Soft gold/yellow from your palette */
+            --accent-color: #fda63a; /* Warm amber accent */
+            --text-color: #333;
+            --light-color: #fff;
+            --dark-color: #333; /* Darker text for header */
+            --slate-blue: #5d6d7e; /* Slate blue for text on light backgrounds */
+            --soft-peach: #fff2d9; /* Soft peach background */
+            --soft-pink: #ffcfcf; /* Soft pink accent */
+            --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577); /* Orange to gold gradient */
+            --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb); /* Soft background gradient */
+            --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad); /* Pale orange/yellow gradient for header */
+        }
+
+        ul li {
+            color: var(--slate-blue) !important;
+        }
+
+        .column ul li {
+            color: var(--slate-blue) !important;
+        }
+
+        ul li, ol li, .content-block ul li, .about-text ul li {
+            color: var(--slate-blue) !important;
+        }
+
+        .hero p {
+            color: var(--soft-peach) !important; 
+        }
+
+        .footer-col p, .copyright p {
+            color: #bbb !important; 
+        }
+
+        .section-title h2 {
+            color: var(--primary-color) !important;
+        }
+
+        .toolkit-card h3, .tool-card h3, .about-text h3, .content-block h3 {
+            color: var(--accent-color) !important;
+        }
+
+        .footer-col h4 {
+            color: var(--accent-color) !important;
+        }
+
+        .footer-col p, .footer-col ul li a, .copyright p {
+            color: #bbb !important;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: var(--header-gradient);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--dark-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .hero {
+            background: var(--dark-color);
+            color: var(--light-color);
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/speaking-bg.jpg') center/cover no-repeat;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--soft-peach);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gradient);
+            color: var(--light-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+        }
+        
+        .content-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--slate-blue);
+        }
+        
+        .content-block {
+            margin-bottom: 60px;
+        }
+        
+        .content-block h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .content-block p {
+            color: var(--slate-blue);
+            margin-bottom: 15px;
+        }
+        
+        .two-columns {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            margin-top: 40px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .image-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .image-container img {
+            width: 100%;
+            display: block;
+        }
+        
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .benefit-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .benefit-card p {
+            color: var(--slate-blue);
+        }
+        
+        .experience-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .experience-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .experience-card h4 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .experience-card p {
+            color: var(--slate-blue);
+            margin-bottom: 10px;
+        }
+        
+        .packages-section {
+            padding: 80px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .package-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .package-card h4 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .package-card .package-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .package-card ul {
+            list-style: none;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .package-card ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .package-card ul li:before {
+            content: '✓';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        .package-card.featured {
+            border: 2px solid var(--accent-color);
+            transform: scale(1.05);
+        }
+        
+        .package-card.featured:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+        
+        .featured-tag {
+            position: absolute;
+            top: 0;
+            right: 30px;
+            background: var(--accent-color);
+            color: var(--light-color);
+            padding: 5px 15px;
+            font-size: 0.9rem;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .testimonials-section {
+            padding: 80px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            color: rgba(253,166,58,0.1);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            line-height: 1;
+        }
+        
+        .testimonial-card p {
+            color: var(--slate-blue);
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author p {
+            margin: 0;
+            font-style: normal;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 80px;
+            padding: 60px 0;
+            background: var(--soft-gradient);
+            border-radius: 10px;
+        }
+        
+        .cta-section h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--slate-blue);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--light-color);
+            background-color: rgba(255,255,255,0.1);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        
+        @media (max-width: 992px) {
+            .two-columns {
+                flex-direction: column;
+            }
+            
+            .column {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--header-gradient);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="images/logo.png" alt="Lumina Rise Logo">
+                    <div class="logo-text">
+                        <h1>Lumina Rise Self-Growth</h1>
+                        <p>Where Self-Care Meets Self-Growth</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Inspirational Speaking</h2>
+            <p>Empowering audiences through positive psychology and practical self-growth strategies, available in-person and online.</p>
+            <a href="#speaking" class="btn">Book an Engagement</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Impactful Conversations</h2>
+                <p>Bringing evidence-based insights and heartfelt inspiration to your next event</p>
+            </div>
+            
+            <div class="content-block">
+                <div class="two-columns">
+                    <div class="column">
+                        <h3>Empowering Audiences</h3>
+                        <p>As a speaker, I bridge the gap between scientific positive psychology and the messy, beautiful reality of daily life. My sessions are designed to do more than just inspire; they provide the practical tools necessary for sustainable growth.</p>
+                        
+                        <p>Whether it's a corporate wellness retreat, a women's empowerment conference, or a virtual masterclass, I deliver high-energy, relatable, and transformative experiences tailored to your audience's needs.</p>
+                        
+                        <p>With a decade of experience in the self-development journey, I share the habits, skills, and mindsets that truly move the needle on personal flourishing and mental well-being.</p>
+                    </div>
+                    
+                    <div class="column">
+                        <div class="image-container">
+                            <img src="images/speaking-event.jpg" alt="Gine speaking at an event">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Lumina Rise Speaking?</h2>
+                <p>Delivering value that resonates long after the session ends</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-brain"></i>
+                    <h4>Science-Backed</h4>
+                    <p>Rooted in positive psychology principles that are proven to enhance well-being and performance.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-tools"></i>
+                    <h4>Practical Strategies</h4>
+                    <p>No "fluff"—just actionable strategies that attendees can implement the very same day.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-laptop-house"></i>
+                    <h4>Flexible Formats</h4>
+                    <p>Available for dynamic in-person keynotes or interactive, high-quality virtual sessions.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-heart"></i>
+                    <h4>Authentic Connection</h4>
+                    <p>A relatable approach that fosters a safe space for vulnerability and genuine growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaking Topics Section -->
+    <section class="experience-section" id="speaking">
+        <div class="container">
+            <div class="section-title">
+                <h2>Core Speaking Topics</h2>
+                <p>Specialized sessions covering the pillars of self-growth and positive psychology</p>
+            </div>
+            
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h4>The Science of Flourishing</h4>
+                    <p>An introduction to positive psychology and how to shift from "surviving" to "thriving" by leveraging your unique strengths.</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h4>Practical Resilience</h4>
+                    <p>Strategies for navigating life's challenges without losing your peace, focusing on emotional regulation and growth mindsets.</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h4>Self-Care vs. Self-Growth</h4>
+                    <p>Understanding the vital intersection where nurturing yourself meets the discipline of personal evolution.</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h4>Habits for the Modern Woman</h4>
+                    <p>Breaking down the psychology of habit formation to build a life that supports your highest goals and daily happiness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engagement Types Section -->
+    <section class="packages-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Engagement Types</h2>
+                <p>Choose the format that best suits your group or organization</p>
+            </div>
+            
+            <div class="packages-grid">
+                <div class="package-card">
+                    <h4>Keynote Address</h4>
+                    <p class="package-price">45-60 Minutes</p>
+                    <ul>
+                        <li>High-impact inspirational talk</li>
+                        <li>Core positive psychology insights</li>
+                        <li>Q&A session included</li>
+                        <li>Available in-person or virtual</li>
+                    </ul>
+                    <p>Perfect for conferences and large events</p>
+                    <a href="index.html#contact" class="btn">Inquire Now</a>
+                </div>
+                
+                <div class="package-card featured">
+                    <div class="featured-tag">Most Impactful</div>
+                    <h4>Interactive Workshop</h4>
+                    <p class="package-price">2-4 Hours</p>
+                    <ul>
+                        <li>Deep dive into specific strategies</li>
+                        <li>Hands-on exercises & worksheets</li>
+                        <li>Group discussions & coaching</li>
+                        <li>Customized to your group's goals</li>
+                    </ul>
+                    <p>Ideal for retreats and team building</p>
+                    <a href="index.html#contact" class="btn">Inquire Now</a>
+                </div>
+                
+                <div class="package-card">
+                    <h4>Virtual Masterclass</h4>
+                    <p class="package-price">90 Minutes</p>
+                    <ul>
+                        <li>Focused digital learning session</li>
+                        <li>Interactive polls and chat engagement</li>
+                        <li>Digital toolkit for all attendees</li>
+                        <li>Recording access for participants</li>
+                    </ul>
+                    <p>Best for global teams and online communities</p>
+                    <a href="index.html#contact" class="btn">Inquire Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Audience Feedback</h2>
+                <p>What organizers and attendees are saying</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>Gine's session on resilience was exactly what our team needed. She has a way of making complex psychological concepts feel simple and immediately useful.</p>
+                    <div class="testimonial-author">
+                        <p><strong>- Event Organizer, Women in Leadership</strong></p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p>I've attended many self-growth workshops, but this was the first one where I walked away with a clear, step-by-step plan that I actually stuck to!</p>
+                    <div class="testimonial-author">
+                        <p><strong>- Workshop Attendee</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="container">
+        <div class="cta-section">
+            <h3>Ready to Inspire Your Audience?</h3>
+            <p>Let's collaborate to create a memorable experience that sparks genuine growth and positive change for your group.</p>
+            <a href="index.html#contact" class="btn">Check Availability</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Lumina Rise</h4>
+                    <p>Empowering women to grow through the lens of positive psychology and intentional living.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Gine</a></li>
+                        <li><a href="index.html#services">All Services</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@luminarise.ca</li>
+                        <li><i class="fas fa-globe"></i> www.luminarise.ca</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Lumina Rise Self-Growth. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
