@@ -8,20 +8,19 @@
     <style>
            
 :root {
-    --primary-color: #ff7f30; /* Vibrant orange from your logo */
-    --secondary-color: #ffe577; /* Soft gold/yellow from your palette */
-    --accent-color: #fda63a; /* Warm amber accent */
+    --primary-color: #ff7f30;
+    --secondary-color: #ffe577;
+    --accent-color: #fda63a;
     --text-color: #333;
     --light-color: #fff;
-    --dark-color: #333; /* Darker text for header */
-    --slate-blue: #5d6d7e; /* Slate blue for text on light backgrounds */
-    --soft-peach: #fff2d9; /* Soft peach background */
-    --soft-pink: #ffcfcf; /* Soft pink accent */
-    --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577); /* Orange to gold gradient */
-    --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb); /* Soft background gradient */
-    --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad); /* Pale orange/yellow gradient for header */
+    --dark-color: #333;
+    --slate-blue: #5d6d7e;
+    --soft-peach: #fff2d9;
+    --soft-pink: #ffcfcf;
+    --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577);
+    --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb);
+    --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad);
     
-    /* Typography Variables */
     --heading-font-size: 2.5rem;
     --subheading-font-size: 1.8rem;
     --subtitle-font-size: 1.1rem;
@@ -29,8 +28,6 @@
     --small-font-size: 0.9rem;
 }
 
-
-/* Reset all paragraph styles first */
 p {
     font-family: 'Montserrat', sans-serif !important;
     color: var(--slate-blue) !important;
@@ -39,7 +36,6 @@ p {
     margin-bottom: 15px !important;
 }
 
-/* Then add specific exceptions */
 .hero p {
     color: var(--soft-peach) !important;
 }
@@ -54,7 +50,6 @@ p {
     margin-bottom: 0 !important;
 }
 
-/* Handle spans that might be used instead of paragraphs */
 span {
     font-family: 'Montserrat', sans-serif !important;
     color: var(--slate-blue) !important;
@@ -62,12 +57,10 @@ span {
     font-size: var(--body-font-size) !important;
 }
 
-/* Fix info-item spans */
 .info-item span {
     color: var(--slate-blue) !important;
 }
 
-/* Make sure list items have consistent styling */
 li {
     font-family: 'Montserrat', sans-serif !important;
     color: var(--slate-blue) !important;
@@ -75,7 +68,6 @@ li {
     font-size: var(--body-font-size) !important;
 }
 
-/* Footer list exceptions */
 .footer-col ul li a {
     color: #bbb !important;
 }
@@ -99,7 +91,6 @@ li {
             padding: 0 20px;
         }
         
-        /* Header Styles */
         header {
             background: var(--header-gradient);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -163,7 +154,6 @@ li {
             color: var(--dark-color);
         }
         
-        /* Hero Section */
         .hero {
             background: var(--dark-color);
             color: var(--light-color);
@@ -225,13 +215,12 @@ li {
             box-shadow: 0 6px 15px rgba(0,0,0,0.25);
         }
         
-        /* About Section */
-        .about {
+        .content-section {
             padding: 100px 0;
             background-color: var(--soft-peach);
         }
         
-     .section-title {
+        .section-title {
             text-align: center;
             margin-bottom: 60px;
         }
@@ -249,39 +238,64 @@ li {
             color: var(--slate-blue);
         }
         
-        .about-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
+        .content-block {
+            margin-bottom: 60px;
         }
         
-        .about-image {
-            flex: 1;
-        }
-        
-        .about-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h3 {
+        .content-block h3 {
             font-size: 1.8rem;
             color: var(--accent-color);
             margin-bottom: 20px;
         }
         
-        .about-text p {
+        .content-block p {
             color: var(--slate-blue);
             margin-bottom: 15px;
         }
+
+        .quiz-highlight {
+            background: #fff9e6;
+            border-left: 5px solid #ffc107;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .quiz-highlight h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .quiz-highlight p {
+            color: var(--slate-blue);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
         
-        /* Toolbox Section */
+        .two-columns {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            margin-top: 40px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .image-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .image-container img {
+            width: 100%;
+            display: block;
+        }
+        
         .toolbox {
             padding: 50px 0 100px 0;
             background: var(--soft-gradient);
@@ -323,30 +337,54 @@ li {
         .toolkit-card p {
             color: var(--slate-blue);
         }
-        
-        /* Quiz Highlight Box */
-        .quiz-highlight {
-            background: #fff9e6;
-            border-left: 5px solid #ffc107;
-            padding: 40px;
-            margin: 40px 0;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+        .toolkit-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
         }
 
-        .quiz-highlight h3 {
+        .toolkit-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .toolkit-card li:last-child {
+            border-bottom: none;
+        }
+
+        .toolkit-card li:before {
+            content: "✦ ";
             color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-weight: bold;
+            margin-right: 8px;
         }
-
-        .quiz-highlight p {
-            color: var(--slate-blue);
-            line-height: 1.7;
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 80px;
+            padding: 60px 40px;
+            background: var(--soft-gradient);
+            border-radius: 10px;
+        }
+        
+        .cta-section h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
             margin-bottom: 20px;
         }
         
-        /* Contact Section */
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--slate-blue);
+        }
+        
+        .back-button {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
         .contact {
             padding: 100px 0;
             background-color: var(--soft-peach);
@@ -408,7 +446,6 @@ li {
             min-height: 150px;
         }
         
-        /* Footer */
         footer {
             background-color: var(--dark-color);
             color: var(--light-color);
@@ -477,32 +514,323 @@ li {
             color: #bbb;
         }
         
-        /* Custom Styles for Toolkit Pages */
-        .content-section {
-            padding: 100px 0;
-            background-color: var(--soft-peach);
+        @media (max-width: 992px) {
+            .two-columns {
+
+                flex-direction: column;
+            }
+            
+            .column {
+                flex: none;
+                width: 100%;
+            }
         }
         
-        .content-block {
-            margin-bottom: 60px;
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--header-gradient);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
         }
-        
-        .content-block h3 {
-            font-size: 1.8rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-        }
-        
-        .content-block p {
-            color: var(--slate-blue);
-            margin-bottom: 15px;
-        }
-        
-        .two-columns {
-            display: flex;
-            gap: 50px;
-            align-items: flex-start;
-            margin-top: 40px;
-        }
-        
-        .
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Lumina Rise Logo">
+                    <div class="logo-text">
+                        <h1>Lumina Rise Self-Growth</h1>
+                        <p>Where Self-Care Meets Self-Growth</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#toolbox">Toolbox</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#testimonials">Testimonials</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Personalized Toolkit</h2>
+            <p>Your unique blueprint for transformation, designed specifically for your journey, goals, and growth areas.</p>
+            <a href="#quiz" class="btn">Start Your Assessment</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Design Your Life with Intention</h2>
+                <p>Your journey deserves a custom approach that honors your unique experiences and aspirations</p>
+            </div>
+            
+            <div class="content-block">
+                <h3>What is a Personalized Toolkit?</h3>
+                <p>Your life is your greatest creation, and every creator needs the right tools. Just as a builder wouldn't construct a home without blueprints and proper equipment, you shouldn't navigate life's complexities without resources designed for your success.</p>
+                
+                <p>Your journey is entirely your own, shaped by your experiences, dreams, and the courage to keep moving forward. This personalized toolkit is your blueprint for transformation, crafted specifically to help you build confidence, overcome obstacles, and design a life that feels authentically yours.</p>
+                
+                <div class="two-columns">
+                    <div class="column">
+                        <h3>Why Personalization Matters</h3>
+                        <p>Generic advice and one-size-fits-all solutions rarely create lasting change. What works for someone else might not resonate with you, and that's completely okay. Your values, strengths, challenges, and goals are unique to you.</p>
+                        
+                        <p>A personalized toolkit offers:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 20px;">
+                            <li>Resources aligned with your specific goals and values</li>
+                            <li>Tools that match your learning style and preferences</li>
+                            <li>Strategies tailored to your current life circumstances</li>
+                            <li>Exercises that address your unique challenges</li>
+                            <li>A framework that evolves as you grow</li>
+                            <li>Actionable steps that fit into your lifestyle</li>
+                        </ul>
+                        
+                        <p>When your self-development resources are customized to your needs, you're more likely to use them consistently and see meaningful results. This isn't just another workbook—it's your personal roadmap to becoming who you're meant to be.</p>
+                    </div>
+                    
+                    <div class="column">
+                        <div class="image-container">
+                            <img src="../images/personalized-journey.jpg" alt="Woman on personal growth journey">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Highlight -->
+            <div class="quiz-highlight" id="quiz">
+                <h3>✨ Start Your Personalized Journey</h3>
+                <p>Before we create your custom toolkit, I want to truly understand your unique journey, challenges, and aspirations. This comprehensive assessment will help me design resources specifically tailored to where you are right now and where you want to go.</p>
+                <p>Take 10-15 minutes to complete this thoughtful questionnaire. Your honest answers will be the foundation of your personalized transformation blueprint.</p>
+                <p style="font-weight: 600; color: var(--primary-color);">After submitting your assessment, you'll receive your custom toolkit within 48 hours via email.</p>
+                <a href="YOUR_GOOGLE_FORM_LINK_HERE" class="btn" target="_blank">Take the Assessment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="toolbox" id="tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>What's Included in Your Personalized Toolkit</h2>
+                <p>Based on your assessment, your toolkit will include a customized selection from these modules</p>
+            </div>
+            
+            <div class="toolkits">
+                <div class="toolkit-card">
+                    <i class="fas fa-compass"></i>
+                    <h3>Self-Discovery Module</h3>
+                    <p>Explore who you are at your core with personalized exercises designed to uncover your values, strengths, and authentic self.</p>
+                    <ul>
+                        <li>Values clarification exercises</li>
+                        <li>Strength identification assessments</li>
+                        <li>Life vision mapping templates</li>
+                        <li>Personal narrative journaling prompts</li>
+                        <li>Identity exploration worksheets</li>
+                    </ul>
+                </div>
+
+                <div class="toolkit-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Goal Architecture</h3>
+                    <p>Create a clear roadmap for your dreams with goal-setting frameworks tailored to your ambitions and lifestyle.</p>
+                    <ul>
+                        <li>Personalized goal-setting framework</li>
+                        <li>Custom milestone tracking system</li>
+                        <li>Obstacle anticipation planner</li>
+                        <li>Progress celebration rituals</li>
+                        <li>Adaptive action plans</li>
+                    </ul>
+                </div>
+                
+                <div class="toolkit-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Mindset Mastery</h3>
+                    <p>Transform limiting beliefs and cultivate empowering thought patterns with tools designed for your specific mental barriers.</p>
+                    <ul>
+                        <li>Limiting belief transformation exercises</li>
+                        <li>Personalized affirmation builder</li>
+                        <li>Cognitive reframing techniques</li>
+                        <li>Confidence-building practices</li>
+                        <li>Self-compassion development tools</li>
+                    </ul>
+                </div>
+                
+                <div class="toolkit-card">
+                    <i class="fas fa-calendar-day"></i>
+                    <h3>Daily Practices</h3>
+                    <p>Build sustainable habits that support your growth with routines customized to your schedule and energy patterns.</p>
+                    <ul>
+                        <li>Custom morning routine designer</li>
+                        <li>Evening reflection templates</li>
+                        <li>Habit stacking strategies</li>
+                        <li>Energy management tracker</li>
+                        <li>Intentional living checklist</li>
+                    </ul>
+                </div>
+                
+                <div class="toolkit-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Relationship & Boundaries</h3>
+                    <p>Strengthen connections and protect your energy with personalized strategies for healthy relationships.</p>
+                    <ul>
+                        <li>Boundary-setting scripts</li>
+                        <li>Communication style assessment</li>
+                        <li>Relationship values clarification</li>
+                        <li>Conflict resolution frameworks</li>
+                        <li>Connection deepening exercises</li>
+                    </ul>
+                </div>
+                
+                <div class="toolkit-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Life Balance Blueprint</h3>
+                    <p>Create harmony across all life areas with an integrated approach tailored to your priorities and circumstances.</p>
+                    <ul>
+                        <li>Personalized life wheel assessment</li>
+                        <li>Time audit and optimization guide</li>
+                        <li>Priority alignment matrix</li>
+                        <li>Seasonal life planning system</li>
+                        <li>Integration strategies for all life areas</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="content-block" style="margin-top: 80px;">
+                <h3>How Your Personalized Toolkit Works</h3>
+                <p><strong>Step 1: Complete the Assessment</strong><br>
+                Take 10-15 minutes to answer thoughtful questions about your current situation, goals, challenges, values, and preferences. Your honest responses are the foundation for creating your custom toolkit.</p>
+                
+                <p><strong>Step 2: Receive Your Custom Toolkit</strong><br>
+                Within 48 hours, you'll receive a personalized PDF toolkit delivered to your email. This toolkit is specifically curated based on your assessment responses and includes only the resources most relevant to your journey.</p>
+                
+                <p><strong>Step 3: Begin Your Transformation</strong><br>
+                Start using your tools at your own pace. Each resource includes clear instructions and can be used independently or as part of a comprehensive growth plan. Track your progress and adjust as needed.</p>
+                
+                <p><strong>Step 4: Evolve and Adapt</strong><br>
+                As you grow and your needs change, you can retake the assessment to receive an updated toolkit that reflects your new goals and circumstances. Your transformation is ongoing, and your resources should evolve with you.</p>
+            </div>
+            
+            <div class="cta-section">
+                <h3>Ready to Create Your Custom Blueprint?</h3>
+                <p>This personalized toolkit adapts to where you are right now and grows with you as you evolve. Your transformation begins with understanding yourself deeply and having the right tools at your fingertips.</p>
+                <p style="font-size: 1.3rem; font-weight: 600; color: var(--primary-color); margin: 20px 0;">Investment: \$49</p>
+                <p style="font-size: 0.95rem; margin-bottom: 30px;">Includes your comprehensive personalized toolkit (50-100 pages) + one follow-up revision within 3 months</p>
+                <a href="YOUR_GOOGLE_FORM_LINK_HERE" class="btn" target="_blank">Get Your Personalized Toolkit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Toolkits Button -->
+    <div class="back-button">
+        <a href="../index.html#toolbox" class="btn">Back to All Toolkits</a>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get in Touch</h2>
+                <p>Have questions about the Personalized Toolkit? Reach out to us today.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>We'd love to hear from you. Whether you have questions about this toolkit or how we can support your journey, don't hesitate to reach out.</p>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>LuminaRiseSelfGrowth@gmail.com</p>
+                    </div>
+       
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Virtual services available worldwide</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    
+                    <form action="https://formsubmit.co/LuminaRiseSelfGrowth@gmail.com" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" class="form-control" placeholder="Subject" value="Question about the Personalized Toolkit">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <input type="text" name="_honey" style="display:none">
+                        <input type="hidden" name="_captcha" value="true">
+                        <input type="hidden" name="_next" value="https://luminarise.ca/thanks.html">
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Lumina Rise Self-Growth</h4>
+                    <p>Empowering women through self-care and personal growth tools, resources, and community support.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#toolbox">Toolbox</a></li>
+                        
+
+
