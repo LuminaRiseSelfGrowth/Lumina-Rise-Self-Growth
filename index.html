@@ -21,6 +21,48 @@
             --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad); /* Pale orange/yellow gradient for header */
         }
         
+/* Sélecteur de langue */
+.language-selector {
+    margin-left: 20px;
+}
+
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    background: var(--gradient);
+    color: var(--light-color);
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.lang-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.lang-btn i {
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .language-selector {
+        position: absolute;
+        top: 20px;
+        right: 60px;
+    }
+    
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+}
         * {
             margin: 0;
             padding: 0;
@@ -601,6 +643,15 @@ footer::before {
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
                 </div>
+<div class="hamburger">
+    <i class="fas fa-bars"></i>
+</div>
+<!-- NOUVEAU : Sélecteur de langue -->
+<div class="language-selector">
+    <a href="index-fr.html" class="lang-btn" title="Version française">
+        <i class="fas fa-globe"></i> FR
+    </a>
+</div>
             </nav>
         </div>
     </header>
