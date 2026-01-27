@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina Rise | Où le Bien-Être Rencontre la Croissance Personnelle</title>
+    <title>Lumina Rise | Où le bien-être rencontre la croissance personnelle</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -20,6 +20,49 @@
             --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb);
             --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad);
         }
+
+/* Sélecteur de langue */
+.language-selector {
+    margin-left: 20px;
+}
+
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    background: var(--gradient);
+    color: var(--light-color);
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.lang-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.lang-btn i {
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .language-selector {
+        position: absolute;
+        top: 20px;
+        right: 60px;
+    }
+    
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+}
         
         * {
             margin: 0;
@@ -602,6 +645,12 @@ width: 40px;
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
                 </div>
+
+<div class="language-selector">
+    <a href="index.html" class="lang-btn" title="English version">
+        <i class="fas fa-globe"></i> EN
+    </a>
+</div>
             </nav>
         </div>
     </header>
@@ -642,7 +691,7 @@ width: 40px;
     <section class="about" id="about">
         <div class="container">
             <div class="section-title">
-                <h2>À Propos de Lumina Rise</h2>
+                <h2>À propos de Lumina Rise</h2>
                 <p>Dédié à soutenir les femmes dans la confiance en elles et l’épanouissement de leur plein potentiel.</p>
             </div>
             <div class="about-content">
