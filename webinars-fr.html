@@ -21,6 +21,49 @@
             --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad); /* Dégradé orange/jaune pâle pour l'en-tête */
         }
 
+/* Sélecteur de langue */
+.language-selector {
+    margin-left: 20px;
+}
+
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    background: var(--gradient);
+    color: var(--light-color);
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.lang-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.lang-btn i {
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .language-selector {
+        position: absolute;
+        top: 20px;
+        right: 60px;
+    }
+    
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+}
+
         ul li {
             color: var(--slate-blue) !important;
         }
@@ -451,8 +494,9 @@
             color: var(--slate-blue);
             font-style: italic;
             margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
+            position
+
+z-index: 1;
         }
         
         .testimonial-author {
@@ -494,3 +538,334 @@
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--light-color);
+            background-color: rgba(255,255,255,0.1);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        
+        @media (max-width: 992px) {
+            .two-columns {
+                flex-direction: column;
+            }
+            
+            .column {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--header-gradient);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="images/logo.png" alt="Logo Lumina Rise">
+                    <div class="logo-text">
+                        <h1>Lumina Rise Self-Growth</h1>
+                        <p>Où le Soin de Soi Rencontre la Croissance Personnelle</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index-fr.html">Accueil</a></li>
+                    <li><a href="index-fr.html#about">À Propos</a></li>
+                    <li><a href="index-fr.html#services">Services</a></li>
+                    <li><a href="index-fr.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+<!-- Sélecteur de langue -->
+<div class="language-selector">
+    <a href="webinars.html" class="lang-btn" title="English version">
+        <i class="fas fa-globe"></i> EN
+    </a>
+</div>
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Conférences Inspirantes</h2>
+            <p>Inspirer les audiences grâce à la psychologie positive et à des stratégies pratiques de croissance personnelle, disponibles en personne et en ligne.</p>
+            <a href="index-fr.html#contact" class="btn">Réserver une Conférence</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Conversations Percutantes</h2>
+                <p>Apporter des perspectives fondées sur des preuves et une inspiration sincère à votre prochain événement</p>
+            </div>
+            
+            <div class="content-block">
+                <div class="two-columns">
+                    <div class="column">
+                        <h3>Inspirer les Audiences</h3>
+                        <p>En tant que conférencière, je fais le pont entre la psychologie positive scientifique et la réalité complexe et belle de la vie quotidienne. Mes sessions sont conçues pour faire plus qu'inspirer; elles fournissent les outils pratiques nécessaires à une croissance durable.</p>
+                        
+                        <p>Qu'il s'agisse d'une retraite de bien-être en entreprise, d'une conférence sur l'autonomisation des femmes ou d'une masterclass virtuelle, j'offre des expériences dynamiques, authentiques et transformatrices adaptées aux besoins de votre audience.</p>
+                        
+                        <p>Avec plus d'une décennie d'expérience dans le parcours de développement personnel, je partage les habitudes, compétences et mentalités qui font vraiment la différence pour l'épanouissement personnel et le bien-être mental.</p>
+                    </div>
+                    
+                    <div class="column">
+                        <div class="image-container">
+                            <img src="images/speaking-event.jpg" alt="Gine lors d'un événement">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pourquoi Choisir les Conférences Lumina Rise?</h2>
+                <p>Offrir une valeur qui résonne longtemps après la fin de la session</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-brain"></i>
+                    <h4>Fondé sur la Science</h4>
+                    <p>Basé sur des principes de psychologie positive éprouvés pour améliorer le bien-être et la performance.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-tools"></i>
+                    <h4>Stratégies Pratiques</h4>
+                    <p>Pas de "blabla" — seulement des stratégies concrètes que les participants peuvent mettre en œuvre le jour même.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-laptop-house"></i>
+                    <h4>Formats Flexibles</h4>
+                    <p>Disponible pour des présentations dynamiques en personne ou des sessions virtuelles interactives de haute qualité.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-heart"></i>
+                    <h4>Connexion Authentique</h4>
+                    <p>Une approche accessible qui favorise un espace sûr pour la vulnérabilité et la croissance authentique.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaking Topics Section -->
+    <section class="experience-section" id="speaking">
+        <div class="container">
+            <div class="section-title">
+                <h2>Thèmes Principaux</h2>
+                <p>Sessions spécialisées couvrant les piliers de la croissance personnelle et de la psychologie positive</p>
+            </div>
+            
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h4>Vous Comptez : L'Art de Se Mettre en Priorité</h4>
+                    <p>Explorez pourquoi vous êtes la personne la plus importante de votre propre vie. Nous discutons de la raison pour laquelle prioriser votre bien-être n'est pas égoïste. C'est la fondation de tout le reste. En vous mettant en priorité, vous renouvelez votre énergie, établissez des limites saines et gagnez la capacité de vous présenter de manière plus authentique pour les personnes et projets que vous aimez.</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h4>Le Pouvoir de la Constance : La Règle du 1%</h4>
+                    <p>Le succès ne se construit pas du jour au lendemain; il se construit dans les moments quotidiens silencieux. Apprenez à construire des routines et habitudes durables en utilisant l'approche du 1%. Faire de petites améliorations progressives qui mènent à une transformation massive au fil du temps. Nous nous concentrons sur la psychologie de la construction du succès grâce au pouvoir cumulatif de petites actions cohérentes.</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h4>Concevoir une Vie Épanouissante</h4>
+                    <p>Allez au-delà du simple fait de "s'en sortir" et commencez à vivre avec intention. Cette session couvre les piliers fondamentaux d'une vie significative, vous aidant à aligner vos actions quotidiennes avec vos valeurs les plus profondes. Nous explorons des stratégies pratiques pour combler l'écart entre où vous êtes et où vous voulez être, créant une vie remplie de but, de joie et de satisfaction durable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Engagement Types Section -->
+    <section class="packages-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Types de Conférences</h2>
+                <p>Choisissez le format qui convient le mieux à votre groupe ou organisation</p>
+            </div>
+            
+            <div class="packages-grid">
+                <div class="package-card">
+                    <h4>En Personne</h4>
+                    <p class="package-price">Environ 45-60 Minutes</p>
+                    <ul>
+                        <li>Présentation inspirante à fort impact</li>
+                        <li>Perspectives fondamentales de psychologie positive</li>
+                        <li>Période de questions incluse</li>
+                    </ul>
+                    <p>Parfait pour les conférences et grands événements</p>
+                    <a href="index-fr.html#contact" class="btn">Demander Maintenant</a>
+                </div>
+                               
+                <div class="package-card">
+                    <h4>Virtuel</h4>
+                    <p class="package-price">Environ 45-60 Minutes</p>
+                    <ul>
+                        <li>Présentation inspirante à fort impact</li>
+                        <li>Perspectives fondamentales de psychologie positive</li>
+                        <li>Période de questions incluse</li>
+                    </ul>
+                    <p>Idéal pour les équipes mondiales et communautés en ligne</p>
+                    <a href="index-fr.html#contact" class="btn">Demander Maintenant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- CTA Section -->
+    <section class="container">
+        <div class="cta-section">
+            <h3>Prêt à Inspirer Votre Audience?</h3>
+            <p>Collaborons pour créer une expérience mémorable qui déclenche une croissance authentique et un changement positif pour votre groupe.</p>
+            <a href="index-fr.html#contact" class="btn">Vérifier les Disponibilités</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Lumina Rise</h4>
+                    <p>Autonomiser les femmes à grandir à travers le prisme de la psychologie positive et de la vie intentionnelle.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="index-fr.html">Accueil</a></li>
+                        <li><a href="index-fr.html#about">À Propos de Gine</a></li>
+                        <li><a href="index-fr.html#services">Tous les Services</a></li>
+                        <li><a href="index-fr.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Nous Contacter</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> luminariseselfgrowth@gmail.com</li>
+                        <li><i class="fas fa-globe"></i> www.luminarise.ca</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Lumina Rise Self-Growth. Tous Droits Réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.
+
+querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
