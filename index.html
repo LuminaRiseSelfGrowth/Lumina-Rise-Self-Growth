@@ -514,6 +514,36 @@ footer::before {
         
         .footer-container {
             display: grid;
+            grid-template-columns: repeat(auto
+footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 60px 0 20px;
+    background-image: url('images/footer-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    position: relative;
+}
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.7);
+    z-index: 0;
+}
+
+.footer-container, .copyright {
+    position: relative;
+    z-index: 1;
+}
+
+        
+        .footer-container {
+            display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
@@ -797,6 +827,48 @@ footer::before {
         </div>
     </div>
 </section>
+
+<!-- Services Section -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Tailored programs and services to support your self-growth journey.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div="service-image">
+                    <img src="images/coaching.jpg" alt="One-on-One Coaching">
+                </div>
+                <div class="service-content">
+                    <h3>One-on-One Coaching</h3>
+                    <p>Personalized coaching sessions with a certified positive psychology coach to address your unique challenges and goals.</p>
+                    <a href="one-on-one-coaching.html" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/workshops.jpg" alt="Group Workshops">
+                </div>
+                <div class="service-content">
+                    <h3>Group Workshops</h3>
+                    <p>Interactive workshops focused on specific aspects of self-care and personal growth in a supportive community environment.</p>
+                    <a href="group-workshops.html" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/webinars.jpg" alt="Interactive Webinars">
+                </div>
+                <div class="service-content">
+                    <h3>Inspirational Speaking Engagements</h3>
+                    <p>Inspirational Speaking sessions available both in-person and online, covering positive psychology topics and practical self-growth strategies.</p>
+                    <a href="webinars.html" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
  
 <!-- Book a Consultation Section -->
 <section class="consultation" style="padding: 100px 0; background-color: var(--soft-peach);">
@@ -888,50 +960,6 @@ These toolkits are your blueprint for transformation, each one crafted to help y
             </div>
         </div>
     </div>
-</section>
-
-<!-- Services Section -->
-<section class="services" id="services">
-    <div class="container">
-        <div class="section-title">
-            <h2>Our Services</h2>
-            <p>Tailored programs and services to support your self-growth journey.</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="images/coaching.jpg" alt="One-on-One Coaching">
-                </div>
-                <div class="service-content">
-                    <h3>One-on-One Coaching</h3>
-                    <p>Personalized coaching sessions with a certified positive psychology coach to address your unique challenges and goals.</p>
-                    <!-- Add this line below -->
-                    <a href="one-on-one-coaching.html" class="btn">Learn More</a>
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="images/workshops.jpg" alt="Group Workshops">
-                </div>
-                <div class="service-content">
-                    <h3>Group Workshops</h3>
-                    <p>Interactive workshops focused on specific aspects of self-care and personal growth in a supportive community environment.</p>
-                    <!-- Add this line below -->
-                    <a href="group-workshops.html" class="btn">Learn More</a>
-                </div>
- </div>
-                       <div class="service-card">
-                <div class="service-image">
-                    <img src="images/webinars.jpg" alt="Interactive Webinars">
-                </div>
-                <div class="service-content">
-                    <h3>Inspirational Speaking Engagements</h3>
-                    <p>Inspirational Speaking sessions available both in-person and online, covering positive psychology topics and practical self-growth strategies.</p>
-                                                    <!-- Add this line below -->
-                    <a href="webinars.html" class="btn">Learn More</a>
-                </div>
-
-
 </section>
 
 <!-- Newsletter Section -->
@@ -1027,6 +1055,7 @@ These toolkits are your blueprint for transformation, each one crafted to help y
     </div>
 </div>
         </div>
+    </section>
 
 <!-- Footer -->
 <footer>
@@ -1047,7 +1076,7 @@ These toolkits are your blueprint for transformation, each one crafted to help y
                     <li><a href="#about">About</a></li>
                     <li><a href="#toolbox">Toolbox</a></li>
                     <li><a href="#services">Services</a></li>
-                                  </ul>
+                </ul>
             </div>
             <div class="footer-col">
                 <h4>Our Services</h4>
@@ -1070,3 +1099,6 @@ These toolkits are your blueprint for transformation, each one crafted to help y
 <div class="footer-col">
 
 </div>
+
+</body>
+</html>
