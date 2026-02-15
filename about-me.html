@@ -155,50 +155,50 @@
         }
         
         /* Header Styles */
-        header {
-            background: var(--header-gradient);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo img {
-            height: 50px;
-            margin-right: 10px;
-        }
-        
-        .logo-text h1 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin: 0;
-        }
-        
-        .logo-text p {
-            font-size: 0.8rem;
-            color: var(--dark-color);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
+     /* Header Styles /
+header {
+background: var(--header-gradient);
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+position: fixed;
+width: 100%;
+z-index: 1000;
+padding: 0;  / Remove any padding */
+}
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 20px;  /* Add horizontal padding directly to nav /
+max-width: 1400px;   / Optional: limit max width /
+margin: 0 auto;      / Center the nav content */
+}
+.logo {
+display: flex;
+align-items: center;
+margin-right: auto;
+}
+.logo img {
+height: 50px;
+margin-right: 10px;
+}
+.logo-text h1 {
+font-size: 1.5rem;
+color: var(--primary-color);
+margin: 0;
+}
+.logo-text p {
+font-size: 0.8rem;
+color: var(--dark-color);
+}
+.nav-links {
+display: flex;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+.nav-links li {
+margin-left: 30px;
+}
         
         .nav-links a {
             text-decoration: none;
@@ -680,62 +680,38 @@
 
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <img src="images/logo.png" alt="Lumina Rise Logo">
-                    <div class="logo-text">
-                        <h1>Lumina Rise Self-Growth</h1>
-                        <p>Where Self-Care Meets Self-Growth</p>
-                    </div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about-me.html">About</a></li>
-                    <li><a href="index.html#toolbox">Toolbox</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#testimonials">Testimonials</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
-
-<header>
-    <div class="container">
-        <nav>
-            <div class="logo">
-                <img src="images/logo.png" alt="Lumina Rise Logo">
-                <div class="logo-text">
-                    <h1>Lumina Rise Self-Growth</h1>
-                    <p>Where Self-Care Meets Self-Growth</p>
-                </div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about-me.html">About</a></li>
-                <li><a href="index.html#toolbox">Toolbox</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#testimonials">Testimonials</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-            <!-- Language Selector -->
-            <div class="language-selector">
-                <a href="about-me-fr.html" class="lang-btn" title="Version française">
-                    <i class="fas fa-globe"></i> FR
-                </a>
-            </div>
-        </nav>
-    </div>
-</header>            
+            
 
         </div>
-    </header>
+ <!-- Header -->
+<header>
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="Lumina Rise Logo">
+            <div class="logo-text">
+                <h1>Lumina Rise Self-Growth</h1>
+                <p>Where Self-Care Meets Self-Growth</p>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-me.html">About</a></li>
+            <li><a href="index.html#toolbox">Toolbox</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#testimonials">Testimonials</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <!-- Language Selector -->
+        <div class="language-selector">
+            <a href="about-me-fr.html" class="lang-btn" title="Version française">
+                <i class="fas fa-globe"></i> FR
+            </a>
+        </div>
+    </nav>
+</header>
 
     <!-- Hero Section -->
     <section class="hero">
