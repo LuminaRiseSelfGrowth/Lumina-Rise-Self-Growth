@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos de Moi | Lumina Rise Self-Growth</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+:root {
+    --primary-color: #ff7f30;
+    --secondary-color: #ffe577;
+    --accent-color: #fda63a;
+    --text-color: #333;
+    --light-color: #fff;
+    --dark-color: #333;
+    --slate-blue: #5d6d7e;
+    --soft-peach: #fff2d9;
+    --soft-pink: #ffcfcf;
+    --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577);
+    --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb);
+    --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad);
+    
+    /* Typography Variables */
+    --heading-font-size: 2.5rem;
+    --subheading-font-size: 1.8rem;
+    --subtitle-font-size: 1.1rem;
+    --body-font-size: 1.2rem;
+    --small-font-size: 0.9rem;
+}
+
+/* Language Selector */
+.language-selector {
+    margin-left: 20px;
+}
+
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    background: var(--gradient);
+    color: var(--light-color);
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.lang-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.lang-btn i {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .language-selector {
+        position: absolute;
+        top: 20px;
+        right: 60px;
+    }
+    
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+    /* Reset all paragraph styles first */
+    p {
+        font-family: 'Montserrat', sans-serif !important;
+        color: var(--slate-blue) !important;
+        line-height: 1.6 !important;
+        font-size: var(--body-font-size) !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* Then add specific exceptions */
+    .hero p {
+        color: var(--soft-peach) !important;
+    }
+
+    .footer-col p, .copyright p {
+        color: #bbb !important;
+    }
+
+    .logo-text p {
+        font-size: 0.8rem !important;
+        color: var(--dark-color) !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Handle spans that might be used instead of paragraphs */
+    span {
+        font-family: 'Montserrat', sans-serif !important;
+        color: var(--slate-blue) !important;
+        line-height: 1.6 !important;
+        font-size: var(--body-font-size) !important;
+    }
+
+    /* Fix info-item spans */
+    .info-item span {
+        color: var(--slate-blue) !important;
+    }
+
+    /* Make sure list items have consistent styling */
+    li {
+        font-family: 'Montserrat', sans-serif !important;
+        color: var(--slate-blue) !important;
+        line-height: 1.6 !important;
+        font-size: var(--body-font-size) !important;
+    }
+
+    /* Footer list exceptions */
+    .footer-col ul li a {
+        color: #bbb !important;
+    }
+
+    /* Keep section titles as they are */
+    .section-title h2 {
+        color: var(--primary-color) !important;
+    }
+
+    .toolkit-card h3, .tool-card h3, .about-text h3, .content-block h3 {
+        color: var(--accent-color) !important;
+    }
+
+    /* Keep footer text light */
+    .footer-col h4 {
+        color: var(--accent-color) !important;
+    }        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        
+        /* Header Styles */
+header {
+background: var(--header-gradient);
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+position: fixed;
+width: 100%;
+z-index: 1000;
+}
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 0;
+}
+.logo {
+display: flex;
+align-items: center;
+}
+.logo img {
+height: 50px;
+margin-right: 10px;
+}
+.logo-text h1 {
+font-size: 1.5rem;
+color: var(--primary-color);
+margin: 0;
+}
+.logo-text p {
+font-size: 0.8rem;
+color: var(--dark-color);
+}
+.nav-links {
+display: flex;
+list-style: none;
+}
+.nav-links li {
+margin-left: 30px;
+} 
+        /* Hero Section */
+        .hero {
+            background: var(--dark-color);
+            color: var(--light-color);
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/about-me-bg.jpg') center/cover no-repeat;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--soft-peach);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gradient);
+            color: var(--light-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+        }
+        
+        /* Content Section */
+        .content-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--slate-blue);
+        }
+        
+        .content-block {
+            margin-bottom: 60px;
+        }
+        
+        .content-block h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .content-block p {
+            color: var(--slate-blue);
+            margin-bottom: 15px;
+        }
+        
+        .two-columns {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            margin-top: 40px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .image-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .image-container img {
+            width: 100%;
+            display: block;
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            padding: 80px 0;
+            background: var(--soft-gradient);
+        }
+        
+        /* Toolbox Section */
+        .toolbox-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .toolbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .toolbox-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .toolbox-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .toolbox-card h3 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .toolbox-card p {
+            color: var(--slate-blue);
+            margin-bottom: 20px;
+        }
+        
+        /* Education Section */
+        .education-section {
+            padding: 80px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .education-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .education-card h3 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .education-card p {
+            color: var(--slate-blue);
+            margin-bottom: 10px;
+        }
+        
+        /* Interests Section */
+        .interests-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .interest-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .interest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .interest-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .interest-card h4 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .interest-card p {
+            color: var(--slate-blue);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 60px 0;
+            background: var(--soft-gradient);
+            border-radius: 10px;
+            margin: 80px auto;
+            max-width: 1100px;
+        }
+        
+        .cta-section h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--slate-blue);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background-color: #fcf3e1;
+            padding: 60px 0;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h2, .contact-form h2 {
+            color: #e8a35c;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            color: #e8a35c;
+            font-size: 18px;
+            margin-right
+
+: 10px;
+            width: 20px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            margin-bottom: 15px;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .send-btn {
+            background-color: #f8a44c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .send-btn:hover {
+            background-color: #e8943c;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--light-color);
+            background-color: rgba(255,255,255,0.1);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content, .two-columns {
+                flex-direction: column;
+            }
+            
+            .about-image, .about-text, .column {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+             @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--header-gradient);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        .image-container img[src="images/about-founder.jpg"] {
+            width: 85%; 
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+            
+
+        </div>
+ <!-- Header -->
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo Lumina Rise">
+                <div class="logo-text">
+                    <h1>Lumina Rise Self-Growth</h1>
+                    <p>Où le Bien-Être Rencontre la Croissance Personnelle</p>
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about-me-fr.html">À Propos</a></li>
+                <li><a href="index.html#toolbox">Boîte à Outils</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#testimonials">Témoignages</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <a href="about-me.html" class="lang-btn" title="English version">
+                    <i class="fas fa-globe"></i> EN
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>À Propos de Moi</h2>
+            <p>Permettre aux femmes de découvrir leur force intérieure et de transformer leur vie</p>
+            <a href="#mission" class="btn">En Savoir Plus</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mon Histoire</h2>
+                <p>Le parcours qui a mené à Lumina Rise Self-Growth</p>
+            </div>
+            
+            <div class="content-block">
+                <div class="two-columns">
+                    <div class="column">
+                        <h3>Passion pour l'Autonomisation</h3>
+                        <p>Bonjour, je suis Gina-Line, le cœur et l'âme de Lumina Rise. Après plus d'une décennie plongée dans mon propre parcours de développement personnel, j'ai ressenti un puissant appel à créer un espace où les femmes pourraient se sentir vraiment vues, soutenues et habilitées à devenir la version la plus rayonnante d'elles-mêmes. J'ai traversé des périodes difficiles, redécouvert ma force intérieure et appris de première main le pouvoir transformateur de la résilience, de l'état d'esprit et du bien-être. C'est pourquoi je suis si passionnée d'aider les autres à faire de même.</p>
+                        
+                        <p>Avec une formation en coaching en psychologie positive, un certificat de Yale en bien-être et un amour inébranlable pour la croissance personnelle, je guide maintenant les femmes vers des vies remplies de sens, de confiance et de joie. Lumina Rise n'est pas seulement une marque, c'est un mouvement. Un mouvement enraciné dans l'authenticité, la croissance et la compassion profonde. Que vous soyez ici pour guérir, évoluer ou vous reconnecter avec votre vrai moi, je suis honorée de marcher sur ce chemin à vos côtés.</p>
+                        
+                        <p>Dans un monde qui se précipite toujours, Lumina Rise offre un rythme différent, un rythme qui marie le bien-être avec la croissance personnelle, et le travail intérieur avec l'action dans la vie réelle. Je suis là pour vous équiper d'outils, d'idées et de soutien sincère qui vous aident à vous épanouir, pas seulement à fonctionner.</p>
+
+ 			 <p>Ce qui illumine vraiment mon âme, c'est de témoigner de cette étincelle, ce moment où une femme réalise son propre pouvoir et commence à se présenter pleinement dans sa vie. C'est le genre de magie pour laquelle je vis.</p>
+
+ 			 <p>Je suis infiniment curieuse de savoir comment l'état d'esprit, les émotions et l'action intentionnelle créent une transformation durable. J'explore constamment de nouvelles idées, d'anciennes sagesses et des pratiques fondées sur des preuves qui aident les femmes à s'épanouir de l'intérieur. C'est pourquoi je suis si attirée par la psychologie positive, elle combine la science du bien-être avec le cœur d'une vie significative.</p>
+
+ 			 <p>Au fond de moi, je suis animée par une passion simple mais puissante : aider les femmes à retrouver leur joie, leur confiance et leur sens des possibilités. Peu importe à quelle étape du voyage vous vous trouvez, sachez ceci... vous n'êtes pas seule. Et votre ascension ? Elle commence ici même.</p>
+
+                    </div>
+                    <div class="column">
+    <div class="image-container">
+        <img src="images/about-founder.jpg" alt="Fondatrice de Lumina Rise" style="width: 60%; margin: 0 auto; display: block;">
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+<section class="mission-section" id="mission">
+    <div class="container">
+        <div class="section-title">
+            <h2>Ma Mission & Vision</h2>
+            <p>La force motrice derrière Lumina Rise Self-Growth</p>
+        </div>
+        
+        <div class="content-block">
+            <div class="two-columns">
+                <div class="column">
+                    <h3>Mission</h3>
+                    <p>Fournir aux femmes des outils innovants, concrets et inspirants qui soutiennent la santé mentale, encouragent la croissance personnelle et favorisent une communauté de femmes autonomes et confiantes.</p>
+                    
+                    <h3>Vision</h3>
+                    <p>Devenir une ressource de premier plan dans le développement personnel féminin, transformant les pratiques quotidiennes de bien-être en un puissant parcours d'évolution personnelle.</p>
+                    
+                    <h3>Valeurs Fondamentales</h3>
+                    <ul>
+                        <li>Authenticité - Encourager l'expression de soi et la croissance authentiques</li>
+                        <li>Autonomisation - Fournir des outils qui renforcent l'indépendance et la confiance tout en permettant aux femmes de réaliser leur plein potentiel</li>
+                        <li>Compassion - Aborder toutes les interactions avec gentillesse et compréhension</li>
+                        <li>État d'Esprit de Croissance - Embrasser les défis comme des opportunités de développement</li>                   
+                    </ul>
+
+                    <div style="margin-top: 15px;"></div>
+
+                    <h3>Où le Bien-Être Rencontre la Croissance Personnelle</h3>
+                    <p>Cette déclaration puissante reflète notre approche holistique de l'autonomisation des femmes. Nous reconnaissons que le bien-être ne consiste pas seulement à se dorloter ou à prendre une pause des exigences de la vie. Il s'agit de créer une base solide de bien-être physique, émotionnel et mental qui vous permet de poursuivre vos objectifs et vos rêves avec vigueur et résilience.</p>
+
+                    <p>De même, la croissance personnelle ne consiste pas seulement à vous pousser à accomplir davantage. Il s'agit d'élargir vos horizons, de défier vos limites et d'évoluer vers la meilleure version de vous-même – tout en maintenant une attitude compatissante et bienveillante envers votre propre parcours.</p>
+
+                    <p>Notre slogan incarne l'idée que le bien-être et la croissance personnelle ne s'excluent pas mutuellement, mais sont plutôt des forces complémentaires. Lorsque vous apprenez à prendre soin de vous profondément et à grandir intentionnellement, vous créez une boucle de rétroaction positive qui vous propulse vers votre plus haut potentiel. C'est l'essence de ce que j'offre chez Lumina Rise – un voyage où chaque pas vers la croissance est aussi un acte d'amour-propre et de soin.</p>
+
+                    <p>Ce parcours consiste à créer un espace où vous ne survivez pas seulement, mais où vous vous épanouissez. Lorsque vous prenez soin de vous, vous développez la résilience, l'intelligence émotionnelle et le bien-être physique, qui sont tous essentiels à une croissance durable.</p>
+
+                    <p>Cette philosophie promeut l'idée que la croissance ne doit pas être douloureuse ou accablante. Elle peut être édifiante, guérissante et profondément personnelle. Lorsque le bien-être est tissé dans votre parcours de croissance, vous constaterez que les deux deviennent plus faciles et plus épanouissants, menant à une vie plus significative.</p>
+                </div>
+                
+                <div class="column">
+                    <div class="image-container" style="margin-top: 225px;">
+                        <img src="images/mission-vision.jpg" alt="Femmes se soutenant mutuellement">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Toolbox Section -->
+    <section class="toolbox-section" id="toolbox-concept">
+        <div class="container">
+            <div class="section-title">
+                <h2>Le Concept de la Boîte à Outils</h2>
+                <p>Des ressources personnalisées pour le parcours unique de chaque femme</p>
+            </div>
+            
+            <div class="content-block">
+                <p>Tout comme un artisan sélectionne les bons outils pour chaque projet, créer une vie épanouissante et autonome commence par la construction de votre propre boîte à outils personnalisée. Parce que le chemin de chaque femme est différent, votre boîte à outils est personnalisée pour répondre à vos défis spécifiques, amplifier vos forces et nourrir vos aspirations les plus profondes. Avec les bons outils en main, vous êtes équipée pour vous élever, reconstruire et prospérer ; peu importe ce qui se présente.</p>
+
+ <p>Chaque ensemble d'outils que j'ai créé est soigneusement conçu pour soutenir des domaines spécifiques de votre vie, vous aidant à surmonter les défis, à célébrer votre unicité et à cultiver un
+bonheur durable de l'intérieur. Si vous êtes prête à transformer votre vie et à entrer avec audace dans votre pouvoir, tout commence par une simple étape.
+</p>
+            </div>
+            
+            
+        </div>
+    </section>
+<!-- Section Éducation -->
+<section class="education-section" id="education" style="background-color: #f5f1e8; padding: 80px 0;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <div class="section-title" style="text-align: center; margin-bottom: 60px;">
+            <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px;">Éducation & Qualifications</h2>
+            <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto; color: var(--slate-blue);">Mon engagement envers l'apprentissage continu et le développement professionnel</p>
+        </div>
+        
+        <div class="row" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+            
+            <!-- Première Carte Éducation - Formation Formelle -->
+            <div class="education-card" style="background: white; border-radius: 20px; padding: 40px 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 3px solid #ff8c42; flex: 1; min-width: 300px; max-width: 500px;">
+                <div style="font-size: 40px; margin-bottom: 20px; text-align: center;">🎓</div>
+                <h3 style="color: #ff8c42; font-size: 24px; font-weight: bold; margin-bottom: 25px; text-align: center;">Formation Formelle</h3>
+                <ul style="list-style: none; padding: 0; color: #6b7280; font-size: 16px; line-height: 1.8;">
+                    <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
+                        <span style="position: absolute; left: 0; font-size: 18px;">📚</span>
+                        <strong>Techniques d'Intervention en Délinquance</strong><br>
+                        Formation complète en psychologie, sociologie et criminologie, axée sur la compréhension du comportement humain, des dynamiques sociales et des schémas criminels. Ce diplôme met l'accent sur les stratégies d'intervention pratiques, la résolution de conflits et les outils relationnels pour travailler avec des personnes en situation de vulnérabilité ou à risque.
+                    </li>
+                    <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
+                        <span style="position: absolute; left: 0; font-size: 18px;">💼</span>
+                        <strong>Gestion de Bureau</strong><br>
+                        Prépare à travailler dans des postes avec des responsabilités administratives afin de gérer efficacement les tâches et les activités d'un bureau et d'utiliser efficacement divers logiciels. Fournit les connaissances et les compétences nécessaires pour appliquer les nouvelles technologies, effectuer la comptabilité et accomplir diverses tâches de bureau. Permet également aux individus d'améliorer leurs connaissances et ainsi de participer au fonctionnement d'une entreprise.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Deuxième Carte Éducation - Certifications Professionnelles -->
+            <div class="education-card" style="background: white; border-radius: 20px; padding: 40px 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 3px solid #ff8c42; flex: 1; min-width: 300px; max-width: 500px;">
+                <div style="font-size: 40px; margin-bottom: 20px; text-align: center;">🏆</div>
+                <h3 style="color: #ff8c42; font-size: 24px; font-weight: bold; margin-bottom: 25px; text-align: center;">Certifications Professionnelles</h3>
+                <ul style="list-style: none; padding: 0; color: #6b7280; font-size: 16px; line-height: 1.8;">
+                    <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
+                        <span style="position: absolute; left: 0; font-size: 18px;">💪</span>
+                        <strong>Certification de Coach en Psychologie Positive</strong><br>
+                        Formation spécialisée dans les approches fondées sur des données probantes du bien-être, le développement basé sur les forces et les interventions positives qui favorisent la croissance et la résilience.
+                    </li>
+                    <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
+                        <span style="position: absolute; left: 0; font-size: 18px;">🎯</span>
+                        <strong>La Science du Bien-Être – Université Yale</strong><br>
+                        Un cours fondé sur des données probantes explorant la science psychologique derrière le bonheur, le bien-être et l'épanouissement humain. Cette certification se concentre sur les stratégies cognitives et comportementales éprouvées pour augmenter la satisfaction de vie et promouvoir une croissance personnelle durable.
+                    </li>
+                    <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
+                        <span style="position: absolute; left: 0; font-size: 18px;">🤖</span>
+                        <strong>Éthique à l'Ère de l'IA Générative</strong><br>
+                        Axé sur les considérations éthiques et la mise en œuvre responsable des technologies d'intelligence artificielle générative. Cette certification couvre l'éthique informatique, les principes de l'IA générative et les pratiques d'IA responsable.
+                    </li>
+                </ul>
+            </div>
+            
+   <!-- Troisième Carte Éducation - Apprentissage Continu -->
+<div class="education-card" style="background: white; border-radius: 20px; padding: 40px 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 3px solid #ff8c42; flex: 1; min-width: 300px; max-width: 500px;">
+    <div style="font-size: 40px; margin-bottom: 20px; text-align: center;">🌱</div>
+    <h3 style="color: #ff8c42; font-size: 24px; font-weight: bold; margin-bottom: 25px; text-align: center;">Apprentissage Continu</h3>
+    <ul style="list-style: none; padding: 0; color: #6b7280; font-size: 16px; line-height: 1.8;">
+        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
+            <span style="position: absolute; left: 0; font-size: 18px;">🧠</span>
+            J'ai toujours été incroyablement curieuse... le genre de personne qui demande pourquoi et comment à propos de tout. Je me décrirais définitivement comme une apprenante en série.
+        </li>
+        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
+            <span style="position: absolute; left: 0; font-size: 18px;">🌟</span>
+            Depuis que je suis dans un parcours de développement personnel depuis plus d'une décennie, cela m'a permis de développer de nombreuses compétences, habitudes et passe-temps et m'a rendue curieuse d'en savoir toujours plus.
+        </li>
+        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
+            <span style="position: absolute; left: 0; font-size: 18px;">📖</span>
+            Que ce soit plonger dans un nouveau livre, explorer des recherches émergentes ou suivre une formation spécialisée, j'aime vraiment apprendre.
+        </li>
+        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
+            <span style="position: absolute; left: 0; font-size: 18px;">🚀</span>
+            Je recherche constamment de nouvelles perspectives qui peuvent élever le travail que je fais avec les femmes. La croissance est un voyage de toute une vie, et je suis là pour le parcourir à vos côtés. Toujours en train d'apprendre, toujours en train de m'élever.
+        </li>
+    </ul>
+</div> 
+</div>
+</div>
+</section>
+
+    <!-- Section Intérêts -->
+    <section class="interests-section" id="interests">
+        <div class="container">
+            <div class="section-title">
+                <h2>Intérêts Personnels</h2>
+                <p>Les passions qui alimentent ma créativité et ma perspective</p>
+            </div>
+            
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <i class="fas fa-book"></i>
+                    <h4>Lecture</h4>
+                   <p>Je suis une dévoreuse de livres depuis mon jeune âge, trouvant de la magie dans chaque page que je tourne. Travailler dans une bibliothèque provinciale a approfondi mon amour pour les livres encore plus - entourée de milliers d'histoires, de connaissances et de sagesse chaque jour. Les livres ne sont pas seulement un divertissement pour moi ; ce sont des bouées de sauvetage vers la croissance, la compréhension et les possibilités infinies.</p>
+</div>
+                
+                <div class="interest-card">
+                    <i class="fas fa-palette"></i>
+                    <h4>Coloriage & Art</h4>
+                    <p>J'adore la pratique méditative du coloriage, en particulier les designs complexes de Johanna Basford, qui m'aide à pratiquer la pleine conscience et la créativité.</p>
+                </div>
+                
+                <div class="interest-card">
+                    <i class="fas fa-brain"></i>
+                    <h4>Apprentissage</h4>
+                    <p>Je suis infiniment curieuse de la vie et du monde qui m'entoure. J'ai une véritable passion pour l'apprentissage. Que ce soit développer de nouvelles compétences, élargir mes connaissances ou explorer divers sujets qui suscitent l'inspiration et la croissance.</p>
+                </div>
+                
+                <div class="interest-card">
+                    <i class="fas fa-robot"></i>
+                    <h4>Intelligence Artificielle</h4>
+                    <p>Je suis fascinée par le potentiel de l'IA à transformer la façon dont nous apprenons, grandissons et résolvons des problèmes complexes dans le développement personnel.</p>
+                </div>                
+                      
+                <div class="interest-card">
+                    <i class="fas fa-star"></i>
+                    <h4>Développement Personnel</h4>
+                    <p>Un voyage continu pour devenir plus alignée avec qui je suis vraiment. Il s'agit d'évoluer avec intention, de grandir à travers les défis et de me présenter à moi-même avec but et compassion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h3>Prête à Commencer Votre Voyage ?</h3>
+            <p>Travaillons ensemble pour libérer votre potentiel et créer la vie que vous méritez.</p>
+            <a href="index.html#contact" class="btn">Entrer en Contact</a>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Entrer en Contact</h2>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>Luminariseselfgrowth@gmail.com</p>
+                    </div>
+                  
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Services virtuels disponibles partout dans le monde</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
+                      
+                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Envoyer un Message</h2>
+                    <form>
+                        <input type="text" placeholder="Votre Nom" required>
+                        <input type="email" placeholder="Votre Courriel" required>
+                        <input type="text" placeholder="Sujet">
+                        <textarea placeholder="Votre Message" required></textarea>
+                        <button type="submit" class="send-btn">Envoyer le Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+              <div class="footer-container">
+            <div class="footer-col">
+                <h4>À Propos</h4>
+                <ul>
+                    <li><a href="about-me-fr.html">Mon Histoire</a></li>
+                    <li><a href="#mission">Mission & Vision</a></li>
+                    <li><a href="#toolbox-concept">Concept de la Boîte à Outils</a></li>
+                    <li><a href="#education">Éducation</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="index.html#services">Coaching</a></li>
+                    <li><a href="index.html#services">Ateliers</a></li>
+                    <li><a href="index.html#services">Ressources</a></li>
+                    <li><a href="index.html#services">Communauté</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Connexion</h4>
+                <ul>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li>
+
+<a href="#">Infolettre</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Suivez-Nous</h4>
+                <p>Rejoignez notre communauté sur les réseaux sociaux pour de l'inspiration quotidienne et des mises à jour.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Lumina Rise Self-Growth. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Basculement du menu mobile
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
+</body>
+</html>
