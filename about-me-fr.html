@@ -460,78 +460,57 @@ margin-left: 30px;
             color: var(--slate-blue);
         }
         
-        /* Contact Section */
-        .contact-section {
-            background-color: #fcf3e1;
-            padding: 60px 0;
-        }
-
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .contact-info, .contact-form {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .contact-info h2, .contact-form h2 {
-            color: #e8a35c;
-            margin-bottom: 20px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .contact-item i {
-            color: #e8a35c;
-            font-size: 18px;
-            margin-right
-
-: 10px;
-            width: 20px;
-        }
-
-        .contact-form form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            margin-bottom: 15px;
-            padding: 12px 15px;
-            border: none;
-            border-radius: 4px;
-            font-family: inherit;
-        }
-
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .send-btn {
-            background-color: #f8a44c;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-            align-self: flex-start;
-        }
-
-        .send-btn:hover {
-            background-color: #e8943c;
-        }
-        
+      /* Section Contact */
+.contact {
+padding: 100px 0;
+background-color: var(--soft-peach);
+}
+.contact-container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 50px;
+}
+.contact-info h3 {
+font-size: 1.8rem;
+color: var(--accent-color);
+margin-bottom: 30px;
+}
+.contact-info p {
+margin-bottom: 20px;
+color: var(--slate-blue);
+}
+.contact-info .info-item {
+display: flex;
+margin-bottom: 20px;
+}
+.contact-info i {
+font-size: 1.3rem;
+color: var(--primary-color);
+margin-right: 15px;
+}
+.contact-form h3 {
+font-size: 1.8rem;
+color: var(--accent-color);
+margin-bottom: 30px;
+}
+.form-group {
+margin-bottom: 20px;
+}
+.form-control {
+width: 100%;
+padding: 12px 15px;
+border: 1px solid #ddd;
+border-radius: 5px;
+font-size: 1rem;
+transition: border-color 0.3s;
+}
+.form-control:focus {
+outline: none;
+border-color: var(--accent-color);
+}
+textarea.form-control {
+min-height: 150px;
+}        
      /* Footer */
 footer {
 background-color: var(--dark-color);
@@ -955,70 +934,69 @@ bonheur durable de l'intérieur. Si vous êtes prête à transformer votre vie e
     </section>
 
  
-    <!-- Section Contact -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Entrez en contact</h2>
-                <p>Prête à commencer votre parcours de croissance personnelle? Contactez-nous dès aujourd'hui.</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Informations de contact</h3>
-                    <p>Nous aimerions avoir de vos nouvelles. Contactez-nous pour toute question sur nos programmes ou comment nous pouvons soutenir votre parcours.</p>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>Luminariseselfgrowth@gmail.com</p>
-                    </div>
-                
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Services virtuels disponibles dans le monde entier</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/"><i class="fab fa-pinterest-p"></i></a>
-                    </div>
+  <!-- Section Contact -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Entrez en contact</h2>
+            <p>Prête à commencer votre parcours de croissance personnelle? Contactez-nous dès aujourd'hui.</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Informations de contact</h3>
+                <p>Nous aimerions avoir de vos nouvelles. Contactez-nous pour toute question sur nos programmes ou comment nous pouvons soutenir votre parcours.</p>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>Luminariseselfgrowth@gmail.com</p>
                 </div>
-                <div class="contact-form">
-                    <h3>Envoyer un message</h3>
-                    <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" placeholder="Votre nom" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" class="form-control" placeholder="Votre courriel" required>
-                        </div>
-                        <div class="form-group">
-                            <select name="inquiry-type" class="form-control" required>
-                                <option value="">Je suis intéressée par...</option>
-                                <option value="coaching">Coaching individuel</option>
-                                <option value="workshop">Ateliers de groupe</option>
-                                <option value="speaking">Conférence</option>
-                                <option value="toolkit">Achat de boîte à outils</option>
-                                <option value="other">Demande générale</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea name="message" class="form-control" placeholder="Votre Message" required></textarea>
-                        </div>
-                        <!-- Champs spécifiques FormSubmit.co -->
-                        <input type="hidden" name="_next" value="https://luminariseselfgrowth.github.io/Lumina-Rise-Self-Growth/index.html?message=success#contact">
-                        <input type="hidden" name="_subject" value="Nouvelle Soumission du Formulaire de Contact">
-                        <input type="text" name="_honey" style="display:none">
-                        <input type="hidden" name="_captcha" value="true">
-                        <button type="submit" class="btn">Envoyer</button>
-                    </form>
-                    <div id="formMessages">
-                        <p class="success-message" style="display: none; color: green; padding: 10px; background-color: #e8f5e9; border-radius: 5px; margin-top: 20px;">Votre message a été envoyé avec succès !</p>
-                        <p class="error-message" style="display: none; color: red; padding: 10px; background-color: #ffebee; border-radius: 5px; margin-top: 20px;">Un problème est survenu lors de l'envoi de votre message. Veuillez réessayer.</p>
+            
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Services virtuels disponibles dans le monde entier</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Envoyer un message</h3>
+                <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Votre nom" required>
                     </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Votre courriel" required>
+                    </div>
+                    <div class="form-group">
+                        <select name="inquiry-type" class="form-control" required>
+                            <option value="">Je suis intéressée par...</option>
+                            <option value="coaching">Coaching individuel</option>
+                            <option value="workshop">Ateliers de groupe</option>
+                            <option value="speaking">Conférence</option>
+                            <option value="toolkit">Achat de boîte à outils</option>
+                            <option value="other">Demande générale</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" placeholder="Votre Message" required></textarea>
+                    </div>
+                    <!-- Champs spécifiques FormSubmit.co -->
+                    <input type="hidden" name="_next" value="https://luminariseselfgrowth.github.io/Lumina-Rise-Self-Growth/index.html?message=success#contact">
+                    <input type="hidden" name="_subject" value="Nouvelle Soumission du Formulaire de Contact">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_captcha" value="true">
+                    <button type="submit" class="btn">Envoyer</button>
+                </form>
+                <div id="formMessages">
+                    <p class="success-message" style="display: none; color: green; padding: 10px; background-color: #e8f5e9; border-radius: 5px; margin-top: 20px;">Votre message a été envoyé avec succès !</p>
+                    <p class="error-message" style="display: none; color: red; padding: 10px; background-color: #ffebee; border-radius: 5px; margin-top: 20px;">Un problème est survenu lors de l'envoi de votre message. Veuillez réessayer.</p>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
     <!-- Pied de page -->
     <footer>
         <div class="container">
