@@ -7,40 +7,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #ff7f30; 
-            --secondary-color: #ffe577; 
-            --accent-color: #fda63a; 
+            --primary-color: #ff7f30; /* Vibrant orange from your logo */
+            --secondary-color: #ffe577; /* Soft gold/yellow from your palette */
+            --accent-color: #fda63a; /* Warm amber accent */
             --text-color: #333;
             --light-color: #fff;
-            --dark-color: #333; 
-            --slate-blue: #5d6d7e; 
-            --soft-peach: #fff2d9; 
-            --soft-pink: #ffcfcf; 
-            --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577); 
-            --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb); 
-            --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad); 
+            --dark-color: #333; /* Darker text for header */
+            --slate-blue: #5d6d7e; /* Slate blue for text on light backgrounds */
+            --soft-peach: #fff2d9; /* Soft peach background */
+            --soft-pink: #ffcfcf; /* Soft pink accent */
+            --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577); /* Orange to gold gradient */
+            --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb); /* Soft background gradient */
+            --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad); /* Pale orange/yellow gradient for header */
         }
 
         ul li {
             color: var(--slate-blue) !important;
         }
 
+        /* For specifically styled lists */
         .column ul li {
             color: var(--slate-blue) !important;
         }
 
+        /* This covers any other list variations */
         ul li, ol li, .content-block ul li, .about-text ul li {
             color: var(--slate-blue) !important;
         }
 
+        /* Only keep these exceptions with !important to ensure they take precedence */
         .hero p {
-            color: var(--soft-peach) !important; 
+            color: var(--soft-peach) !important; /* Light color for dark backgrounds */
         }
 
         .footer-col p, .copyright p {
-            color: #bbb !important; 
+            color: #bbb !important; /* Light color for dark backgrounds */
         }
 
+        /* Keep section titles as they are */
         .section-title h2 {
             color: var(--primary-color) !important;
         }
@@ -49,6 +53,7 @@
             color: var(--accent-color) !important;
         }
 
+        /* Keep footer text light */
         .footer-col h4 {
             color: var(--accent-color) !important;
         }
@@ -76,6 +81,7 @@
             padding: 0 20px;
         }
         
+        /* Header Styles */
         header {
             background: var(--header-gradient);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -139,6 +145,7 @@
             color: var(--dark-color);
         }
         
+        /* Hero Section */
         .hero {
             background: var(--dark-color);
             color: var(--light-color);
@@ -193,7 +200,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             border: none;
             cursor: pointer;
-            margin-top: 15px;
         }
         
         .btn:hover {
@@ -201,6 +207,111 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.25);
         }
         
+        /* Introduction Section */
+        .content-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--slate-blue);
+        }
+        
+        .content-block {
+            margin-bottom: 60px;
+        }
+        
+        .content-block h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .content-block p {
+            color: var(--slate-blue);
+            margin-bottom: 15px;
+        }
+        
+        .two-columns {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            margin-top: 40px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .image-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .image-container img {
+            width: 100%;
+            display: block;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .benefit-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .benefit-card p {
+            color: var(--slate-blue);
+        }
+        
+        /* Experience Section */
         .experience-section {
             padding: 100px 0;
             background-color: var(--soft-peach);
@@ -208,7 +319,7 @@
         
         .experience-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
@@ -219,9 +330,6 @@
             padding: 30px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
         
         .experience-card:hover {
@@ -238,18 +346,246 @@
         .experience-card p {
             color: var(--slate-blue);
             margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-
-        .coming-soon {
-            display: block;
-            color: var(--primary-color);
-            font-size: 0.85rem;
-            font-weight: bold;
-            margin-top: -10px;
-            margin-bottom: 10px;
         }
         
+        /* Packages Section */
+        .packages-section {
+            padding: 80px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .package-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .package-card h4 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .package-card .package-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .package-card ul {
+            list-style: none;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .package-card ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .package-card ul li:before {
+            content: '✓';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        .package-card.featured {
+            border: 2px solid var(--accent-color);
+            transform: scale(1.05);
+        }
+        
+        .package-card.featured:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+        
+        .featured-tag {
+            position: absolute;
+            top: 0;
+            right: 30px;
+            background: var(--accent-color);
+            color: var(--light-color);
+            padding: 5px 15px;
+            font-size: 0.9rem;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            color: rgba(253,166,58,0.1);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            line-height: 1;
+        }
+        
+        .testimonial-card p {
+            color: var(--slate-blue);
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author p {
+            margin: 0;
+            font-style: normal;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin-top: 80px;
+            padding: 60px 0;
+            background: var(--soft-gradient);
+            border-radius: 10px;
+        }
+        
+        .cta-section h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--slate-blue);
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .faq-item {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .faq-item h4 {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .faq-item p {
+            color: var(--slate-blue);
+        }
+        
+        /* Related Services */
+        .related-services {
+            padding: 80px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .service-content p {
+            color: var(--slate-blue);
+            margin-bottom: 20px;
+        }
+        
+        /* Contact Section */
         .contact {
             padding: 100px 0;
             background-color: var(--soft-peach);
@@ -261,7 +597,7 @@
             gap: 50px;
         }
         
-        .contact-info h3, .contact-form h3 {
+        .contact-info h3 {
             font-size: 1.8rem;
             color: var(--accent-color);
             margin-bottom: 30px;
@@ -281,6 +617,12 @@
             font-size: 1.3rem;
             color: var(--primary-color);
             margin-right: 15px;
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
         }
         
         .form-group {
@@ -305,6 +647,7 @@
             min-height: 150px;
         }
         
+        /* Footer Styles from Index */
         footer {
             background-color: var(--dark-color);
             color: var(--light-color);
@@ -394,6 +737,18 @@
             color: #bbb;
         }
         
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content, .two-columns {
+                flex-direction: column;
+            }
+            
+            .about-image, .about-text, .column {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -411,8 +766,16 @@
                 display: flex;
             }
             
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
             .hamburger {
                 display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
             }
             
             .contact-container {
@@ -422,6 +785,7 @@
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
             <nav>
@@ -447,6 +811,7 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h2>One-on-One Coaching</h2>
@@ -455,6 +820,72 @@
         </div>
     </section>
 
+    <!-- Introduction Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Personalized Transformation</h2>
+                <p>Experience the power of dedicated support tailored to your unique journey</p>
+            </div>
+            
+            <div class="content-block">
+                <div class="two-columns">
+                    <div class="column">
+                        <h3>What Is One-on-One Coaching?</h3>
+                        <p>Our one-on-one coaching sessions provide dedicated support tailored specifically to your unique needs, challenges, and goals. Work directly with a certified positive psychology coach who will guide you through your personal growth journey.</p>
+                        
+                        <p>At Lumina Rise, we believe that transformation happens most powerfully within the context of a supportive relationship. Your coach serves as both a guide and a partner, helping you navigate obstacles, identify opportunities, and create sustainable positive change in your life.</p>
+                        
+                        <p>Whether you're seeking to overcome specific challenges, develop new skills, or create a more fulfilling life aligned with your values, our personalized coaching approach meets you exactly where you are and helps you move forward with confidence.</p>
+                    </div>
+                    
+                    <div class="column">
+                        <div class="image-container">
+                            <img src="images/coachings.jpg" alt="One-on-one coaching session">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Benefits of One-on-One Coaching</h2>
+                <p>Why personalized support accelerates your growth and transformation</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h4>Personalized Approach</h4>
+                    <p>Sessions customized to address your specific challenges, goals, and learning style.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Safe Space</h4>
+                    <p>A confidential environment where you can speak openly about your struggles and aspirations.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-compass"></i>
+                    <h4>Expert Guidance</h4>
+                    <p>Direct access to a certified positive psychology coach with specialized training.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Accelerated Growth</h4>
+                    <p>Faster progress through focused attention and accountability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Experience Section -->
     <section class="experience-section" id="coaching">
         <div class="container">
             <div class="section-title">
@@ -463,6 +894,7 @@
             </div>
             
             <div class="experience-grid">
+                <!-- Discovery Session -->
                 <div class="experience-card">
                     <div>
                         <h4>Initial Discovery Session</h4>
@@ -471,6 +903,7 @@
                     <a href="#contact" class="btn">Free</a>
                 </div>
                 
+                <!-- Regular Sessions -->
                 <div class="experience-card">
                     <div>
                         <h4>Regular Sessions</h4>
@@ -479,6 +912,7 @@
                     <a href="#contact" class="btn">80 USD + 50 USD / month</a>
                 </div>
                 
+                <!-- Ongoing Support -->
                 <div class="experience-card">
                     <div>
                         <h4>Ongoing Support</h4>
@@ -487,10 +921,11 @@
                     <a href="#contact" class="btn">Included</a>
                 </div>
                 
+                <!-- Tailored Resources -->
                 <div class="experience-card">
                     <div>
                         <h4>Tailored Resources</h4>
-                        <span class="coming-soon">Coming Soon</span>
+                        <span class="coming-soon-label">Coming Soon</span>
                         <p>Access to personalized worksheets, exercises, and resources from our various toolkits, selected specifically to support your unique journey.</p>
                     </div>
                     <a href="#" class="btn" style="opacity: 0.7; cursor: not-allowed;">Coming Soon</a>
@@ -499,6 +934,22 @@
         </div>
     </section>
 
+
+    <!-- Book a One-on-One Consultation Section -->
+    <section class="consultation" style="padding: 100px 0; background-color: var(--soft-peach);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Book your one-on-one consultation</h2>
+                <p>Ready to take the next step in your self-development journey? I offer personalized consultations to help you unlock your potential and create meaningful change in your life.</p>
+            </div>
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <p style="color: var(--slate-blue); margin-bottom: 30px; font-size: 1.1rem;">Whether you're looking to build empowering habits, gain clarity on your goals, or explore the science of well-being, I'm here to support you.</p>
+                <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAYVbxl1UMEw3MkVLV0JTSVM0T0pHWklRUU9YQ0hHSi4u" class="btn" target="_blank" rel="noopener noreferrer">Schedule Your Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Updated to match Index) -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
@@ -513,6 +964,7 @@
                         <i class="fas fa-envelope"></i>
                         <p>Luminariseselfgrowth@gmail.com</p>
                     </div>
+                
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <p>Virtual services available worldwide</p>
@@ -544,17 +996,23 @@
                         <div class="form-group">
                             <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
                         </div>
+                        <!-- FormSubmit.co specific fields -->
                         <input type="hidden" name="_next" value="https://luminariseselfgrowth.github.io/Lumina-Rise-Self-Growth/index.html?message=success#contact">
                         <input type="hidden" name="_subject" value="New Contact Form Submission">
                         <input type="text" name="_honey" style="display:none">
                         <input type="hidden" name="_captcha" value="true">
                         <button type="submit" class="btn">Send Message</button>
                     </form>
+                    <div id="formMessages">
+                        <p class="success-message" style="display: none; color: green; padding: 10px; background-color: #e8f5e9; border-radius: 5px; margin-top: 20px;">Your message has been sent successfully!</p>
+                        <p class="error-message" style="display: none; color: red; padding: 10px; background-color: #ffebee; border-radius: 5px; margin-top: 20px;">There was a problem sending your message. Please try again.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer (Updated to match Index) -->
     <footer>
         <div class="container">
             <div class="footer-container">
@@ -583,6 +1041,8 @@
                         <li><a href="group-workshops.html">Group Workshops</a></li>
                         <li><a href="webinars.html">Inspirational Speaking Engagements</a></li>
                     </ul>
+                </div>
+                <div class="footer-col">
                 </div>
             </div>
             <div class="copyright">
