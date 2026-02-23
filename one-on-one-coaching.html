@@ -586,80 +586,93 @@
         }
         
         /* Contact Section */
-        .contact-section {
-            background-color: #fcf3e1;
-            padding: 60px 0;
-        }
-
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .contact-info, .contact-form {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .contact-info h2, .contact-form h2 {
-            color: #e8a35c;
-            margin-bottom: 20px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .contact-item i {
-            color: #e8a35c;
-            font-size: 18px;
-            margin-right: 10px;
-            width: 20px;
-        }
-
-        .contact-form form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            margin-bottom: 15px;
-            padding: 12px 15px;
-            border: none;
-            border-radius: 4px;
-            font-family: inherit;
-        }
-
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .send-btn {
-            background-color: #f8a44c;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-            align-self: flex-start;
-        }
-
-        .send-btn:hover {
-            background-color: #e8943c;
+        .contact {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
         }
         
-        /* Footer */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 20px;
+            color: var(--slate-blue);
+        }
+        
+        .contact-info .info-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info i {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+        }
+        
+        /* Footer Styles from Index */
         footer {
             background-color: var(--dark-color);
             color: var(--light-color);
             padding: 60px 0 20px;
+            background-image: url('images/footer-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(51, 51, 51, 0.7);
+            z-index: 0;
+        }
+
+        .footer-container, .copyright {
+            position: relative;
+            z-index: 1;
         }
         
         .footer-container {
@@ -953,25 +966,27 @@
                         <li>Monthly progress reviews</li>
                     </ul>
                     <p>Best for deep, lasting transformation</p>
-              <a href="index.html#contact" class="btn">Get Started</a>
+                    <a href="index.html#contact" class="btn">Get Started</a>
                 </div>
-
-<!-- Book a One-on-One Consultation Section -->
-<section class="consultation" style="padding: 100px 0; background-color: var(--soft-peach);">
-    <div class="container">
-        <div class="section-title">
-            <h2>Book your one-on-one consultation</h2>
-            <p>Ready to take the next step in your self-development journey? I offer personalized consultations to help you unlock your potential and create meaningful change in your life.</p>
+            </div>
         </div>
-        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-            <p style="color: var(--slate-blue); margin-bottom: 30px; font-size: 1.1rem;">Whether you're looking to build empowering habits, gain clarity on your goals, or explore the science of well-being, I'm here to support you.</p>
-            <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAYVbxl1UMEw3MkVLV0JTSVM0T0pHWklRUU9YQ0hHSi4u" class="btn" target="_blank" rel="noopener noreferrer">Schedule Your Consultation</a>
-        </div>
-    </div>
-</section>
-       </div>
+    </section>
 
-  <!-- Contact Section -->
+    <!-- Book a One-on-One Consultation Section -->
+    <section class="consultation" style="padding: 100px 0; background-color: var(--soft-peach);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Book your one-on-one consultation</h2>
+                <p>Ready to take the next step in your self-development journey? I offer personalized consultations to help you unlock your potential and create meaningful change in your life.</p>
+            </div>
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <p style="color: var(--slate-blue); margin-bottom: 30px; font-size: 1.1rem;">Whether you're looking to build empowering habits, gain clarity on your goals, or explore the science of well-being, I'm here to support you.</p>
+                <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAYVbxl1UMEw3MkVLV0JTSVM0T0pHWklRUU9YQ0hHSi4u" class="btn" target="_blank" rel="noopener noreferrer">Schedule Your Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Updated to match Index) -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
@@ -992,90 +1007,85 @@
                         <p>Virtual services available worldwide</p>
                     </div>
                     <div class="social-links">
-                      
                          <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
-                      
                         <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
-<div class="contact-form">
-    <h3>Send a Message</h3>
-    <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST">
-        <div class="form-group">
-            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-        </div>
-      <div class="form-group">
-    <select name="inquiry-type" class="form-control" required>
-        <option value="">I'm interested in...</option>
-        <option value="coaching">One-on-One Coaching</option>
-        <option value="workshop">Group Workshops</option>
-        <option value="speaking">Speaking Engagement</option>
-        <option value="toolkit">Toolkit Purchase</option>
-        <option value="other">General Inquiry</option>
-    </select>
-</div>
-
-        <div class="form-group">
-            <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
-        </div>
-        <!-- FormSubmit.co specific fields -->
-        <input type="hidden" name="_next" value="https://luminariseselfgrowth.github.io/Lumina-Rise-Self-Growth/index.html?message=success#contact">
-        <input type="hidden" name="_subject" value="New Contact Form Submission">
-        <input type="text" name="_honey" style="display:none">
-        <input type="hidden" name="_captcha" value="true">
-        <button type="submit" class="btn">Send Message</button>
-    </form>
-    <div id="formMessages">
-        <p class="success-message" style="display: none; color: green; padding: 10px; background-color: #e8f5e9; border-radius: 5px; margin-top: 20px;">Your message has been sent successfully!</p>
-        <p class="error-message" style="display: none; color: red; padding: 10px; background-color: #ffebee; border-radius: 5px; margin-top: 20px;">There was a problem sending your message. Please try again.</p>
-    </div>
-</div>
-        </div>
-
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="footer-container">
-            <div class="footer-col">
-                <h4>Lumina Rise Self-Growth</h4>
-                <p>Empowering women through self-care and personal growth tools, resources, and with support.</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="inquiry-type" class="form-control" required>
+                                <option value="">I'm interested in...</option>
+                                <option value="coaching">One-on-One Coaching</option>
+                                <option value="workshop">Group Workshops</option>
+                                <option value="speaking">Speaking Engagement</option>
+                                <option value="toolkit">Toolkit Purchase</option>
+                                <option value="other">General Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <!-- FormSubmit.co specific fields -->
+                        <input type="hidden" name="_next" value="https://luminariseselfgrowth.github.io/Lumina-Rise-Self-Growth/index.html?message=success#contact">
+                        <input type="hidden" name="_subject" value="New Contact Form Submission">
+                        <input type="text" name="_honey" style="display:none">
+                        <input type="hidden" name="_captcha" value="true">
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                    <div id="formMessages">
+                        <p class="success-message" style="display: none; color: green; padding: 10px; background-color: #e8f5e9; border-radius: 5px; margin-top: 20px;">Your message has been sent successfully!</p>
+                        <p class="error-message" style="display: none; color: red; padding: 10px; background-color: #ffebee; border-radius: 5px; margin-top: 20px;">There was a problem sending your message. Please try again.</p>
+                    </div>
                 </div>
             </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#toolbox">Toolbox</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Our Services</h4>
-                <ul>
-                    <li><a href="one-on-one-coaching.html">One-on-One Coaching</a></li>
-                    <li><a href="group-workshops.html">Group Workshops</a></li>
-                    <li><a href="webinars.html">Inspirational Speaking Engagements</a></li>
+        </div>
+    </section>
 
-                </ul>
+    <!-- Footer (Updated to match Index) -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Lumina Rise Self-Growth</h4>
+                    <p>Empowering women through self-care and personal growth tools, resources, and with support.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#toolbox">Toolbox</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="one-on-one-coaching.html">One-on-One Coaching</a></li>
+                        <li><a href="group-workshops.html">Group Workshops</a></li>
+                        <li><a href="webinars.html">Inspirational Speaking Engagements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                </div>
             </div>
-            <div class="footer-col">
-     
+            <div class="copyright">
+                <p>&copy; 2025 Lumina Rise Self-Growth. All Rights Reserved.</p>
             </div>
         </div>
-        <div class="copyright">
-            <p>&copy; 2025 Lumina Rise Self-Growth. All Rights Reserved.</p>
-        </div>
-    </div>
-</footer>
-<div class="footer-col">
-
-</div>
+    </footer>
+</body>
+</html>
