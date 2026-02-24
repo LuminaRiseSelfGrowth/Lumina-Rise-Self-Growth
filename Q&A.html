@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q&A: Your Guide to Growth | Lumina Rise Self-Growth | Where Self-Care Meets Self-Growth</title></title>
+    <title>Q&A: Your Guide to Growth | Lumina Rise Self-Growth</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -72,6 +72,11 @@
             color: var(--primary-color);
             margin: 0;
         }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--dark-color);
+        }
         
         .nav-links {
             display: flex;
@@ -89,35 +94,99 @@
             transition: color 0.3s;
         }
 
-        /* Hero Section */
-        .hero-small {
-            background: var(--dark-color);
-            color: var(--light-color);
-            padding: 120px 0 60px;
-            text-align: center;
-            position: relative;
+        .nav-links a:hover {
+            color: var(--primary-color);
         }
 
-     .hero::before {
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+
+        /* Language Selector */
+        .language-selector {
+            margin-left: 20px;
+        }
+
+        .lang-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 15px;
+            background: var(--gradient);
+            color: var(--light-color);
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Hero Section (Matched to Index) */
+        .hero {
+            background: var(--dark-color);
+            color: var(--light-color);
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('images/coaching-bg.jpg') center/cover no-repeat;
+            background: url('images/hero-bg.jpg') center/cover no-repeat;
             opacity: 0.3;
             z-index: 0;
         }
-
-        .hero-small h2 {
-            font-size: 2.5rem;
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--soft-peach);
         }
 
-        /* Table Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gradient);
+            color: var(--light-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Q&A Content Styles */
+        .qa-section {
+            padding: 100px 0 60px;
+        }
+
         .table-container {
             overflow-x: auto;
             margin: 40px 0;
@@ -145,15 +214,6 @@
             color: var(--slate-blue);
         }
 
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* Content Sections */
-        .qa-section {
-            padding: 60px 0;
-        }
-
         .qa-card {
             background: var(--soft-peach);
             padding: 30px;
@@ -168,7 +228,7 @@
         }
 
         .deep-dive {
-            padding: 60px 0;
+            padding: 80px 0;
             background: var(--soft-gradient);
         }
 
@@ -192,15 +252,11 @@
             padding-bottom: 10px;
         }
 
-        .list-column ul {
-            list-style: none;
-        }
-
         .list-column li {
             margin-bottom: 10px;
             padding-left: 25px;
             position: relative;
-            font-size: 0.95rem;
+            list-style: none;
         }
 
         .list-column li::before {
@@ -209,50 +265,162 @@
             left: 0;
         }
 
-        /* Footer */
+        /* Contact Section (Matched to Index) */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info h3, .contact-form h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Footer Styles (Matched to Index) */
         footer {
             background-color: var(--dark-color);
             color: var(--light-color);
             padding: 60px 0 20px;
-            text-align: center;
+            background-image: url('images/footer-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(51, 51, 51, 0.7);
+            z-index: 0;
+        }
+
+        .footer-container, .copyright {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul a { color: #bbb; text-decoration: none; }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: var(--light-color);
+            background-color: rgba(255,255,255,0.1);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s;
         }
 
         .copyright {
-            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
             padding-top: 20px;
-            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
             color: #bbb;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px; left: 0; right: 0;
+                background: var(--header-gradient);
+                flex-direction: column;
+                padding: 20px;
+            }
+            .hamburger { display: block; }
+            .hero h2 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header (Same as Index) -->
     <header>
         <div class="container">
             <nav>
                 <div class="logo">
                     <img src="images/logo.png" alt="Lumina Rise Logo">
                     <div class="logo-text">
-                        <h1>Lumina Rise | Where Self-Care Meets Self-Growth</title></h1>
+                        <h1>Lumina Rise Self-Growth</h1>
+                        <p>Where Self-Care Meets Self-Growth</p>
                     </div>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about-me.html">About</a></li>
                     <li><a href="index.html#toolbox">Toolbox</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="language-selector">
+                    <a href="index-fr.html" class="lang-btn" title="Version française">
+                        <i class="fas fa-globe"></i> FR
+                    </a>
+                </div>
             </nav>
         </div>
     </header>
 
-    <section class="hero-small">
+    <!-- Hero Section (Same as Index Style) -->
+    <section class="hero" id="home">
         <div class="container">
             <h2>Q&A: Understanding Your Journey</h2>
             <p>Clear answers to help you navigate Self-Development, Self-Growth, and Self-Care.</p>
+            <a href="#contact" class="btn">Start Your Journey</a>
         </div>
     </section>
 
+    <!-- Q&A Content -->
     <section class="qa-section">
         <div class="container">
             <div class="table-container">
@@ -284,7 +452,6 @@
                 </table>
             </div>
 
-            <!-- Clipboard Content -->
             <div class="qa-card">
                 <h3>1. What is self-development?</h3>
                 <p>Self-development is the intentional process of improving skills, knowledge, or abilities to achieve personal and professional goals. It’s about learning, practicing, and applying new competencies that make you more capable and confident.</p>
@@ -299,11 +466,6 @@
                 <h3>3. What is self-care?</h3>
                 <p>Self-care is the practice of actively taking care of your physical, mental, and emotional health. It’s about replenishing energy, maintaining balance, and preventing burnout. Self-care is essential for supporting both self-development and self-growth.</p>
             </div>
-
-            <div class="qa-card">
-                <h3>4. How do self-development, self-growth, and self-care relate?</h3>
-                <p>Self-development builds skills that help you achieve goals. Self-growth transforms your mindset and emotional resilience. Self-care sustains your energy, health, and balance to support both growth and development.</p>
-            </div>
         </div>
     </section>
 
@@ -311,72 +473,130 @@
     <section class="deep-dive">
         <div class="container">
             <div class="list-grid">
-                <!-- Self-Development -->
                 <div class="list-column">
                     <h3>1. Self-Development</h3>
-                    <p><small>Building Skills and Knowledge</small></p>
                     <ul>
                         <li>Learning a new language</li>
                         <li>Practicing coding to build a website</li>
                         <li>Improving public speaking</li>
                         <li>Reading personal development books</li>
                         <li>Taking online courses (Art, Design)</li>
-                        <li>Managing money and budgeting</li>
-                        <li>Practicing a musical instrument</li>
-                        <li>Learning graphic design or video editing</li>
-                        <li>Training in leadership or teamwork</li>
-                        <li>Learning first aid or survival skills</li>
                     </ul>
                 </div>
-
-                <!-- Self-Growth -->
                 <div class="list-column">
                     <h3>2. Self-Growth</h3>
-                    <p><small>Transforming Mindset and Character</small></p>
                     <ul>
                         <li>Journaling daily thoughts</li>
                         <li>Practicing gratitude each morning</li>
                         <li>Reflecting on mistakes</li>
                         <li>Meditating for self-awareness</li>
                         <li>Challenging negative thoughts</li>
-                        <li>Practicing empathy and listening</li>
-                        <li>Engaging in volunteer work</li>
-                        <li>Creating a vision board</li>
-                        <li>Building resilience with difficult tasks</li>
-                        <li>Exploring creative outlets for expression</li>
                     </ul>
                 </div>
-
-                <!-- Self-Care -->
                 <div class="list-column">
                     <h3>3. Self-Care</h3>
-                    <p><small>Maintaining Health and Wellbeing</small></p>
                     <ul>
                         <li>Sleeping 7–9 hours each night</li>
                         <li>Eating balanced, nutritious meals</li>
                         <li>Drinking enough water daily</li>
                         <li>Exercising regularly (Yoga, walking)</li>
                         <li>Going for a walk in nature</li>
-                        <li>Spending time with loved ones</li>
-                        <li>Limiting social media/screen time</li>
-                        <li>Decluttering your workspace</li>
-                        <li>Setting boundaries (Saying "no")</li>
-                        <li>Creating a relaxing bedtime routine</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact Section (Same as Index) -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title" style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px;">Get in Touch</h2>
+                <p style="color: var(--slate-blue);">Ready to start your self-growth journey? Reach out today to see how we can support your transformation.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>I'd love to hear from you. Reach out with any questions about coaching, workshops, or the toolkits.</p>
+                    <div class="info-item" style="display: flex; margin-bottom: 20px;">
+                        <i class="fas fa-envelope" style="color: var(--primary-color); margin-right: 15px;"></i>
+                        <p>Luminariseselfgrowth@gmail.com</p>
+                    </div>
+                    <div class="info-item" style="display: flex; margin-bottom: 20px;">
+                        <i class="fas fa-map-marker-alt" style="color: var(--primary-color); margin-right: 15px;"></i>
+                        <p>Virtual services available worldwide</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="inquiry-type" class="form-control" required>
+                                <option value="">I'm interested in...</option>
+                                <option value="coaching">One-on-One Coaching</option>
+                                <option value="workshop">Group Workshops</option>
+                                <option value="toolkit">Toolkit Purchase</option>
+                                <option value="other">General Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" placeholder="Your Message" style="min-height: 150px;" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Index) -->
     <footer>
         <div class="container">
-            <h4>Lumina Rise Self-Growth</h4>
-            <p>Empowering women through self-care and personal growth tools.</p>
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Lumina Rise Self-Growth</h4>
+                    <p>Empowering women through self-care and personal growth tools, resources, and support.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-me.html">About</a></li>
+                        <li><a href="index.html#toolbox">Toolbox</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="copyright">
                 <p>&copy; 2025 Lumina Rise Self-Growth. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        if(hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
 </html>
