@@ -901,91 +901,133 @@ footer::before {
 </style>
 
 
-
-
 <!-- Toolbox Section -->
 <section class="toolbox" id="toolbox">
     <div class="container">
         <div class="section-title">
             <h2>The Toolbox Concept</h2>
-            <p>Your life is your greatest creation, and every creator needs the right tools. Just as a builder wouldn't construct a home without blueprints and proper equipment, you shouldn't navigate life's complexities without resources designed for your success. Your journey is entirely your own, shaped by your experiences, dreams, and the courage to keep moving forward.
-
-These toolkits are your blueprint for transformation, each one crafted to help you build confidence, overcome obstacles, and design a life that feels authentically yours. They're not just resources; they're your companions on the path to becoming who you're meant to be. The life you've been dreaming of is waiting, and it starts with taking that first intentional step.</p>
+            <p>Your life is your greatest creation, and every creator needs the right tools. Just as a builder wouldn't construct a home without blueprints and proper equipment, you shouldn't navigate life's complexities without resources designed for your success.</p>
         </div>
         <div class="toolkits">
             <div class="toolkit-card">
                 <i class="fas fa-heart"></i>
-                <h3>The Self-Care Toolkit <span style="display: inline;">(73 pages)</span></h3>
-                <p>Nurture your soul and recharge your spirit with daily practices, mindfulness guides, relaxation techniques, and self-nurturing routines.</p>
+                <h3>The Self-Care Toolkit <span>(73 pages)</span></h3>
+                <p>Nurture your soul and recharge your spirit with daily practices, mindfulness guides, and self-nurturing routines.</p>
                 <a href="toolkits/self-care.html" class="btn">Explore Toolkit</a>
             </div>
             <div class="toolkit-card">
                 <i class="fas fa-seedling"></i>
-                <h3>The Personal Growth Toolkit <span style="display: inline;">(78 pages)</span></h3>
-                <p>Strategies to evolve and thrive through goal-setting exercises, reflective journaling prompts, and strategies for overcoming personal barriers.</p>
+                <h3>The Personal Growth Toolkit <span>(78 pages)</span></h3>
+                <p>Strategies to evolve and thrive through goal-setting exercises and reflective journaling prompts.</p>
                 <a href="toolkits/personal-growth.html" class="btn">Explore Toolkit</a>
             </div>
-
             <div class="toolkit-card">
                 <i class="fas fa-fist-raised"></i>
-                <h3>Empowerment Essentials <span style="display: inline;">- Coming Soon</span></h3>
-                <p>Tools to build unshakeable confidence with confidence-boosting activities, affirmations, and leadership development modules.</p>
+                <h3>Empowerment Essentials <span>- Coming Soon</span></h3>
+                <p>Tools to build unshakeable confidence with confidence-boosting activities and leadership modules.</p>
                 <a href="toolkits/empowerment.html" class="btn">Explore Toolkit</a>
             </div>
-
+        </div> <!-- Added missing closing div for toolkits -->
+    </div> <!-- Added missing closing div for container -->
+</section> <!-- Added missing closing section for toolbox -->
+<!-- Q&A Section -->
 <section class="qa-section" id="qa">
-        <div class="container">
-            <div class="section-title">
-                <h2>Q&A: Understanding Your Journey</h2>
-                <p>Clear answers to the most common questions about personal evolution.</p>
+    <div class="container">
+        <div class="section-title">
+            <h2>Q&A: Understanding Your Journey</h2>
+            <p>Clear answers to the most common questions about personal evolution.</p>
+        </div>
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="q-and-a.html" class="btn">View Full Q&A Guide</a>
+        </div>
+    </div>
+</section>
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Get in Touch</h2>
+            <p>Ready to start your self-growth journey? Reach out today to see how we can support your transformation.</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>I'd love to hear from you. Reach out with any questions about coaching, workshops, or the toolkits.</p>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>Luminariseselfgrowth@gmail.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Virtual services available worldwide</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+                </div>
             </div>
 
-   
-            <div class="qa-table-wrapper">
-                <table class="qa-table">
-                    <thead>
-                        <tr>
-                            <th>Category</th>
-                            <th>Focus</th>
-                            <th>Examples</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Self-Development</strong></td>
-                            <td>Skills, knowledge, productivity</td>
-                            <td>Learning coding, public speaking, cooking, finance</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Self-Growth</strong></td>
-                            <td>Mindset, resilience, character</td>
-                            <td>Journaling, gratitude, patience, confidence</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Self-Care</strong></td>
-                            <td>Physical & mental well-being</td>
-                            <td>Sleep, exercise, hobbies, boundaries</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="q-and-a.html" class="btn">View Full Q&A Guide</a>
+            <div class="contact-form">
+                <h3>Send a Message</h3>
+                <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <select name="inquiry-type" class="form-control" required>
+                            <option value="">I'm interested in...</option>
+                            <option value="coaching">One-on-One Coaching</option>
+                            <option value="workshop">Group Workshops</option>
+                            <option value="speaking">Speaking Engagement</option>
+                            <option value="toolkit">Toolkit Purchase</option>
+                            <option value="other">General Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
+                    </div>
+                    
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_next" value="https://luminarise.ca/thank-you.html">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_captcha" value="true">
+                    
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <h4>Lumina Rise Self-Growth</h4>
-            <p>Where Self-Care Meets Self-Growth</p>
-            <div class="copyright">
-                <p>&copy; 2025 Lumina Rise Self-Growth. All Rights Reserved.</p>
+    </div>
+</section>
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Lumina Rise Self-Growth</h4>
+                <p>Empowering women through self-care and personal growth tools, resources, and support.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#toolbox">Toolbox</a></li>
+                    <li><a href="#services">Services</a></li>
+                </ul>
             </div>
         </div>
-    </footer>
-
+        <div class="copyright">
+            <p>&copy; 2025 Lumina Rise Self-Growth. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
