@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A: Your Guide to Growth | Lumina Rise Self-Growth</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff7f30;
+            --secondary-color: #ffe577;
+            --accent-color: #fda63a;
+            --text-color: #333;
+            --light-color: #fff;
+            --dark-color: #333;
+            --slate-blue: #5d6d7e;
+            --soft-peach: #fff2d9;
+            --soft-pink: #ffcfcf;
+            --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577);
+            --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb);
+            --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--header-gradient);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        /* Hero Section */
+        .hero-small {
+            background: var(--dark-color);
+            color: var(--light-color);
+            padding: 120px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-small h2 {
+            font-size: 2.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Table Styles */
+        .table-container {
+            overflow-x: auto;
+            margin: 40px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        th {
+            background: var(--gradient);
+            color: white;
+            text-align: left;
+            padding: 15px;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            color: var(--slate-blue);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Content Sections */
+        .qa-section {
+            padding: 60px 0;
+        }
+
+        .qa-card {
+            background: var(--soft-peach);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .qa-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .deep-dive {
+            padding: 60px 0;
+            background: var(--soft-gradient);
+        }
+
+        .list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .list-column {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .list-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--soft-peach);
+            padding-bottom: 10px;
+        }
+
+        .list-column ul {
+            list-style: none;
+        }
+
+        .list-column li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .list-column li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 60px 0 20px;
+            text-align: center;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="images/logo.png" alt="Lumina Rise Logo">
+                    <div class="logo-text">
+                        <h1>Lumina Rise</h1>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-me.html">About</a></li>
+                    <li><a href="index.html#toolbox">Toolbox</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-small">
+        <div class="container">
+            <h2>Q&A: Understanding Your Journey</h2>
+            <p>Clear answers to help you navigate Self-Development, Self-Growth, and Self-Care.</p>
+        </div>
+    </section>
+
+    <section class="qa-section">
+        <div class="container">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Focus</th>
+                            <th>Examples</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Self-Development</strong></td>
+                            <td>Skills, knowledge, productivity</td>
+                            <td>Learning coding, public speaking, cooking, leadership, art, finance</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Self-Growth</strong></td>
+                            <td>Mindset, emotional resilience, character</td>
+                            <td>Journaling, gratitude, patience, empathy, confidence, reflection</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Self-Care</strong></td>
+                            <td>Physical, mental, emotional well-being</td>
+                            <td>Sleep, exercise, hobbies, relaxation, boundaries, nature</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Clipboard Content -->
+            <div class="qa-card">
+                <h3>1. What is self-development?</h3>
+                <p>Self-development is the intentional process of improving skills, knowledge, or abilities to achieve personal and professional goals. It’s about learning, practicing, and applying new competencies that make you more capable and confident.</p>
+            </div>
+
+            <div class="qa-card">
+                <h3>2. What is self-growth?</h3>
+                <p>Self-growth is the deeper, ongoing process of becoming a better version of yourself emotionally, mentally, and spiritually. Unlike self-development, which focuses on skills, self-growth is about personal transformation, mindset, and character development.</p>
+            </div>
+
+            <div class="qa-card">
+                <h3>3. What is self-care?</h3>
+                <p>Self-care is the practice of actively taking care of your physical, mental, and emotional health. It’s about replenishing energy, maintaining balance, and preventing burnout. Self-care is essential for supporting both self-development and self-growth.</p>
+            </div>
+
+            <div class="qa-card">
+                <h3>4. How do self-development, self-growth, and self-care relate?</h3>
+                <p>Self-development builds skills that help you achieve goals. Self-growth transforms your mindset and emotional resilience. Self-care sustains your energy, health, and balance to support both growth and development.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive Sections -->
+    <section class="deep-dive">
+        <div class="container">
+            <div class="list-grid">
+                <!-- Self-Development -->
+                <div class="list-column">
+                    <h3>1. Self-Development</h3>
+                    <p><small>Building Skills and Knowledge</small></p>
+                    <ul>
+                        <li>Learning a new language</li>
+                        <li>Practicing coding to build a website</li>
+                        <li>Improving public speaking</li>
+                        <li>Reading personal development books</li>
+                        <li>Taking online courses (Art, Design)</li>
+                        <li>Managing money and budgeting</li>
+                        <li>Practicing a musical instrument</li>
+                        <li>Learning graphic design or video editing</li>
+                        <li>Training in leadership or teamwork</li>
+                        <li>Learning first aid or survival skills</li>
+                    </ul>
+                </div>
+
+                <!-- Self-Growth -->
+                <div class="list-column">
+                    <h3>2. Self-Growth</h3>
+                    <p><small>Transforming Mindset and Character</small></p>
+                    <ul>
+                        <li>Journaling daily thoughts</li>
+                        <li>Practicing gratitude each morning</li>
+                        <li>Reflecting on mistakes</li>
+                        <li>Meditating for self-awareness</li>
+                        <li>Challenging negative thoughts</li>
+                        <li>Practicing empathy and listening</li>
+                        <li>Engaging in volunteer work</li>
+                        <li>Creating a vision board</li>
+                        <li>Building resilience with difficult tasks</li>
+                        <li>Exploring creative outlets for expression</li>
+                    </ul>
+                </div>
+
+                <!-- Self-Care -->
+                <div class="list-column">
+                    <h3>3. Self-Care</h3>
+                    <p><small>Maintaining Health and Wellbeing</small></p>
+                    <ul>
+                        <li>Sleeping 7–9 hours each night</li>
+                        <li>Eating balanced, nutritious meals</li>
+                        <li>Drinking enough water daily</li>
+                        <li>Exercising regularly (Yoga, walking)</li>
+                        <li>Going for a walk in nature</li>
+                        <li>Spending time with loved ones</li>
+                        <li>Limiting social media/screen time</li>
+                        <li>Decluttering your workspace</li>
+                        <li>Setting boundaries (Saying "no")</li>
+                        <li>Creating a relaxing bedtime routine</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h4>Lumina Rise Self-Growth</h4>
+            <p>Empowering women through self-care and personal growth tools.</p>
+            <div class="copyright">
+                <p>&copy; 2025 Lumina Rise Self-Growth. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
