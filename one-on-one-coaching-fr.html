@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching Individuel | Lumina Rise Épanouissement Personnel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff7f30; /* Orange vibrant du logo */
+            --secondary-color: #ffe577; /* Or doux/jaune de la palette */
+            --accent-color: #fda63a; /* Ambre chaleureux */
+            --text-color: #333;
+            --light-color: #fff;
+            --dark-color: #333; /* Texte plus sombre pour l'en-tête */
+            --slate-blue: #5d6d7e; /* Bleu ardoise pour le texte sur fond clair */
+            --soft-peach: #fff2d9; /* Fond pêche doux */
+            --soft-pink: #ffcfcf; /* Accent rose doux */
+            --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577); /* Dégradé orange à or */
+            --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb); /* Dégradé de fond doux */
+            --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad); /* Dégradé jaune/orange pâle pour l'en-tête */
+        }
+
+        ul li {
+            color: var(--slate-blue) !important;
+        }
+
+        .column ul li {
+            color: var(--slate-blue) !important;
+        }
+
+        ul li, ol li, .content-block ul li, .about-text ul li {
+            color: var(--slate-blue) !important;
+        }
+
+        .hero p {
+            color: var(--soft-peach) !important; 
+        }
+
+        .footer-col p, .copyright p {
+            color: #bbb !important; 
+        }
+
+        .section-title h2 {
+            color: var(--primary-color) !important;
+        }
+
+        .toolkit-card h3, .tool-card h3, .about-text h3, .content-block h3 {
+            color: var(--accent-color) !important;
+        }
+
+        .footer-col h4 {
+            color: var(--accent-color) !important;
+        }
+
+        .footer-col p, .footer-col ul li a, .copyright p {
+            color: #bbb !important;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: var(--header-gradient);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--dark-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .hero {
+            background: var(--dark-color);
+            color: var(--light-color);
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/coaching-bg.jpg') center/cover no-repeat;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--soft-peach);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gradient);
+            color: var(--light-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+        }
+        
+        .content-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--slate-blue);
+        }
+        
+        .content-block {
+            margin-bottom: 60px;
+        }
+        
+        .content-block h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .content-block p {
+            color: var(--slate-blue);
+            margin-bottom: 15px;
+        }
+        
+        .two-columns {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            margin-top: 40px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .image-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .image-container img {
+            width: 100%;
+            display: block;
+        }
+        
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .benefit-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .benefit-card p {
+            color: var(--slate-blue);
+        }
+        
+        .experience-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .experience-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .experience-card h4 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .experience-card p {
+            color: var(--slate-blue);
+            margin-bottom: 10px;
+        }
+        
+        .packages-section {
+            padding: 80px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .package-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .package-card h4 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .package-card .package-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .package-card ul {
+            list-style: none;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .package-card ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .package-card ul li:before {
+            content: '✓';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        .package-card.featured {
+            border: 2px solid var(--accent-color);
+            transform: scale(1.05);
+        }
+        
+        .package-card.featured:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+        
+        .featured-tag {
+            position: absolute;
+            top: 0;
+            right: 30px;
+            background: var(--accent-color);
+            color: var(--light-color);
+            padding: 5px 15px;
+            font-size: 0.9rem;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .testimonials-section {
+            padding: 80px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            color: rgba(253,166,58,0.1);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            line-height: 1;
+        }
+        
+        .testimonial-card p {
+            color: var(--slate-blue);
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author p {
+            margin: 0;
+            font-style: normal;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 80px;
+            padding: 60px 0;
+            background: var(--soft-gradient);
+            border-radius: 10px;
+        }
+        
+        .cta-section h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--slate-blue);
+        }
+        
+        .faq-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .faq-item {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .faq-item h4 {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .faq-item p {
+            color: var(--slate-blue);
+        }
+        
+        .related-services {
+            padding: 80px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .service-content p {
+            color: var(--slate-blue);
+            margin-bottom: 20px;
+        }
+        
+        .contact-section {
+            background-color: #fcf3e1;
+            padding: 60px 0;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h2, .contact-form h2 {
+            color: #e8a35c;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            color: #e8a35c;
+            font-size: 18px;
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            margin-bottom: 15px;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .send-btn {
+            background-color: #f8a44c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .send-btn:hover {
+            background-color: #e8943c;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--light-color);
+            background-color: rgba(255,255,255,0.1);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        
+        @media (max-width: 992px) {
+            .about-content, .two-columns {
+                flex-direction: column;
+            }
+            
+            .about-image, .about-text, .column {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--header-gradient);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="images/logo.png" alt="Logo Lumina Rise">
+                    <div class="logo-text">
+                        <h1>Lumina Rise Épanouissement Personnel</h1>
+                        <p>Là où le soin de soi rencontre l'épanouissement personnel</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index-fr.html">Accueil</a></li>
+                    <li><a href="index-fr.html#about">À propos</a></li>
+                    <li><a href="index-fr.html#toolbox">Boîte à outils</a></li>
+                    <li><a href="index-fr.html#services">Services</a></li>
+                    <li><a href="Q&A-fr.html#Q&A">F.A.Q.</a></li>
+                    <li><a href="index-fr.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+<!-- Language Selector -->
+<div class="language-selector">
+    <a href="one-on-one-coaching.html" class="lang-btn" title="English version">
+        <i class="fas fa-globe"></i> EN
+    </a>
+</div>
+    </header>
+
+    <!-- Section Hero -->
+    <section class="hero">
+        <div class="container">
+            <h2>Coaching Individuel</h2>
+            <p>Un accompagnement personnalisé pour vous aider à libérer tout votre potentiel</p>
+            <a href="#coaching" class="btn">Explorer le coaching</a>
+        </div>
+    </section>
+
+    <!-- Section Introduction -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Transformation Personnalisée</h2>
+                <p>Découvrez la puissance d'un soutien dédié, adapté à votre parcours unique</p>
+            </div>
+            
+            <div class="content-block">
+                <div class="two-columns">
+                    <div class="column">
+                        <h3>Qu'est-ce que le coaching individuel ?</h3>
+                        <p>Nos séances de coaching individuel offrent un soutien dédié, spécifiquement adapté à vos besoins, défis et objectifs uniques. Travaillez directement avec une coach certifiée en psychologie positive qui vous guidera tout au long de votre parcours de croissance personnelle.</p>
+                        
+                        <p>Chez Lumina Rise, nous croyons que la transformation est plus puissante lorsqu'elle s'inscrit dans le cadre d'une relation de soutien. Votre coach agit à la fois comme guide et partenaire, vous aidant à surmonter les obstacles, à identifier les opportunités et à créer un changement positif durable dans votre vie.</p>
+                        
+                        <p>Que vous cherchiez à surmonter des défis spécifiques, à développer de nouvelles compétences ou à créer une vie plus épanouissante en accord avec vos valeurs, notre approche de coaching personnalisé vous rejoint exactement là où vous en êtes et vous aide à avancer avec confiance.</p>
+                    </div>
+                    
+                    <div class="column">
+                        <div class="image-container">
+                            <img src="images/coachings.jpg" alt="Séance de coaching individuel">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Avantages -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Avantages du coaching individuel</h2>
+                <p>Pourquoi un soutien personnalisé accélère votre croissance et votre transformation</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h4>Approche Personnalisée</h4>
+                    <p>Des séances sur mesure pour répondre à vos défis, objectifs et style d'apprentissage spécifiques.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Espace Sécurisé</h4>
+                    <p>Un environnement confidentiel où vous pouvez parler ouvertement de vos luttes et de vos aspirations.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-compass"></i>
+                    <h4>Accompagnement Expert</h4>
+                    <p>Accès direct à une coach certifiée en psychologie positive ayant suivi une formation spécialisée.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Croissance Accélérée</h4>
+                    <p>Des progrès plus rapides grâce à une attention focalisée et une responsabilisation accrue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Expérience -->
+    <section class="experience-section" id="coaching">
+        <div class="container">
+            <div class="section-title">
+                <h2>L'Expérience de Coaching</h2>
+                  <p>L'expérience de coaching est conçue pour être un voyage transformateur ancré dans la psychologie positive et plus d'une décennie d'expertise en développement personnel. Plutôt qu'une simple séance isolée, chaque expérience offre une approche globale de la croissance personnelle, adaptée spécifiquement pour aider les femmes à cultiver des habitudes durables et le bien-être. <strong>Quel que soit l'accompagnement choisi,</strong> chaque parcours doit commencer par une <strong>séance de découverte initiale</strong> afin d'établir vos objectifs et d'assurer une base pour des progrès significatifs.</p>
+        </div>
+            
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h4>Séance de découverte initiale</h4>
+                    <p>Ceci est votre consultation GRATUITE.
+Pour commencer, remplissez simplement le formulaire en cliquant sur le bouton « Planifiez votre consultation » ci-dessous.
+
+Nous débuterons par une séance complète conçue pour comprendre votre situation actuelle, les défis auxquels vous faites face et les objectifs que vous espérez atteindre.</p>
+                    <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAYVbxl1UMEw3MkVLV0JTSVM0T0pHWklRUU9YQ0hHSi4u" class="btn" target="_blank" rel="noopener noreferrer">Planifiez votre consultation</a>
+                      </div>
+                
+                <div class="experience-card">
+                    <h4>Séances régulières</h4>
+                    <p>Séances bihebdomadaires conçues pour réfléchir aux progrès, explorer les défis et mettre en œuvre des stratégies pratiques qui soutiennent votre croissance et votre transformation à long terme. La durée de notre travail ensemble est personnalisée en fonction de vos objectifs, avec des options flexibles incluant des séances individuelles ou des forfaits à plus long terme.
+
+<h4>USD 80 par séance</h4>
+</p>
+                </div>
+  <div class="experience-card">
+                    <h4>Engagement de croissance de 3 mois</h4>
+                    <p>Conçu pour les clientes qui souhaitent une transformation structurée et cohérente. 6 séances bihebdomadaires et un soutien continu (normalement USD 50 par mois).
+<h4>USD 450</h4></p>
+                </div>                
+                <div class="experience-card">
+                    <h4>Soutien continu</h4>
+                    <p>Ceci est un complément aux séances régulières. Un soutien par courriel entre les séances pour répondre aux questions ou aux défis qui surviennent alors que vous appliquez de nouvelles compétences et mentalités dans votre vie quotidienne. Inclus sans frais supplémentaires avec le forfait de 3 mois.
+
+<h4>USD 50 par mois</h4></p>
+                </div>
+   
+                          
+                <div class="experience-card">
+                    <h4>Ressources sur mesure</h4>
+                    <p>Accès à des fiches de travail personnalisées, des exercices et des ressources provenant de nos diverses boîtes à outils, sélectionnés spécifiquement pour soutenir votre parcours unique.</p>
+                <h4>À venir</h4> </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- Section Consultation -->
+<section class="consultation" style="padding: 100px 0; background-color: var(--soft-peach);">
+    <div class="container">
+        <div class="section-title">
+            <h2>Réservez votre consultation individuelle</h2>
+            <p>Prête à franchir la prochaine étape de votre parcours de développement personnel ? J'offre des consultations personnalisées pour vous aider à libérer votre potentiel et à créer un changement significatif dans votre vie.</p>
+        </div>
+        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+            <p style="color: var(--slate-blue); margin-bottom: 30px; font-size: 1.1rem;">Que vous cherchiez à instaurer des habitudes valorisantes, à clarifier vos objectifs ou à explorer la science du bien-être, je suis là pour vous soutenir.</p>
+            <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAYVbxl1UMEw3MkVLV0JTSVM0T0pHWklRUU9YQ0hHSi4u" class="btn" target="_blank" rel="noopener noreferrer">Planifiez votre consultation</a>
+        </div>
+    </div>
+</section>
+
+<!-- Pied de page -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Lumina Rise Épanouissement Personnel</h4>
+                <p>Autonomiser les femmes grâce à des outils de soin de soi et de croissance personnelle, des ressources et un soutien dédié.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#toolbox">Boîte à outils</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Témoignages</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Nos Services</h4>
+                <ul>
+                    <li><a href="one-on-one-coaching.html">Coaching Individuel</a></li>
+                    <li><a href="group-workshops.html">Ateliers de Groupe</a></li>
+                    <li><a href="webinars.html">Conférences Inspirantes</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+     
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Lumina Rise Épanouissement Personnel. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
