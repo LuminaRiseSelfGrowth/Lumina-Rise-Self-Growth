@@ -96,6 +96,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
+ 	    width: 100%;
         }
         
         .logo {
@@ -122,16 +123,20 @@
         .nav-links {
             display: flex;
             list-style: none;
+	    margin: 0;
+ 	   padding: 0;
+ 	   align-items: center;
         }
         
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 25px;
         }
         
         .nav-links a {
             text-decoration: none;
             color: var(--dark-color);
             font-weight: 500;
+  	    font-size: 1rem;
             transition: color 0.3s;
         }
         
@@ -141,11 +146,10 @@
         
         .hamburger {
             display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--dark-color);
+
         }
         
+
         /* Hero Section */
         .hero {
             background: var(--dark-color);
@@ -622,6 +626,7 @@ footer::before {
 <header>
     <div class="container">
         <nav>
+            <!-- Logo Section -->
             <div class="logo">
                 <img src="images/logo.png" alt="Lumina Rise Logo">
                 <div class="logo-text">
@@ -630,6 +635,7 @@ footer::before {
                 </div>
             </div>
             
+            <!-- Navigation Links -->
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about-me.html">About</a></li>
@@ -639,6 +645,7 @@ footer::before {
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             
+            <!-- Hamburger Icon (Hidden on Desktop) -->
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
@@ -651,7 +658,7 @@ footer::before {
             </div>
         </nav>
     </div>
-</header> 
+</header>
  <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
