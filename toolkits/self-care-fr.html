@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Boîte à Outils de Soins Personnels | Lumina Rise Croissance Personnelle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+           
+:root {
+    --primary-color: #ff7f30; /* Orange vibrant de votre logo */
+    --secondary-color: #ffe577; /* Or doux/jaune de votre palette */
+    --accent-color: #fda63a; /* Accent ambre chaud */
+    --text-color: #333;
+    --light-color: #fff;
+    --dark-color: #333; /* Texte plus sombre pour l'en-tête */
+    --slate-blue: #5d6d7e; /* Bleu ardoise pour le texte sur fond clair */
+    --soft-peach: #fff2d9; /* Fond pêche douce */
+    --soft-pink: #ffcfcf; /* Accent rose doux */
+    --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577); /* Dégradé orange vers or */
+    --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb); /* Dégradé de fond doux */
+    --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad); /* Dégradé orange pâle/jaune pour l'en-tête */
+    
+    /* Variables de Typographie */
+    --heading-font-size: 2.5rem;
+    --subheading-font-size: 1.8rem;
+    --subtitle-font-size: 1.1rem;
+    --body-font-size: 1rem;
+    --small-font-size: 0.9rem;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif !important;
+    color: var(--slate-blue) !important;
+    line-height: 1.6 !important;
+    font-size: var(--body-font-size) !important;
+    margin-bottom: 15px !important;
+}
+
+.hero p {
+    color: var(--soft-peach) !important;
+}
+
+.footer-col p, .copyright p {
+    color: #bbb !important;
+}
+
+.logo-text p {
+    font-size: 0.8rem !important;
+    color: var(--dark-color) !important;
+    margin-bottom: 0 !important;
+}
+
+span {
+    font-family: 'Montserrat', sans-serif !important;
+    color: var(--slate-blue) !important;
+    line-height: 1.6 !important;
+    font-size: var(--body-font-size) !important;
+}
+
+.info-item span {
+    color: var(--slate-blue) !important;
+}
+
+li {
+    font-family: 'Montserrat', sans-serif !important;
+    color: var(--slate-blue) !important;
+    line-height: 1.6 !important;
+    font-size: var(--body-font-size) !important;
+}
+
+.footer-col ul li a {
+    color: #bbb !important;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: var(--header-gradient);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--dark-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .hero {
+            background: var(--dark-color);
+            color: var(--light-color);
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../images/self-care-bg.jpg') center/cover no-repeat;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--soft-peach);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gradient);
+            color: var(--light-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+        }
+        
+        .about {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+     .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--slate-blue);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        
+        .about-image {
+            flex: 1;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            color: var(--slate-blue);
+            margin-bottom: 15px;
+        }
+        
+        .toolbox {
+            padding: 50px 0 100px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .toolkits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .toolkit-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .toolkit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .toolkit-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .toolkit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .toolkit-card p {
+            color: var(--slate-blue);
+        }
+        
+        .services {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background: var(--soft-peach);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .service-content p {
+            color: var(--slate-blue);
+        }
+        
+        .testimonials {
+            padding: 100px 0;
+            background: var(--soft-gradient);
+        }
+        
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial-card {
+            background: var(--light-color);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--slate-blue);
+        }
+        
+        .client {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .client-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 3px solid var(--accent-color);
+        }
+        
+        .client-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .client-info h4 {
+            color: var(--primary-color);
+        }
+        
+        .client-info p {
+            font-size: 0.9rem;
+            margin: 0;
+            font-style: normal;
+            color: var(--slate-blue);
+        }
+        
+        .contact {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 20px;
+            color: var(--slate-blue);
+        }
+        
+        .contact-info .info-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info i {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--light-color);
+            background-color: rgba(255,255,255,0.1);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        
+        .content-section {
+            padding: 100px 0;
+            background-color: var(--soft-peach);
+        }
+        
+        .content-block {
+            margin-bottom: 60px;
+        }
+        
+        .content-block h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .content-block p {
+            color: var(--slate-blue);
+            margin-bottom: 15px;
+        }
+        
+        .two-columns {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            margin-top: 40px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .image-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .image-container img {
+            width: 100%;
+            display: block;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .tool-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .tool-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .tool-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .tool-card p {
+            color: var(--slate-blue);
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 80px;
+            padding: 60px 0;
+            background: var(--soft-gradient);
+            border-radius: 10px;
+        }
+        
+        .cta-section h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--slate-blue);
+        }
+        
+        .back-button {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        @media (max-width: 992px) {
+            .about-content, .two-columns {
+                flex-direction: column;
+            }
+            
+            .about-image, .about-text, .column {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--header-gradient);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Logo Lumina Rise">
+                    <div class="logo-text">
+                        <h1>Lumina Rise Croissance Personnelle</h1>
+                        <p>Où le soin de soi rencontre l'épanouissement</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../index.html#about">À propos</a></li>
+                    <li><a href="../index.html#toolbox">Boîte à outils</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#testimonials">Témoignages</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section Hero -->
+    <section class="hero">
+        <div class="container">
+            <h2>La Boîte à Outils de Soins Personnels</h2>
+            <p>Nourrissez votre âme et rechargez votre esprit avec des pratiques quotidiennes, des guides de pleine conscience, des techniques de relaxation et des routines d'auto-soin.</p>
+            <a href="#tools" class="btn">Explorer les outils</a>
+        </div>
+    </section>
+
+    <!-- Section Introduction -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>À propos des soins personnels</h2>
+                <p>Comprendre l'importance de se donner la priorité et de veiller à son bien-être</p>
+            </div>
+            
+            <div class="content-block">
+                <h3>Qu'est-ce que le soin personnel ?</h3>
+                <p>Le soin personnel est la pratique consistant à prendre des mesures délibérées pour préserver ou améliorer votre santé physique, mentale et émotionnelle. Il s'agit d'identifier vos propres besoins et de prendre des mesures pour y répondre ; c'est un élément essentiel de la gestion du stress et du bien-être général.</p>
+                
+                <p>Chez Lumina Rise, nous pensons que prendre soin de soi n'est pas égoïste, c'est nécessaire. Lorsque vous donnez la priorité à votre bien-être, vous êtes mieux équipée pour vous investir pleinement dans tous les domaines de votre vie. Le soin personnel est à la fois préventif et réparateur, vous aidant à maintenir l'équilibre et à vous remettre des défis de la vie.</p>
+                
+                <div class="two-columns">
+                    <div class="column">
+                        <h3>Pourquoi le soin personnel est important</h3>
+                        <p>Dans le monde trépidant d'aujourd'hui, les femmes se retrouvent souvent au bas de leur propre liste de priorités. Entre les exigences professionnelles, les responsabilités familiales et les obligations sociales, prendre du temps pour soi peut sembler indulgent ou impossible.</p>
+                        
+                        <p>Cependant, les recherches montrent systématiquement que les pratiques régulières de soins personnels mènent à :</p>
+                        <ul style="margin-left: 20px; margin-bottom: 20px;">
+                            <li>Une réduction du stress et de l'anxiété</li>
+                            <li>Une amélioration de l'humeur et de la régulation émotionnelle</li>
+                            <li>Une fonction immunitaire renforcée</li>
+                            <li>De meilleures relations</li>
+                            <li>Une productivité et une créativité accrues</li>
+                            <li>Une plus grande résilience face aux moments difficiles</li>
+                        </ul>
+                        
+                        <p>Lorsque nous négligeons de prendre soin de nous, nous risquons l'épuisement professionnel, la fatigue de compassion et la détérioration de notre santé physique et mentale. À l'inverse, lorsque nous faisons du soin personnel une partie non négociable de nos routines, nous créons les bases d'un succès et d'un épanouissement durables.</p>
+                    </div>
+                    
+                    <div class="column">
+                        <div class="image-container">
+                            <img src="../images/self-care-importance.jpg" alt="Femme pratiquant le soin de soi">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Outils -->
+    <section class="toolbox" id="tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Outils de soins personnels (73 pages)</h2>
+                <p>Des ressources pratiques pour vous aider à établir une pratique durable de soins personnels</p>
+            </div>
+            
+            <div class="toolkits">
+                <div class="toolkit-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>Rituels du matin</h3>
+                    <p>Commencez votre journée avec intention grâce à des pratiques matinales guidées qui donnent un ton positif pour les heures à venir. Ces routines simples mais puissantes ne prennent que 5 à 15 minutes mais peuvent transformer votre journée entière.</p>
+                </div>
+
+                <div class="toolkit-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Pratiques de pleine conscience</h3>
+                    <p>Apprenez à être pleinement présente dans l'instant présent grâce à des exercices guidés de pleine conscience, incluant des techniques de respiration, des scans corporels et des pratiques de conscience pour les activités quotidiennes.</p>
+                </div>
+                
+                <div class="toolkit-card">
+                    <i class="fas fa-moon"></i>
+                    <h3>Détente du soir</h3>
+                    <p>Découvrez des routines apaisantes pour vous aider à passer de l'agitation de la journée à un sommeil réparateur. Ces pratiques signalent à votre esprit et à votre corps qu'il est temps de se détendre et de se restaurer.</p>
+                </div>
+                
+                <div class="toolkit-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Guide d'auto-compassion</h3>
+                    <p>Transformez votre dialogue intérieur avec des pratiques qui favorisent la bienveillance envers vous-même. Apprenez à vous traiter avec la même compassion que vous offrez à vos proches.</p>
+                </div>
+                
+                <div class="toolkit-card">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3>Évaluation des soins personnels</h3>
+                    <p>Évaluez vos pratiques actuelles à travers différentes dimensions du bien-être pour identifier les domaines qui nécessitent plus d'attention et créer un plan personnalisé.</p>
+                </div>
+                
+                <div class="toolkit-card">
+                    <i class="fas fa-door-closed"></i>
+                    <h3>Établissement de limites</h3>
+                    <p>Apprenez des stratégies pratiques pour établir et maintenir des limites saines dans vos relations, au travail et dans votre vie numérique afin de protéger votre énergie.</p>
+                </div>
+                
+<!-- Bouton de paiement Stripe -->
+<div style="text-align: center; margin: 50px auto 30px; max-width: 250px;">
+    <a href="https://buy.stripe.com/00w4gz82kgTidd2343e3e00" class="btn" target="_blank">
+        Acheter la Boîte à Outils – USD 28
+    </a>
+    <p style="font-size: 0.9rem; color: var(--slate-blue); margin-top: 10px; text-align: center;">
+        Paiement sécurisé via Stripe. Cartes de crédit, Apple Pay et Google Pay acceptés.<br>
+        <strong>Vous recevrez la boîte à outils par courriel dans les 24 heures suivant le paiement.</strong>
+    </p>
+</div>
+
+
+            </div>
+            
+            <div class="content-block" style="margin-top: 80px;">
+                <h3>Comment utiliser cette boîte à outils</h3>
+                <p>Cette boîte à outils est conçue pour être flexible et adaptable à vos besoins et circonstances uniques. Nous vous recommandons de commencer par l'Évaluation des soins personnels pour identifier les domaines qui nécessitent le plus d'attention en ce moment.</p>
+                
+                <p>À partir de là, explorez les outils qui résonnent avec vous et incorporez-les progressivement dans votre routine. Rappelez-vous, le soin personnel n'est pas une question de perfection, mais de progrès et de constance. De petites actions, répétées régulièrement, créent des changements significatifs.</p>
+                
+                <p>En travaillant avec ces outils, soyez attentive à ce qu'ils vous font ressentir et ajustez-les au besoin. Ce qui fonctionne pour quelqu'un d'autre peut ne pas fonctionner pour vous, et ce qui fonctionne aujourd'hui peut ne pas fonctionner demain. La clé est de rester curieuse et compatissante envers vous-même tout au long du processus.</p>
+            </div>
+            
+            <div class="cta-section">
+                <h3>Prête à aller plus loin ?</h3>
+                <p>Explorez nos programmes complets de soins personnels conçus pour vous aider à établir des pratiques durables qui soutiennent vos besoins et votre style de vie uniques.</p>
+                <a href="../index.html#services" class="btn">Voir nos programmes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bouton Retour -->
+    <div class="back-button">
+        <a href="../index.html#toolbox" class="btn">Retour à toutes les boîtes à outils</a>
+    </div>
+
+<!-- Section Contact -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contactez-nous</h2>
+            <p>Vous avez des questions sur cette boîte à outils ? Contactez-nous dès aujourd'hui.</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Informations de contact</h3>
+                <p>Nous serions ravis de vous lire. Que vous ayez des questions sur cette boîte à outils ou sur la manière dont nous pouvons vous accompagner, n'hésitez pas à nous contacter.</p>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>LuminaRiseSelfGrowth@gmail.com</p>
+                </div>
+   
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                       <span>Services virtuels disponibles dans le monde entier</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Envoyer un message</h3>
+                
+                <form action="https://formsubmit.co/LuminaRiseSelfGrowth@gmail.com" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Votre courriel" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" class="form-control" placeholder="Objet" value="Question sur la boîte à outils de soins personnels">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" placeholder="Votre message" required></textarea>
+                    </div>
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_next" value="https://luminarise-selfgrowth.com/thanks.html">
+                    <button type="submit" class="btn">Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Lumina Rise Croissance Personnelle</h4>
+                    <p>Autonomiser les femmes à travers des outils de soins personnels, des ressources de croissance et un soutien communautaire.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="../index.html#about">À propos</a></li>
+                        <li><a href="../index.html#toolbox">Boîte à outils</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                        <li><a href="../index.html#testimonials">Témoignages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Nos services</h4>
+                    <ul>
+                        <li><a href="../index.html#services">Coaching individuel</a></li>
+                        <li><a href="../index.html#services">Ateliers de groupe</a></li>
+                        <li><a href="../index.html#services">Cours en ligne</a></li>
+                        <li><a href="../index.html#services">Ressources de soins personnels</a></li>
+                        <li><a href="../index.html#services">Soutien communautaire</a></li>
+                    </ul>
+                </div>
+ <div class="footer-col">
+    <h4>Infolettre + Suivi Gratuit</h4>
+    <p>Inscrivez-vous pour recevoir des conseils, des ressources de croissance et notre kit de démarrage gratuit !</p>
+    <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST" style="max-width: 500px; margin: 0 auto;">
+        <div class="form-group">
+            <input type="email" name="email" class="form-control" placeholder="Entrez votre adresse courriel" required style="padding: 15px; border-radius: 30px; border: 1px solid #ddd; width: 100%; margin-bottom: 20px; font-size: 1rem;">
+        </div>
+        
+        <input type="hidden" name="_next" value="https://luminariseselfgrowth.github.io/Lumina-Rise-Self-Growth/thank-you.html">
+        <input type="hidden" name="_subject" value="Nouvelle inscription à l'infolettre">
+        <input type="hidden" name="_template" value="box">
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_captcha" value="false">
+        
+        <button type="submit" class="btn" style="background: var(--primary-color); width: 100%; padding: 15px; font-size: 1.1rem; font-weight: 600; border-radius: 30px; transition: all 0.3s;">S'abonner pour obtenir votre Suivi Quotidien gratuit</button>
+    </form>
+</div>
+
+
+
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Lumina Rise Croissance Personnelle. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('header').style.background = 'linear-gradient(135deg, rgba(255,242,217,0.95), rgba(255,230,187,0.95), rgba(255,207,173,0.95))';
+                document.querySelector('header').style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                document.querySelector('header').style.background = 'linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad)';
+            }
+        });
+    </script>
+</body>
+</html>
