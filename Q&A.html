@@ -40,7 +40,38 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+/* Add this to your main CSS (outside the media query) */
+.hamburger {
+    display: none; /* Keep hidden on desktop */
+    font-size: 2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    z-index: 1001;
+}
 
+/* Ensure it shows up on mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        margin-right: 15px;
+    }
+    
+    .nav-links {
+        display: none; /* Hide links by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--header-gradient);
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when "active" class is added via JS */
+    }
+}
         /* Header Styles */
       /* Global Branding Fonts */
 h1, h2, h3, h4, .hero h2, .section-title h2 {
