@@ -478,7 +478,18 @@ transition: transform 0.2s;
         </div>
 
         <!-- Detailed Breakdown -->
-        <div class="details-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px;">
+/* Change this line in your CSS /
+.details-grid {
+display: grid;
+grid-template-columns: 1fr; / This ensures it fits on small screens */
+gap: 40px;
+}
+/* Add this to allow side-by-side on larger screens */
+@media (min-width: 992px) {
+.details-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+}>
             
             <!-- Coaching Details -->
             <div class="detail-box">
