@@ -1,4 +1,4 @@
-0<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -73,13 +73,6 @@
     }
 }
         /* Header Styles */
-      /* Global Branding Fonts */
-h1, h2, h3, h4, .hero h2, .section-title h2 {
-font-family: 'Playfair Display', serif !important;
-}
-p, li, a, span, .btn, .logo-text p {
-font-family: 'Montserrat', sans-serif !important;
-}
 /* Header & Navigation Styling */
 header {
 background: var(--header-gradient);
@@ -104,6 +97,7 @@ height: 50px;
 margin-right: 12px;
 }
 .logo-text h1 {
+font-family: 'Montserrat', sans-serif;
 font-weight: 700;
 font-size: 1.6rem;
 color: var(--primary-color);
@@ -111,6 +105,7 @@ margin: 0;
 line-height: 1.2;
 }
 .logo-text p {
+font-family: 'Montserrat', sans-serif;
 font-size: 0.75rem !important;
 color: var(--dark-color) !important;
 margin: 0 !important;
@@ -134,6 +129,12 @@ padding-bottom: 2px;
 color: var(--primary-color);
 border-bottom: 2px solid var(--primary-color);
 }
+.hamburger {
+display: none; /* Keeps it hidden on desktop */
+font-size: 2rem;
+color: var(--primary-color);
+cursor: pointer;
+}
 /* Language Button Pill */
 .language-selector {
 margin-left: 15px;
@@ -151,10 +152,7 @@ font-weight: 700;
 font-size: 0.85rem;
 box-shadow: 0 4px 10px rgba(255, 127, 48, 0.3);
 transition: transform 0.2s;
-}
-.lang-btn:hover {
-transform: scale(1.05);
-}
+}     
         /* Hero Section (Matched to Index) */
         .hero {
             background: var(--dark-color);
@@ -410,7 +408,6 @@ transform: scale(1.05);
 </head>
 <body>
 
-    <!-- Header (Same as Index) -->
  <!-- Header -->
 <header>
     <div class="container">
@@ -428,7 +425,7 @@ transform: scale(1.05);
                 <li><a href="about-me.html">About</a></li>
                 <li><a href="index.html#toolbox">Toolbox</a></li>
                 <li><a href="index.html#services">Services</a></li>
-                <li><a href="Q&A.html">Q&A</a></li>
+                <li><a href="Q&A.html#qa">Q&A</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             
