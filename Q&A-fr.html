@@ -263,6 +263,16 @@ transform: scale(1.05);
             position: absolute;
             left: 0;
         }
+.details-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 40px;
+}
+@media (min-width: 992px) {
+.details-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+}
 
         /* Contact Section */
         .contact {
@@ -449,7 +459,7 @@ transform: scale(1.05);
         </div>
 
         <!-- Detailed Breakdown -->
-        <div class="details-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+ <div class="details-grid">
             
             <!-- Coaching Details -->
             <div class="detail-box">
