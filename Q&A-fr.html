@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FAQ Lumina Rise : Votre guide vers l'épanouissement personnel, la croissance et le soin de soi.">
     <title>FAQ : Votre guide vers l'épanouissement | Lumina Rise Self-Growth</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         :root {
             --primary-color: #ff7f30;
@@ -25,13 +34,13 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
         }
         
         body {
             color: var(--text-color);
             line-height: 1.6;
             background-color: var(--light-color);
+            font-family: 'Montserrat', sans-serif;
         }
         
         .container {
@@ -41,94 +50,115 @@
             padding: 0 20px;
         }
 
-        /* Header Styles */
-   /* Global Branding Fonts */
-h1, h2, h3, h4, .hero h2, .section-title h2 {
-font-family: 'Playfair Display', serif !important;
-}
-p, li, a, span, .btn, .logo-text p {
-font-family: 'Montserrat', sans-serif !important;
-}
-/* Header & Navigation Styling */
-header {
-background: var(--header-gradient);
-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-position: fixed;
-width: 100%;
-z-index: 1000;
-}
-nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 0;
-width: 100%;
-}
-.logo {
-display: flex;
-align-items: center;
-}
-.logo img {
-height: 50px;
-margin-right: 12px;
-}
-.logo-text h1 {
-font-weight: 700;
-font-size: 1.6rem;
-color: var(--primary-color);
-margin: 0;
-line-height: 1.2;
-}
-.logo-text p {
-font-size: 0.75rem !important;
-color: var(--dark-color) !important;
-margin: 0 !important;
-font-weight: 400;
-}
-.nav-links {
-display: flex;
-list-style: none;
-gap: 25px;
-}
-.nav-links a {
-text-decoration: none;
-color: #4a4a4a;
-font-weight: 500;
-font-size: 0.95rem;
-transition: all 0.3s;
-border-bottom: 2px solid transparent;
-padding-bottom: 2px;
-}
-.nav-links a:hover {
-color: var(--primary-color);
-border-bottom: 2px solid var(--primary-color);
-}
-/* Language Button Pill */
-.language-selector {
-margin-left: 15px;
-}
-.lang-btn {
-display: inline-flex;
-align-items: center;
-gap: 6px;
-padding: 10px 20px;
-background: var(--gradient);
-color: white !important;
-text-decoration: none;
-border-radius: 25px;
-font-weight: 700;
-font-size: 0.85rem;
-box-shadow: 0 4px 10px rgba(255, 127, 48, 0.3);
-transition: transform 0.2s;
-}
-.lang-btn:hover {
-transform: scale(1.05);
-}
+        /* Typography */
+        h1, h2, h3, h4, .hero h2, .section-title h2 {
+            font-family: 'Playfair Display', serif !important;
+        }
+        
+        p, li, a, span, .btn, .logo-text p {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--header-gradient);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            width: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 12px;
+        }
+        
+        .logo-text h1 {
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin: 0;
+            line-height: 1.2;
+        }
+        
+        .logo-text p {
+            font-size: 0.75rem !important;
+            color: var(--dark-color) !important;
+            margin: 0 !important;
+            font-weight: 400;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #4a4a4a;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Language Button */
+        .language-selector {
+            margin-left: 15px;
+        }
+        
+        .lang-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            background: var(--gradient);
+            color: white !important;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 10px rgba(255, 127, 48, 0.3);
+            transition: transform 0.2s;
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.05);
+        }
+
         /* Hero Section */
         .hero {
             background: var(--dark-color);
             color: var(--light-color);
-            padding: 150px 0 100px;
+            padding: 180px 0 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -181,9 +211,78 @@ transform: scale(1.05);
             cursor: pointer;
         }
 
-        /* Q&A Content Styles */
+        /* Roadmap Section */
+        .roadmap-section {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: var(--soft-peach);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .service-card.featured {
+            border: 2px solid var(--accent-color);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .detail-box {
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .detail-box.colored {
+            background: var(--soft-gradient);
+        }
+
+        /* Q&A Styles */
         .qa-section {
-            padding: 100px 0 60px;
+            padding: 60px 0;
+        }
+
+        .qa-card {
+            background: var(--soft-peach);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .qa-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
         }
 
         .table-container {
@@ -213,19 +312,6 @@ transform: scale(1.05);
             color: var(--slate-blue);
         }
 
-        .qa-card {
-            background: var(--soft-peach);
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border-left: 5px solid var(--primary-color);
-        }
-
-        .qa-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
         .deep-dive {
             padding: 80px 0;
             background: var(--soft-gradient);
@@ -251,11 +337,14 @@ transform: scale(1.05);
             padding-bottom: 10px;
         }
 
+        .list-column ul {
+            list-style: none;
+        }
+
         .list-column li {
             margin-bottom: 10px;
             padding-left: 25px;
             position: relative;
-            list-style: none;
         }
 
         .list-column li::before {
@@ -263,16 +352,6 @@ transform: scale(1.05);
             position: absolute;
             left: 0;
         }
-.details-grid {
-display: grid;
-grid-template-columns: 1fr;
-gap: 40px;
-}
-@media (min-width: 992px) {
-.details-grid {
-grid-template-columns: repeat(2, 1fr);
-}
-}
 
         /* Contact Section */
         .contact {
@@ -302,9 +381,10 @@ grid-template-columns: repeat(2, 1fr);
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1rem;
+            font-family: inherit;
         }
 
-        /* Footer Styles */
+        /* Footer */
         footer {
             background-color: var(--dark-color);
             color: var(--light-color);
@@ -344,7 +424,8 @@ grid-template-columns: repeat(2, 1fr);
 
         .footer-col ul { list-style: none; }
         .footer-col ul li { margin-bottom: 10px; }
-        .footer-col ul a { color: #bbb; text-decoration: none; }
+        .footer-col ul a { color: #bbb; text-decoration: none; transition: 0.3s; }
+        .footer-col ul a:hover { color: var(--primary-color); }
 
         .social-links {
             display: flex;
@@ -364,6 +445,11 @@ grid-template-columns: repeat(2, 1fr);
             transition: all 0.3s;
         }
 
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
         .copyright {
             text-align: center;
             padding-top: 20px;
@@ -373,55 +459,76 @@ grid-template-columns: repeat(2, 1fr);
         }
 
         /* Responsive */
+        @media (min-width: 992px) {
+            .details-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
             .nav-links {
                 display: none;
                 position: absolute;
-                top: 80px; left: 0; right: 0;
+                top: 80px;
+                left: 0;
+                right: 0;
                 background: var(--header-gradient);
                 flex-direction: column;
                 padding: 20px;
+                text-align: center;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
             }
-            .hamburger { display: block; }
-            .hero h2 { font-size: 2.5rem; }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
 <body>
 
-  <!-- Header -->
-<header>
-    <div class="container">
-        <nav>
-            <div class="logo">
-                <img src="images/logo.png" alt="Lumina Rise Logo">
-                <div class="logo-text">
-                    <h1>Lumina Rise</h1>
-                    <p>Where Self-Care Meets Self-Growth</p>
-                </div>
-            </div>
-            
-            <ul class="nav-links">
-                <li><a href="index-fr.html">Accueil</a></li>
-                <li><a href="about-me-fr.html">À propos</a></li>
-                <li><a href="index-fr.html#toolbox">Boîte à outils</a></li>
-                <li><a href="index-fr.html#services">Services</a></li>
-                <li><a href="Q&A-fr.html">FAQ</a></li>
-                <li><a href="index-fr.html#contact">Contact</a></li>
-            </ul>
-            
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-            
-            <div class="language-selector">
-                <a href="Q&A.html" class="lang-btn">
-                    <i class="fas fa-globe"></i> EN
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index-fr.html" class="logo">
+                    <img src="images/logo.png" alt="Lumina Rise Logo">
+                    <div class="logo-text">
+                        <h1>Lumina Rise</h1>
+                        <p>Where Self-Care Meets Self-Growth</p>
+                    </div>
                 </a>
-            </div>
-        </nav>
-    </div>
-</header>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index-fr.html">Accueil</a></li>
+                    <li><a href="about-me-fr.html">À propos</a></li>
+                    <li><a href="index-fr.html#toolbox">Boîte à outils</a></li>
+                    <li><a href="index-fr.html#services">Services</a></li>
+                    <li><a href="Q&A-fr.html">FAQ</a></li>
+                    <li><a href="index-fr.html#contact">Contact</a></li>
+                </ul>
+                
+                <div class="hamburger" id="hamburger" aria-label="Menu de navigation">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <div class="language-selector">
+                    <a href="Q&A.html" class="lang-btn">
+                        <i class="fas fa-globe"></i> EN
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
@@ -431,68 +538,62 @@ grid-template-columns: repeat(2, 1fr);
         </div>
     </section>
 
-<!-- Roadmap & Services Section -->
-<section class="roadmap-section" id="services-deep-dive" style="padding: 100px 0; background-color: var(--light-color);">
-    <div class="container">
-        <div class="section-title" style="text-align: center; margin-bottom: 60px;">
-            <h2 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 15px;">La feuille de route Lumina Rise</h2>
-            <p style="max-width: 800px; margin: 0 auto; color: var(--slate-blue);">Des espaces de transformation pour les femmes prêtes à s'épanouir, même si elles ne savent pas encore à quoi cette croissance ressemblera.</p>
-        </div>
-
-        <!-- Service Overview -->
-        <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px;">
-            <div class="service-card" style="background: var(--soft-peach); padding: 30px; border-radius: 15px; text-align: center;">
-                <i class="fas fa-microphone-alt" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
-                <h3 style="margin-bottom: 15px;">Conférences d'autonomisation</h3>
-                <p style="color: var(--slate-blue);">Sessions de motivation axées sur le développement de soi, la confiance et la transformation de l'état d'esprit.</p>
-            </div>
-            <div class="service-card" style="background: var(--soft-peach); padding: 30px; border-radius: 15px; text-align: center; border: 2px solid var(--accent-color);">
-                <i class="fas fa-hand-holding-heart" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
-                <h3 style="margin-bottom: 15px;">Coaching individuel</h3>
-                <p style="color: var(--slate-blue);">Un espace sûr et puissant où vous êtes vue, entendue et mise au défi de renforcer votre confiance de l'intérieur.</p>
-            </div>
-            <div class="service-card" style="background: var(--soft-peach); padding: 30px; border-radius: 15px; text-align: center;">
-                <i class="fas fa-toolbox" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
-                <h3 style="margin-bottom: 15px;">Kits d'outils de croissance</h3>
-                <p style="color: var(--slate-blue);">Ressources structurées et guidées, créées manuellement pour accompagner votre transformation à votre rythme.</p>
-            </div>
-        </div>
-
-        <!-- Detailed Breakdown -->
- <div class="details-grid">
-            
-            <!-- Coaching Details -->
-            <div class="detail-box">
-                <h3 style="color: var(--primary-color); margin-bottom: 20px; border-bottom: 2px solid var(--soft-peach); padding-bottom: 10px;">À qui s'adresse le Coaching ?</h3>
-                <p style="margin-bottom: 15px; color: var(--slate-blue);">Le coaching est pour la femme qui :</p>
-                <ul style="list-style: none; color: var(--slate-blue); padding: 0;">
-                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Se sent bloquée mais sait qu'elle est faite pour plus</li>
-                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Est fatiguée de s'effacer ou de se limiter</li>
-                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Aspire à la clarté, à une direction et à une structure</li>
-                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Est prête à arrêter de survivre pour commencer à évoluer</li>
-                </ul>
+    <!-- Roadmap & Services Section -->
+    <section class="roadmap-section" id="services-deep-dive">
+        <div class="container">
+            <div class="section-title">
+                <h2>La feuille de route Lumina Rise</h2>
+                <p style="max-width: 800px; margin: 0 auto; color: var(--slate-blue);">Des espaces de transformation pour les femmes prêtes à s'épanouir, même si elles ne savent pas encore à quoi cette croissance ressemblera.</p>
             </div>
 
-            <!-- Selection Guide -->
-            <div class="detail-box" style="background: var(--soft-gradient); padding: 30px; border-radius: 15px;">
-                <h3 style="color: var(--dark-color); margin-bottom: 20px;">Quel service me convient ?</h3>
-                <div style="margin-bottom: 15px;">
-                    <strong>Besoin d'inspiration et d'élan ?</strong>
-                    <p style="font-size: 0.9rem; color: var(--slate-blue);">→ Choisissez une conférence</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-microphone-alt"></i>
+                    <h3>Conférences d'autonomisation</h3>
+                    <p style="color: var(--slate-blue);">Sessions de motivation axées sur le développement de soi, la confiance et la transformation de l'état d'esprit.</p>
                 </div>
-                <div style="margin-bottom: 15px;">
-                    <strong>Besoin d'un soutien personnalisé ?</strong>
-                    <p style="font-size: 0.9rem; color: var(--slate-blue);">→ Choisissez le coaching individuel</p>
+                <div class="service-card featured">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Coaching individuel</h3>
+                    <p style="color: var(--slate-blue);">Un espace sûr et puissant où vous êtes vue, entendue et mise au défi de renforcer votre confiance de l'intérieur.</p>
                 </div>
-                <div>
-                    <strong>Vous voulez avancer à votre rythme ?</strong>
-                    <p style="font-size: 0.9rem; color: var(--slate-blue);">→ Choisissez un kit d'outils de croissance</p>
+                <div class="service-card">
+                    <i class="fas fa-toolbox"></i>
+                    <h3>Kits d'outils de croissance</h3>
+                    <p style="color: var(--slate-blue);">Ressources structurées et guidées, créées manuellement pour accompagner votre transformation à votre rythme.</p>
+                </div>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <h3 style="color: var(--primary-color); margin-bottom: 20px; border-bottom: 2px solid var(--soft-peach); padding-bottom: 10px;">À qui s'adresse le Coaching ?</h3>
+                    <p style="margin-bottom: 15px; color: var(--slate-blue);">Le coaching est pour la femme qui :</p>
+                    <ul style="list-style: none; color: var(--slate-blue); padding: 0;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Se sent bloquée mais sait qu'elle est faite pour plus</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Est fatiguée de s'effacer ou de se limiter</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Aspire à la clarté, à une direction et à une structure</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> Est prête à arrêter de survivre pour commencer à évoluer</li>
+                    </ul>
+                </div>
+
+                <div class="detail-box colored">
+                    <h3 style="color: var(--dark-color); margin-bottom: 20px;">Quel service me convient ?</h3>
+                    <div style="margin-bottom: 15px;">
+                        <strong>Besoin d'inspiration et d'élan ?</strong>
+                        <p style="font-size: 0.9rem; color: var(--slate-blue);">→ Choisissez une conférence</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <strong>Besoin d'un soutien personnalisé ?</strong>
+                        <p style="font-size: 0.9rem; color: var(--slate-blue);">→ Choisissez le coaching individuel</p>
+                    </div>
+                    <div>
+                        <strong>Vous voulez avancer à votre rythme ?</strong>
+                        <p style="font-size: 0.9rem; color: var(--slate-blue);">→ Choisissez un kit d'outils de croissance</p>
+                    </div>
                 </div>
             </div>
         </div>
-</section>
-      
-
+    </section>
 
     <!-- Q&A Content -->
     <section class="qa-section">
@@ -511,11 +612,7 @@ grid-template-columns: repeat(2, 1fr);
                 <h3>3. Qu'est-ce que le soin de soi (Self-Care) ?</h3>
                 <p>Le soin de soi est la pratique consistant à prendre activement soin de sa santé physique, mentale et émotionnelle. Il s'agit de reconstituer son énergie, de maintenir l'équilibre et de prévenir l'épuisement. Le soin de soi est essentiel pour soutenir à la fois le développement et la croissance personnelle.</p>
             </div>
-        </div>
-    </section>
 
-   <section class="qa-section" style="padding-top: 0;">
-        <div class="container">
             <div class="table-container">
                 <table>
                     <thead>
@@ -545,7 +642,7 @@ grid-template-columns: repeat(2, 1fr);
                 </table>
             </div>
         </div>
-</section>
+    </section>
 
     <!-- Deep Dive Sections -->
     <section class="deep-dive">
@@ -614,25 +711,25 @@ grid-template-columns: repeat(2, 1fr);
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-title" style="text-align: center; margin-bottom: 60px;">
-                <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px;">Contactez-nous</h2>
+            <div class="section-title">
+                <h2>Contactez-nous</h2>
                 <p style="color: var(--slate-blue);">Prête à commencer votre voyage de croissance ? Contactez-nous dès aujourd'hui pour voir comment nous pouvons soutenir votre transformation.</p>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Coordonnées</h3>
                     <p>Je serais ravie de vous lire. N'hésitez pas à poser vos questions sur le coaching, les ateliers ou les kits d'outils.</p>
-                    <div class="info-item" style="display: flex; margin-bottom: 20px;">
-                        <i class="fas fa-envelope" style="color: var(--primary-color); margin-right: 15px;"></i>
+                    <div class="info-item" style="display: flex; margin: 20px 0;">
+                        <i class="fas fa-envelope" style="color: var(--primary-color); margin-right: 15px; margin-top: 5px;"></i>
                         <p>Luminariseselfgrowth@gmail.com</p>
                     </div>
                     <div class="info-item" style="display: flex; margin-bottom: 20px;">
-                        <i class="fas fa-map-marker-alt" style="color: var(--primary-color); margin-right: 15px;"></i>
+                        <i class="fas fa-map-marker-alt" style="color: var(--primary-color); margin-right: 15px; margin-top: 5px;"></i>
                         <p>Services virtuels disponibles dans le monde entier</p>
                     </div>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
 
@@ -672,17 +769,17 @@ grid-template-columns: repeat(2, 1fr);
                     <h4>Lumina Rise Self-Growth</h4>
                     <p>Autonomiser les femmes grâce à des outils, des ressources et un soutien pour le soin de soi et l'épanouissement personnel.</p>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Liens rapides</h4>
                     <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="about-me.html">À propos</a></li>
-                        <li><a href="index.html#toolbox">Boîte à outils</a></li>
-                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index-fr.html">Accueil</a></li>
+                        <li><a href="about-me-fr.html">À propos</a></li>
+                        <li><a href="index-fr.html#toolbox">Boîte à outils</a></li>
+                        <li><a href="index-fr.html#services">Services</a></li>
                     </ul>
                 </div>
             </div>
@@ -693,14 +790,29 @@ grid-template-columns: repeat(2, 1fr);
     </footer>
 
     <script>
-        // Menu mobile
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        // Menu mobile Logic
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
         if(hamburger) {
             hamburger.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
+                const icon = hamburger.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
             });
         }
+
+        // Close menu when link is clicked
+        const links = document.querySelectorAll('.nav-links a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = hamburger.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
     </script>
 </body>
 </html>
