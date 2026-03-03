@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coaching Individuel | Lumina Rise Épanouissement Personnel</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --primary-color: #ff7f30; /* Orange vibrant du logo */
@@ -841,7 +841,7 @@ transform: scale(1.05);
             </div>
             
             <div class="language-selector">
-                <a href="about-me.html" class="lang-btn">
+                <a href="one-on-one-coaching.html" class="lang-btn">
                     <i class="fas fa-globe"></i> EN
                 </a>
             </div>
@@ -1022,5 +1022,13 @@ Nous débuterons par une séance complète conçue pour comprendre votre situati
         </div>
     </div>
 </footer>
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
 </body>
 </html>
