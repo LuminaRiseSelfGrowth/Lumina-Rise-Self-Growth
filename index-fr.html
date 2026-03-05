@@ -50,6 +50,7 @@
             font-size: 1rem;
         }
 
+
         /* Responsive */
         @media (max-width: 768px) {
             .language-selector {
@@ -631,35 +632,51 @@ transform: scale(1.05);
     cursor: pointer;
     z-index: 1001;
 }
-
-/* Ensure it shows up on mobile */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-        margin-right: 15px;
-    }
-    
-    .nav-links {
-        display: none; /* Hide links by default on mobile */
-        flex-direction: column;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: var(--header-gradient);
-        padding: 20px;
-        text-align: center;
-    }
-
-    .nav-links.active {
-        display: flex; /* Show links when "active" class is added via JS */
-    }
+.hamburger {
+display: none; /* Keep hidden on desktop /
+font-size: 2rem;
+color: var(--primary-color); / This makes the lines orange */
+cursor: pointer;
+z-index: 1001;
 }
-            
-            .hero h2 {
-                font-size: 2.5rem;
-            }
+/* Fixed Hamburger & Mobile Menu */
+        .hamburger {
+            display: none; /* Hidden on desktop */
+            font-size: 2rem;
+            color: var(--primary-color); /* Makes the lines orange */
+            cursor: pointer;
+            z-index: 1001;
         }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hidden by default */
+                position: absolute;
+                top: 80px; left: 0; right: 0;
+                background: var(--header-gradient);
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+            }
+            
+            .hamburger { 
+                display: block; /* Shows on mobile */
+                margin-right: 15px;
+            }
+
+            /* This allows the JavaScript to show the menu */
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h2 { font-size: 2.5rem; }
+        }
+    .nav-links.active {
+        display: flex; /* This shows the menu when you click the lines */
+    }
+
+    .hero h2 { font-size: 2.5rem; }
+}
     </style>
 </head>
 <body>
@@ -907,13 +924,13 @@ transform: scale(1.05);
             <div class="toolkits">
                 <div class="toolkit-card">
                     <i class="fas fa-heart"></i>
-                    <h3>La boîte à outils des soins personnels <span>(73 pages)</span></h3>
+                    <h3>La boîte à outils des soins personnels <span>(73 pages - FR ou EN)</span></h3>
                     <p>Prenez soin de votre âme et rechargez votre énergie grâce à des pratiques quotidiennes, des guides de pleine conscience et des routines bienveillantes.</p>
                     <a href="toolkits/self-care.html" class="btn">Explorer la boîte à outils</a>
                 </div>
                 <div class="toolkit-card">
                     <i class="fas fa-seedling"></i>
-                    <h3>La boîte à outils de croissance personnelle <span>(78 pages)</span></h3>
+                    <h3>La boîte à outils de croissance personnelle <span>(78 pages - EN seulement, FR à venir)</span></h3>
                     <p>Des stratégies pour évoluer et s’épanouir grâce à des exercices de définition d’objectifs et des questions de journal réflexif.</p>
                     <a href="toolkits/personal-growth.html" class="btn">Explorer la boîte à outils</a>
                 </div>
