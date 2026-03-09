@@ -1055,13 +1055,21 @@ z-index: 1001;
             </div>
         </div>
     </footer>
-   <script>
+<script>
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
+    // Ouvre ou ferme le menu lors du clic sur l'icône hamburger
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
-</script>
+
+    // Ferme le menu automatiquement lorsqu'un lien est sélectionné
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+</script> 
 </body>
 </html>
