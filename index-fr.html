@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lumina Rise | Où le bien-être rencontre le développement personnel</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #ff7f30;
@@ -21,50 +22,33 @@
             --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad);
         }
 
-        /* Sélecteur de langue */
-        .language-selector {
+        /* Language Toggle Styles */
+        .lang-switch {
+            display: flex;
+            gap: 10px;
             margin-left: 20px;
         }
 
-        .lang-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            padding: 8px 15px;
-            background: var(--gradient);
-            color: var(--light-color);
+        .lang-link {
             text-decoration: none;
-            border-radius: 20px;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
 
-        .lang-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        .lang-link.active {
+            background: var(--primary-color);
+            color: white;
         }
 
-        .lang-btn i {
-            font-size: 1rem;
+        .lang-link:hover:not(.active) {
+            background: rgba(255, 127, 48, 0.1);
         }
 
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .language-selector {
-                position: absolute;
-                top: 20px;
-                right: 60px;
-            }
-            
-            .lang-btn {
-                padding: 6px 12px;
-                font-size: 0.85rem;
-            }
-        }
-        
         * {
             margin: 0;
             padding: 0;
@@ -84,87 +68,71 @@
             padding: 0 20px;
         }
         
-        /* Styles d'en-tête */
-       /* Header & Navigation Styling */
-header {
-background: var(--header-gradient);
-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-position: fixed;
-width: 100%;
-z-index: 1000;
-}
-nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 0;
-width: 100%;
-}
-.logo {
-display: flex;
-align-items: center;
-}
-.logo img {
-height: 50px;
-margin-right: 12px;
-}
-.logo-text h1 {
-font-family: 'Montserrat', sans-serif;
-font-weight: 700;
-font-size: 1.6rem;
-color: var(--primary-color);
-margin: 0;
-line-height: 1.2;
-}
-.logo-text p {
-font-family: 'Montserrat', sans-serif;
-font-size: 0.75rem !important;
-color: var(--dark-color) !important;
-margin: 0 !important;
-font-weight: 400;
-}
-.nav-links {
-display: flex;
-list-style: none;
-gap: 25px;
-}
-.nav-links a {
-text-decoration: none;
-color: #4a4a4a;
-font-family: 'Montserrat', sans-serif;
-font-weight: 500;
-font-size: 0.95rem;
-transition: all 0.3s;
-border-bottom: 2px solid transparent;
-padding-bottom: 2px;
-}
-.nav-links a:hover {
-color: var(--primary-color);
-border-bottom: 2px solid var(--primary-color);
-}
-/* Language Button Pill */
-.language-selector {
-margin-left: 15px;
-}
-.lang-btn {
-display: inline-flex;
-align-items: center;
-gap: 6px;
-padding: 10px 20px;
-background: var(--gradient);
-color: white !important;
-text-decoration: none;
-border-radius: 25px;
-font-family: 'Montserrat', sans-serif;
-font-weight: 700;
-font-size: 0.85rem;
-box-shadow: 0 4px 10px rgba(255, 127, 48, 0.3);
-transition: transform 0.2s;
-}
-.lang-btn:hover {
-transform: scale(1.05);
-}        
-        /* Section Héro */
+        header {
+            background: var(--header-gradient);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 12px;
+        }
+
+        .logo-text h1 {
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--dark-color);
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a4a4a;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
         .hero {
             background: var(--dark-color);
             color: var(--light-color);
@@ -177,19 +145,13 @@ transform: scale(1.05);
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background: url('images/hero-bg.jpg') center/cover no-repeat;
             opacity: 0.3;
             z-index: 0;
         }
         
-        .hero .container {
-            position: relative;
-            z-index: 1;
-        }
+        .hero .container { position: relative; z-index: 1; }
         
         .hero h2 {
             font-size: 3rem;
@@ -217,859 +179,174 @@ transform: scale(1.05);
             font-weight: 600;
             transition: all 0.3s;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            border: none;
-            cursor: pointer;
         }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-        }
-        
-        /* Section À propos */
-        .about {
+
+        .about, .toolbox, .services, .contact, .consultation {
             padding: 100px 0;
-            background-color: var(--soft-peach);
         }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .section-title p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--slate-blue);
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-        }
-        
-        .about-image {
-            flex: 1;
-        }
-        
-        .about-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h3 {
-            font-size: 1.8rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-        }
-        
-        .about-text p {
-            color: var(--slate-blue);
-            margin-bottom: 15px;
-        }
-        
-        /* Section Boîte à outils */
-        .toolbox {
-            padding: 100px 0;
-            background: var(--soft-gradient);
-        }
-        
-        .toolkits {
+
+        .about, .contact, .consultation { background-color: var(--soft-peach); }
+        .toolbox { background: var(--soft-gradient); }
+
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
+        .section-title p { color: var(--slate-blue); }
+
+        .about-content { display: flex; align-items: center; gap: 50px; }
+        .about-image { flex: 1; }
+        .about-image img { width: 100%; border-radius: 10px; }
+        .about-text { flex: 1; }
+        .about-text h3 { color: var(--accent-color); margin-bottom: 20px; }
+        .about-text p { color: var(--slate-blue); margin-bottom: 15px; }
+
+        .toolkits, .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
-        
-        .toolkit-card {
+
+        .toolkit-card, .service-card {
             background: var(--light-color);
             border-radius: 10px;
             padding: 30px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid var(--primary-color);
+            transition: 0.3s;
         }
-        
-        .toolkit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-        
-        .toolkit-card i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .toolkit-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--accent-color);
-        }
-        
-        .toolkit-card p {
-            color: var(--slate-blue);
-        }
-        
-        /* Section Services */
-        .services {
-            padding: 100px 0;
-            background-color: var(--light-color);
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .service-card {
-            background: var(--soft-peach);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .service-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .service-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-        
-        .service-card:hover .service-image img {
-            transform: scale(1.1);
-        }
-        
-        .service-content {
-            padding: 25px;
-        }
-        
-        .service-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-        
-        .service-content p {
-            color: var(--slate-blue);
-        }
-        
-        /* Section Témoignages */
-        .testimonials {
-            padding: 100px 0;
-            background: var(--soft-gradient);
-        }
-        
-        .testimonial-container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .testimonial-card {
-            background: var(--light-color);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            margin: 20px 0;
-            border-left: 4px solid var(--accent-color);
-        }
-        
-        .testimonial-card p {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: var(--slate-blue);
-        }
-        
-        .client {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .client-image {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 15px;
-            border: 3px solid var(--accent-color);
-        }
-        
-        .client-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .client-info h4 {
-            color: var(--primary-color);
-        }
-        
-        .client-info p {
-            font-size: 0.9rem;
-            margin: 0;
-            font-style: normal;
-            color: var(--slate-blue);
-        }
-        
-        /* Section Contact */
-        .contact {
-            padding: 100px 0;
-            background-color: var(--soft-peach);
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-        }
-        
-        .contact-info h3 {
-            font-size: 1.8rem;
-            color: var(--accent-color);
-            margin-bottom: 30px;
-        }
-        
-        .contact-info p {
-            margin-bottom: 20px;
-            color: var(--slate-blue);
-        }
-        
-        .contact-info .info-item {
-            display: flex;
-            margin-bottom: 20px;
-        }
-        
-        .contact-info i {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-right: 15px;
-        }
-        
-        .contact-form h3 {
-            font-size: 1.8rem;
-            color: var(--accent-color);
-            margin-bottom: 30px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-color);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-        }
-        
-        /* Pied de page */
+
+        .toolkit-card:hover { transform: translateY(-5px); }
+
         footer {
             background-color: var(--dark-color);
             color: var(--light-color);
             padding: 60px 0 20px;
+            position: relative;
             background-image: url('images/footer-bg.jpg');
             background-size: cover;
-            background-position: center;
             background-blend-mode: overlay;
-            position: relative;
-        }
-        
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(51, 51, 51, 0.7);
-            z-index: 0;
         }
 
-        .footer-container, .copyright {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-col h4 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-        
-        .footer-col ul {
-            list-style: none;
-        }
-        
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-col ul a {
-            color: #bbb;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-col ul a:hover {
-            color: var(--accent-color);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            color: var(--light-color);
-            background-color: rgba(255,255,255,0.1);
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            background: var(--gradient);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-            color: #bbb;
-        }
-        
-        /* Design Réactif */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .about-image, .about-text {
-                flex: none;
-                width: 100%;
-            }
-        }
-        
+        .copyright { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #bbb; }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 80px;
-                left: 0;
-                right: 0;
-                background: var(--header-gradient);
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 10px 0;
-            }
-       /* Add this to your main CSS (outside the media query) */
-.hamburger {
-    display: none; /* Keep hidden on desktop */
-    font-size: 2rem;
-    color: var(--primary-color);
-    cursor: pointer;
-    z-index: 1001;
-}
-.hamburger {
-display: none; /* Keep hidden on desktop /
-font-size: 2rem;
-color: var(--primary-color); / This makes the lines orange */
-cursor: pointer;
-z-index: 1001;
-}
-/* Fixed Hamburger & Mobile Menu */
-        .hamburger {
-            display: none; /* Hidden on desktop */
-            font-size: 2rem;
-            color: var(--primary-color); /* Makes the lines orange */
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* Hidden by default */
                 position: absolute;
                 top: 80px; left: 0; right: 0;
                 background: var(--header-gradient);
                 flex-direction: column;
                 padding: 20px;
-                text-align: center;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
             }
-            
-            .hamburger { 
-                display: block; /* Shows on mobile */
-                margin-right: 15px;
-            }
-
-            /* This allows the JavaScript to show the menu */
-            .nav-links.active {
-                display: flex;
-            }
-
-            .hero h2 { font-size: 2.5rem; }
+            .nav-links.active { display: flex; }
+            .hamburger { display: block; }
+            .lang-switch { margin: 20px 0 0 0; justify-content: center; }
+            .about-content { flex-direction: column; }
         }
-    .nav-links.active {
-        display: flex; /* This shows the menu when you click the lines */
-    }
-
-    .hero h2 { font-size: 2.5rem; }
-}
     </style>
 </head>
 <body>
-    <!-- En-tête -->
-  <!-- En-tête -->
+
 <header>
     <div class="container">
         <nav>
-            <div class="logo">
+            <a href="index-fr.html" class="logo">
                 <img src="images/logo.png" alt="Logo Lumina Rise">
                 <div class="logo-text">
                     <h1>Lumina Rise</h1>
                     <p>Où le bien-être rencontre le développement personnel</p>
                 </div>
-            </div>
+            </a>
             
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index-fr.html">Accueil</a></li>
                 <li><a href="about-me-fr.html">À propos</a></li>
                 <li><a href="index-fr.html#toolbox">Boîte à outils</a></li>
                 <li><a href="index-fr.html#services">Services</a></li>
                 <li><a href="Q&A-fr.html">FAQ</a></li>
                 <li><a href="index-fr.html#contact">Contact</a></li>
+                
+                <!-- Language Toggle -->
+                <div class="lang-switch">
+                    <a href="index.html" class="lang-link">EN</a>
+                    <a href="index-fr.html" class="lang-link active">FR</a>
+                </div>
             </ul>
             
-            <div class="hamburger">
+            <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
-            </div>
-            
-            <div class="language-selector">
-                <a href="index.html" class="lang-btn">
-                    <i class="fas fa-globe"></i> EN
-                </a>
             </div>
         </nav>
     </div>
 </header>
-    <!-- Section Héro -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h2>Aider les femmes à s’épanouir et à briller</h2>
-            <p>Découvrez les outils et les conseils dont vous avez besoin pour nourrir votre santé mentale, embrasser votre croissance personnelle et transformer votre vie.</p>
-            <a href="#contact" class="btn">Commencez Votre Parcours</a>
-        </div>
-    </section>
 
-    <!-- Barre de crédibilité -->
-    <section class="credibility-bar" style="background: white; padding: 40px 0; text-align: center; border-bottom: 1px solid #f0f0f0;">
-        <div class="container">
-            <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; align-items: center;">
-                <div>
-                    <i class="fas fa-graduation-cap" style="color: var(--primary-color); font-size: 2rem;"></i>
-                    <p style="margin-top: 10px; font-weight: 600;">Certificat Yale</p>
-                    <p style="font-size: 0.9rem; color: var(--slate-blue);">🟠 Science du Bien-Être</p>
-                </div>
-                <div>
-                    <i class="fas fa-users" style="color: var(--primary-color); font-size: 2rem;"></i>
-                    <p style="margin-top: 10px; font-weight: 600;">Plus de 10 ans</p>
-                    <p style="font-size: 0.9rem; color: var(--slate-blue);">🟠 Expertise en Développement Personnel</p>
-                </div>
-                <div>
-                    <i class="fas fa-heart" style="color: var(--primary-color); font-size: 2rem;"></i>
-                    <p style="margin-top: 10px; font-weight: 600;">🟠 Approche fondée sur des preuves</p>
-                    <p style="font-size: 0.9rem; color: var(--slate-blue);">Coach en Psychologie Positive</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section À propos -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>À propos de Lumina Rise</h2>
-                <p>Dédié à soutenir les femmes dans la confiance en elles et l’épanouissement de leur plein potentiel.</p>
-            </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="images/lumina-logo.png" alt="Autonomisation des femmes" width="200">
-                </div>
-                <div class="about-text">
-                    <h3>Votre parcours vers la découverte de soi</h3>
-                    <p>Chez Lumina Rise, nous comprenons que le parcours de chaque femme est unique. Notre mission est de vous offrir les outils, les ressources et le soutien nécessaires pour surmonter les défis, développer votre résilience et créer une vie remplie de sens et de joie.</p>
-                    <p>Lumina Rise croit que le bien-être et le développement personnel sont liés. C’est pourquoi nous offrons une approche complète qui prend soin de l’esprit, du corps et de l’âme.</p>
-                    <p>Que vous souhaitiez améliorer votre santé mentale, renforcer votre confiance en vous ou découvrir votre véritable raison d’être, Lumina Rise est là pour vous accompagner à chaque étape de votre parcours.</p>
-                    <a href="about-me-fr.html" class="btn">À propos de la fondatrice</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Qualification -->
-    <section class="qualification-section" style="background-color: #f5f1e8; padding: 80px 0;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <div class="row" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
-                
-                <!-- Carte "Ceci est pour vous si" -->
-                <div class="qualification-card" style="background: white; border-radius: 20px; padding: 40px 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 3px solid #ff8c42; flex: 1; min-width: 300px; max-width: 500px;">
-                    <div style="font-size: 40px; margin-bottom: 20px; text-align: center;">💪</div>
-                    <h3 style="color: #ff8c42; font-size: 24px; font-weight: bold; margin-bottom: 25px; text-align: center;">Ceci est pour vous si :</h3>
-                    <ul style="list-style: none; padding: 0; color: #6b7280; font-size: 16px; line-height: 1.8;">
-                        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                            <span style="position: absolute; left: 0; font-size: 18px;">✨</span>
-                            Vous êtes prête à faire le travail et à fournir des efforts constants
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                            <span style="position: absolute; left: 0; font-size: 18px;">🎯</span>
-                            Vous êtes engagée à poursuivre vos objectifs
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                            <span style="position: absolute; left: 0; font-size: 18px;">⏰</span>
-                            Vous comprenez que les vrais résultats prennent du temps et du dévouement
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                            <span style="position: absolute; left: 0; font-size: 18px;">🌱</span>
-                            Vous êtes prête à investir en vous-même et en votre croissance
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                            <span style="position: absolute; left: 0; font-size: 18px;">🚀</span>
-                            Vous voulez un changement authentique et durable dans votre vie
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                            <span style="position: absolute; left: 0; font-size: 18px;">📚</span>
-                            Vous êtes ouverte à apprendre de nouvelles stratégies et à les mettre en œuvre
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                            <span style="position: absolute; left: 0; font-size: 18px;">🦋</span>
-                            Vous êtes prête à sortir de votre zone de confort
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                            <span style="position: absolute; left: 0; font-size: 18px;">💎</span>
-                            Vous valorisez la qualité plutôt que les solutions rapides
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Carte "Ceci n'est pas pour vous si" -->
-                <div class="qualification-card" style="background: white; border-radius: 20px; padding: 40px 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 3px solid #ff8c42; flex: 1; min-width: 300px; max-width: 500px;">
-                    <div style="font-size: 40px; margin-bottom: 20px; text-align: center;">🚫</div>
-                    <h3 style="color: #ff8c42; font-size: 24px; font-weight: bold; margin-bottom: 25px; text-align: center;">Ceci n'est pas pour vous si :</h3>
-                    <ul style="list-style: none; padding: 0; color: #6b7280; font-size: 16px; line-height: 1.8;">
-                        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                            <span style="position: absolute; left: 0; font-size: 18px;">💊</span>
-                            Vous cherchez une pilule magique ou un succès instantané
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                            <span style="position: absolute; left: 0; font-size: 18px;">😴</span>
-                            Vous attendez des résultats sans fournir d'efforts
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                            <span style="position: absolute; left: 0; font-size: 18px;">⏳</span>
-                            Vous n'êtes pas prête à investir du temps dans le processus
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                            <span style="position: absolute; left: 0; font-size: 18px;">🛋️</span>
-                            Vous voulez que quelqu'un d'autre fasse tout le travail à votre place
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                            <span style="position: absolute; left: 0; font-size: 18px;">🎪</span>
-                            Vous recherchez des promesses ou des garanties irréalistes
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                            <span style="position: absolute; left: 0; font-size: 18px;">🔒</span>
-                            Vous n'êtes pas prête à faire les changements nécessaires
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                            <span style="position: absolute; left: 0; font-size: 18px;">👉</span>
-                            Vous préférez blâmer les autres plutôt que de prendre vos responsabilités
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                            <span style="position: absolute; left: 0; font-size: 18px;">💸</span>
-                            Vous cherchez l'option la moins chère sans tenir compte de la valeur
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Services -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nos services</h2>
-                <p>Programmes et services sur mesure pour soutenir votre parcours de croissance personnelle.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/coaching.jpg" alt="Coaching Individuel">
-                    </div>
-                    <div class="service-content">
-                        <h3>Coaching individuel</h3>
-                        <p>Séances de coaching personnalisées avec une coach certifiée en psychologie positive pour répondre à vos défis et objectifs uniques.</p>
-                        <a href="one-on-one-coaching.html" class="btn">En savoir plus</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/workshops.jpg" alt="Ateliers de Groupe">
-                    </div>
-                    <div class="service-content">
-                        <h3>Ateliers de groupe *À venir</h3>
-                        <p>Ateliers interactifs axés sur des aspects spécifiques des soins personnels et de la croissance personnelle dans un environnement communautaire solidaire.</p>
-                        <a href="group-workshops.html" class="btn">En savoir plus</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/webinars.jpg" alt="Conférences inspirantes">
-                    </div>
-                    <div class="service-content">
-                        <h3>Conférences inspirantes</h3>
-                        <p>Sessions de conférences inspirantes disponibles en personne et en ligne, couvrant des sujets de psychologie positive et des stratégies pratiques de croissance personnelle.</p>
-                        <a href="webinars-fr.html" class="btn">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Réservez une consultation -->
-    <section class="consultation" style="padding: 100px 0; background-color: var(--soft-peach);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Réservez votre consultation individuelle</h2>
-                <p>Prête à passer à la prochaine étape de votre parcours de développement personnel ? Je propose des consultations personnalisées pour vous aider à révéler votre potentiel et à créer des changements concrets et significatifs dans votre vie.</p>
-            </div>
-            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-                <p style="color: var(--slate-blue); margin-bottom: 30px; font-size: 1.1rem;">Que vous souhaitiez développer des habitudes positives, clarifier vos objectifs ou découvrir la science du bien-être, je suis là pour vous accompagner.</p>
-                <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAYVbxl1URTFDQ0JGTklCMEM1UEcxM0NFRE85VUZNSC4u" class="btn" target="_blank" rel="noopener noreferrer">Séance de découverte initiale (gratuite)</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Boîte à outils -->
-    <section class="toolbox" id="toolbox">
-        <div class="container">
-            <div class="section-title">
-                <h2>Le concept de la boîte à outils</h2>
-                <p>Votre vie est votre plus grande création, et chaque créateur a besoin des bons outils. Tout comme un constructeur ne construirait pas une maison sans plans et équipement appropriés, vous ne devriez pas naviguer dans les complexités de la vie sans ressources conçues pour votre succès.</p>
-                <p>Votre parcours vous appartient entièrement, façonné par vos expériences, vos rêves et le courage de continuer à avancer.</p>
-                <p>Ces boîtes à outils sont votre plan de transformation, chacune conçue pour vous aider à développer votre confiance, à surmonter les obstacles et à concevoir une vie qui vous ressemble authentiquement. Veuillez noter que les trousses sont présentement offertes uniquement en anglais.</p>
-            </div>
-            <div class="toolkits">
-                <div class="toolkit-card">
-                    <i class="fas fa-heart"></i>
-                    <h3>La boîte à outils des soins personnels <span>(73 pages - FR ou EN)</span></h3>
-                    <p>Prenez soin de votre âme et rechargez votre énergie grâce à des pratiques quotidiennes, des guides de pleine conscience et des routines bienveillantes.</p>
-                    <a href="toolkits/self-care-fr.html" class="btn">Explorer la boîte à outils</a>
-                </div>
-                <div class="toolkit-card">
-                    <i class="fas fa-seedling"></i>
-                    <h3>La boîte à outils de croissance personnelle <span>(78 pages - EN seulement, FR à venir)</span></h3>
-                    <p>Des stratégies pour évoluer et s’épanouir grâce à des exercices de définition d’objectifs et des questions de journal réflexif.</p>
-                    <a href="toolkits/personal-growth.html" class="btn">Explorer la boîte à outils</a>
-                </div>
-                <div class="toolkit-card">
-                    <i class="fas fa-fist-raised"></i>
-                    <h3>L'essentiel de l'empowerment <span>- Bientôt disponible</span></h3>
-                    <p>Outils pour développer une confiance inébranlable avec des activités de renforcement de la confiance et des modules de leadership.</p>
-                    <a href="toolkits/empowerment.html" class="btn">Explorer la boîte à outils</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Q&A -->
-    <section class="qa-section" id="qa">
-        <div class="container">
-            <div class="section-title">
-                <h2>FAQ: Comprendre votre parcours</h2>
-            </div>
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="Q&A-fr.html" class="btn">Voir le guide complet FAQ</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Infolettre -->
-    <div class="newsletter-section" style="margin-top: 50px; background: var(--soft-gradient); padding: 40px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); text-align: center;">
-        <h3 style="color: var(--primary-color); font-size: 1.8rem; margin-bottom: 20px;">Rejoignez notre infolettre</h3>
-        <p style="color: var(--slate-blue); font-size: 1.1rem; margin-bottom: 15px;">Abonnez-vous pour recevoir des conseils de soins personnels pour la croissance personnelle et des ressources exclusives.</p>
-        <div style="background-color: var(--light-color); padding: 15px; border-radius: 8px; margin-bottom: 20px; display: inline-block;">
-            <i class="fas fa-gift" style="color: var(--primary-color); font-size: 2rem; margin-bottom: 10px;"></i>
-            <p style="font-weight: bold; color: var(--accent-color);">Un cadeau spécial sera offert lors de l'inscription !</p>
-        </div>
-        <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST" style="max-width: 500px; margin: 0 auto;">
-            <div class="form-group">
-                <input type="email" name="email" class="form-control" placeholder="Entrez Votre Adresse Courriel" required style="padding: 15px; border-radius: 30px; border: 1px solid #ddd; width: 100%; margin-bottom: 20px; font-size: 1rem;">
-            </div>
-            <input type="hidden" name="_next" value="https://luminarise.ca/thank-you.html">
-            <input type="hidden" name="_subject" value="Nouvelle Inscription à l'Infolettre">
-            <button type="submit" class="btn" style="background: var(--primary-color); width: 100%; padding: 15px; font-size: 1.1rem; font-weight: 600; border-radius: 30px;">Abonnez-vous pour obtenir votre tracker gratuit</button>
-        </form>
+<section class="hero" id="home">
+    <div class="container">
+        <h2>Aider les femmes à s’épanouir et à briller</h2>
+        <p>Découvrez les outils et les conseils dont vous avez besoin pour nourrir votre santé mentale, embrasser votre croissance personnelle et transformer votre vie.</p>
+        <a href="#contact" class="btn">Commencez Votre Parcours</a>
     </div>
+</section>
 
-    <!-- Section Contact -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Entrez en contact</h2>
-                <p>Prête à commencer votre parcours de croissance personnelle? Contactez-nous dès aujourd'hui.</p>
+<section class="about" id="about">
+    <div class="container">
+        <div class="section-title">
+            <h2>À propos de Lumina Rise</h2>
+            <p>Dédié à soutenir les femmes dans la confiance en elles et l’épanouissement de leur plein potentiel.</p>
+        </div>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="images/lumina-logo.png" alt="Lumina Logo" style="width: 200px; display: block; margin: 0 auto;">
             </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Informations de contact</h3>
-                    <p>Nous aimerions avoir de vos nouvelles. Contactez-nous pour toute question sur nos programmes.</p>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>Luminariseselfgrowth@gmail.com</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Services virtuels disponibles dans le monde entier</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3>Envoyer un message</h3>
-                    <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" placeholder="Votre nom" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" class="form-control" placeholder="Votre courriel" required>
-                        </div>
-                        <div class="form-group">
-                            <select name="inquiry-type" class="form-control" required>
-                                <option value="">Je suis intéressée par...</option>
-                                <option value="coaching">Coaching individuel</option>
-                                <option value="workshop">Ateliers de groupe</option>
-                                <option value="speaking">Conférence</option>
-                                <option value="toolkit">Achat de boîte à outils</option>
-                                <option value="other">Demande générale</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" class="form-control" placeholder="Votre Message" required></textarea>
-                        </div>
-                        <input type="hidden" name="_next" value="https://luminarise.ca/thank-you.html">
-                        <button type="submit" class="btn">Envoyer</button>
-                    </form>
-                </div>
+            <div class="about-text">
+                <h3>Votre parcours vers la découverte de soi</h3>
+                <p>Chez Lumina Rise, nous comprenons que le parcours de chaque femme est unique. Notre mission est de vous offrir les outils, les ressources et le soutien nécessaires pour surmonter les défis et développer votre résilience.</p>
+                <a href="about-me-fr.html" class="btn">À propos de la fondatrice</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Pied de page -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h4>Lumina Rise Self-Growth</h4>
-                    <p>Soutenir les femmes dans leur épanouissement en leur offrant des outils concrets, des ressources et un accompagnement bienveillant.</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Liens Rapides</h4>
-                    <ul>
-                        <li><a href="#home">Accueil</a></li>
-                        <li><a href="#about">À propos</a></li>
-                        <li><a href="#toolbox">Boîte à outils</a></li>
-                        <li><a href="#services">Services</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Lumina Rise Self-Growth. Tous droits réservés.</p>
-            </div>
+<section class="consultation">
+    <div class="container">
+        <div class="section-title">
+            <h2>Réservez votre consultation individuelle</h2>
+            <p>Prête à passer à la prochaine étape ? Je propose des consultations personnalisées pour vous aider à révéler votre potentiel.</p>
         </div>
-    </footer>
+        <div style="text-align: center;">
+            <a href="https://forms.office.com/..." class="btn" target="_blank">Séance de découverte initiale (gratuite)</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="copyright">
+            <p>&copy; 2025 Lumina Rise Self-Growth. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
+
 <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
 
-    // Ouvre ou ferme le menu lors du clic sur l'icône hamburger
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
         navLinks.classList.toggle('active');
     });
 
-    // Ferme le menu automatiquement lorsqu'un lien est sélectionné
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
         });
     });
-</script> 
+
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+            navLinks.classList.remove('active');
+        }
+    });
+</script>
 </body>
 </html>
