@@ -1,140 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Lumina Rise Self-Growth</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-:root {
-    --primary-color: #ff7f30;
-    --secondary-color: #ffe577;
-    --accent-color: #fda63a;
-    --text-color: #333;
-    --light-color: #fff;
-    --dark-color: #333;
-    --slate-blue: #5d6d7e;
-    --soft-peach: #fff2d9;
-    --soft-pink: #ffcfcf;
-    --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577);
-    --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb);
-    --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad);
-    
-    /* Typography Variables */
-    --heading-font-size: 2.5rem;
-    --subheading-font-size: 1.8rem;
-    --subtitle-font-size: 1.1rem;
-    --body-font-size: 1.2rem;
-    --small-font-size: 0.9rem;
-}
+        :root {
+            --primary-color: #ff7f30;
+            --secondary-color: #ffe577;
+            --accent-color: #fda63a;
+            --text-color: #333;
+            --light-color: #fff;
+            --dark-color: #333;
+            --slate-blue: #5d6d7e;
+            --soft-peach: #fff2d9;
+            --soft-pink: #ffcfcf;
+            --gradient: linear-gradient(135deg, #ff5a00, #fda63a, #ffe577);
+            --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb);
+            --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad);
+            
+            /* Typography Variables */
+            --heading-font-size: 2.5rem;
+            --subheading-font-size: 1.8rem;
+            --subtitle-font-size: 1.1rem;
+            --body-font-size: 1.2rem;
+            --small-font-size: 0.9rem;
+        }
 
-/* Language Selector */
-.language-selector {
-    margin-left: 20px;
-}
+        /* Language Toggle Styles */
+        .lang-switch {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
 
-.lang-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 8px 15px;
-    background: var(--gradient);
-    color: var(--light-color);
-    text-decoration: none;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+        .lang-link {
+            text-decoration: none;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
 
-.lang-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
+        .lang-link.active {
+            background: var(--primary-color);
+            color: white;
+        }
 
-.lang-btn i {
-    font-size: 1rem;
-}
+        .lang-link:hover:not(.active) {
+            background: rgba(255, 127, 48, 0.1);
+        }
 
-@media (max-width: 768px) {
-    .language-selector {
-        position: absolute;
-        top: 20px;
-        right: 60px;
-    }
-    
-    .lang-btn {
-        padding: 6px 12px;
-        font-size: 0.85rem;
-    }
-}
+        /* Reset all paragraph styles */
+        p {
+            font-family: 'Montserrat', sans-serif !important;
+            color: var(--slate-blue) !important;
+            line-height: 1.6 !important;
+            font-size: var(--body-font-size) !important;
+            margin-bottom: 15px !important;
+        }
 
-    /* Reset all paragraph styles first */
-    p {
-        font-family: 'Montserrat', sans-serif !important;
-        color: var(--slate-blue) !important;
-        line-height: 1.6 !important;
-        font-size: var(--body-font-size) !important;
-        margin-bottom: 15px !important;
-    }
+        .hero p {
+            color: var(--soft-peach) !important;
+        }
 
-    /* Then add specific exceptions */
-    .hero p {
-        color: var(--soft-peach) !important;
-    }
+        .footer-col p, .copyright p {
+            color: #bbb !important;
+        }
 
-    .footer-col p, .copyright p {
-        color: #bbb !important;
-    }
+        .logo-text p {
+            font-size: 0.8rem !important;
+            color: var(--dark-color) !important;
+            margin-bottom: 0 !important;
+        }
 
-    .logo-text p {
-        font-size: 0.8rem !important;
-        color: var(--dark-color) !important;
-        margin-bottom: 0 !important;
-    }
+        span {
+            font-family: 'Montserrat', sans-serif !important;
+            color: var(--slate-blue) !important;
+            line-height: 1.6 !important;
+            font-size: var(--body-font-size) !important;
+        }
 
-    /* Handle spans that might be used instead of paragraphs */
-    span {
-        font-family: 'Montserrat', sans-serif !important;
-        color: var(--slate-blue) !important;
-        line-height: 1.6 !important;
-        font-size: var(--body-font-size) !important;
-    }
+        li {
+            font-family: 'Montserrat', sans-serif !important;
+            color: var(--slate-blue) !important;
+            line-height: 1.6 !important;
+            font-size: var(--body-font-size) !important;
+        }
 
-    /* Fix info-item spans */
-    .info-item span {
-        color: var(--slate-blue) !important;
-    }
+        .footer-col ul li a {
+            color: #bbb !important;
+        }
 
-    /* Make sure list items have consistent styling */
-    li {
-        font-family: 'Montserrat', sans-serif !important;
-        color: var(--slate-blue) !important;
-        line-height: 1.6 !important;
-        font-size: var(--body-font-size) !important;
-    }
+        .section-title h2 {
+            color: var(--primary-color) !important;
+        }
 
-    /* Footer list exceptions */
-    .footer-col ul li a {
-        color: #bbb !important;
-    }
+        .toolkit-card h3, .tool-card h3, .about-text h3, .content-block h3 {
+            color: var(--accent-color) !important;
+        }
 
-    /* Keep section titles as they are */
-    .section-title h2 {
-        color: var(--primary-color) !important;
-    }
+        .footer-col h4 {
+            color: var(--accent-color) !important;
+        }        
 
-    .toolkit-card h3, .tool-card h3, .about-text h3, .content-block h3 {
-        color: var(--accent-color) !important;
-    }
-
-    /* Keep footer text light */
-    .footer-col h4 {
-        color: var(--accent-color) !important;
-    }        
         * {
             margin: 0;
             padding: 0;
@@ -154,46 +128,71 @@
             padding: 10px;
         }
         
-        /* Header Styles */
-/* Header Styles */
-header {
-background: var(--header-gradient);
-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-position: fixed;
-width: 100%;
-z-index: 1000;
-}
-nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 0;
-}
-.logo {
-display: flex;
-align-items: center;
-}
-.logo img {
-height: 50px;
-margin-right: 10px;
-}
-.logo-text h1 {
-font-size: 1.5rem;
-color: var(--primary-color);
-margin: 0;
-}
-.logo-text p {
-font-size: 0.8rem;
-color: var(--dark-color);
-}
-.nav-links {
-display: flex;
-list-style: none;
-}
-.nav-links li {
-margin-left: 30px;
-} 
-        /* Hero Section */
+        header {
+            background: var(--header-gradient);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--dark-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+        
         .hero {
             background: var(--dark-color);
             color: var(--light-color);
@@ -229,13 +228,6 @@ margin-left: 30px;
             display: inline-block;
         }
         
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: var(--soft-peach);
-        }
-        
         .btn {
             display: inline-block;
             padding: 12px 30px;
@@ -255,7 +247,6 @@ margin-left: 30px;
             box-shadow: 0 6px 15px rgba(0,0,0,0.25);
         }
         
-        /* Content Section */
         .content-section {
             padding: 100px 0;
             background-color: var(--soft-peach);
@@ -272,26 +263,8 @@ margin-left: 30px;
             margin-bottom: 15px;
         }
         
-        .section-title p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--slate-blue);
-        }
-        
         .content-block {
             margin-bottom: 60px;
-        }
-        
-        .content-block h3 {
-            font-size: 1.8rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-        }
-        
-        .content-block p {
-            color: var(--slate-blue);
-            margin-bottom: 15px;
         }
         
         .two-columns {
@@ -316,87 +289,16 @@ margin-left: 30px;
             display: block;
         }
         
-        /* Mission Section */
         .mission-section {
             padding: 80px 0;
             background: var(--soft-gradient);
         }
         
-        /* Toolbox Section */
         .toolbox-section {
             padding: 100px 0;
             background-color: var(--soft-peach);
         }
         
-        .toolbox-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .toolbox-card {
-            background: var(--light-color);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .toolbox-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-        
-        .toolbox-card h3 {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            margin-bottom: 15px;
-        }
-        
-        .toolbox-card p {
-            color: var(--slate-blue);
-            margin-bottom: 20px;
-        }
-        
-        /* Education Section */
-        .education-section {
-            padding: 80px 0;
-            background: var(--soft-gradient);
-        }
-        
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .education-card {
-            background: var(--light-color);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .education-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-        
-        .education-card h3 {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            margin-bottom: 15px;
-        }
-        
-        .education-card p {
-            color: var(--slate-blue);
-            margin-bottom: 10px;
-        }
-        
-        /* Interests Section */
         .interests-section {
             padding: 100px 0;
             background-color: var(--soft-peach);
@@ -429,17 +331,6 @@ margin-left: 30px;
             margin-bottom: 20px;
         }
         
-        .interest-card h4 {
-            font-size: 1.2rem;
-            color: var(--accent-color);
-            margin-bottom: 15px;
-        }
-        
-        .interest-card p {
-            color: var(--slate-blue);
-        }
-        
-        /* CTA Section */
         .cta-section {
             text-align: center;
             padding: 60px 0;
@@ -449,19 +340,6 @@ margin-left: 30px;
             max-width: 1100px;
         }
         
-        .cta-section h3 {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .cta-section p {
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: var(--slate-blue);
-        }
-        
-        /* Contact Section */
         .contact-section {
             background-color: #fcf3e1;
             padding: 60px 0;
@@ -476,11 +354,6 @@ margin-left: 30px;
         .contact-info, .contact-form {
             flex: 1;
             min-width: 300px;
-        }
-
-        .contact-info h2, .contact-form h2 {
-            color: #e8a35c;
-            margin-bottom: 20px;
         }
 
         .contact-item {
@@ -510,11 +383,6 @@ margin-left: 30px;
             font-family: inherit;
         }
 
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
         .send-btn {
             background-color: #f8a44c;
             color: white;
@@ -527,11 +395,6 @@ margin-left: 30px;
             align-self: flex-start;
         }
 
-        .send-btn:hover {
-            background-color: #e8943c;
-        }
-        
-        /* Footer */
         footer {
             background-color: var(--dark-color);
             color: var(--light-color);
@@ -543,30 +406,6 @@ margin-left: 30px;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
-        }
-        
-        .footer-col h4 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-        
-        .footer-col ul {
-            list-style: none;
-        }
-        
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-col ul a {
-            color: #bbb;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-col ul a:hover {
-            color: var(--accent-color);
         }
         
         .social-links {
@@ -587,11 +426,6 @@ margin-left: 30px;
             transition: all 0.3s;
         }
         
-        .social-links a:hover {
-            background: var(--gradient);
-            transform: translateY(-3px);
-        }
-        
         .copyright {
             text-align: center;
             padding-top: 20px;
@@ -600,19 +434,7 @@ margin-left: 30px;
             color: #bbb;
         }
         
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-content, .two-columns {
-                flex-direction: column;
-            }
-            
-            .about-image, .about-text, .column {
-                flex: none;
-                width: 100%;
-            }
-        }
-        
-             @media (max-width: 768px) {
+        @media (max-width: 768px) {
             .nav-links {
                 display: none;
                 position: absolute;
@@ -636,149 +458,78 @@ margin-left: 30px;
             .hamburger {
                 display: block;
             }
-            
-            .hero h2 {
-                font-size: 2.5rem;
+
+            .lang-switch {
+                margin: 20px 0 0 0;
+                justify-content: center;
             }
             
-            .contact-container {
+            .two-columns {
                 flex-direction: column;
             }
         }
-        
-        .image-container img[src="images/about-founder.jpg"] {
-            width: 85%; 
-            margin: 0 auto;
-            display: block;
-        }
     </style>
-
 </head>
 <body>
-            
 
-        </div>
-
-<!-- Header -->
 <header>
     <div class="container">
         <nav>
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <img src="images/logo.png" alt="Lumina Rise Logo">
                 <div class="logo-text">
                     <h1>Lumina Rise</h1>
                     <p>Where Self-Care Meets Self-Growth</p>
                 </div>
-            </div>
+            </a>
             
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about-me.html">About the founder</a></li>
                 <li><a href="index.html#toolbox">Toolbox</a></li>
                 <li><a href="index.html#services">Services</a></li>
                 <li><a href="Q&A.html#Q&A">FAQ</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
+                
+                <!-- Language Toggle -->
+                <div class="lang-switch">
+                    <a href="about-me.html" class="lang-link active">EN</a>
+                    <a href="about-me-fr.html" class="lang-link">FR</a>
+                </div>
             </ul>
             
-            <div class="hamburger">
+            <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
-            </div>
-            
-            <!-- Language Selector -->
-            <div class="language-selector">
-                <a href="about-me-fr.html" class="lang-btn" title="French version">
-                    <i class="fas fa-globe"></i> FR
-                </a>
             </div>
         </nav>
     </div>
-</header>    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-     <h2>My Story</h2>
-            <p>Empowering women to discover their inner strength and transform their lives, through the experience and journey I've walked myself.</p>
-            <a href="#mission" class="btn">Learn More</a>
-        </div>
-    </section>
+</header>
 
-    <!-- Introduction Section -->
-    <section class="content-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>The Journey That Led to Lumina Rise Self-Growth</h2>
-                <p>
-Through my personal and professional experiences, I've come to understand that growth is not a luxury but rather a responsibility to oneself.
-
-Lumina Rise has become the space I wish I had during certain moments of my life.
-</p>
-            </div>            
-            <div class="content-block">
-                <div class="two-columns">
-                    <div class="column">
-                        <h3>Passion for Self-Development</h3>
-                        <p>Hi, I’m Gina-Line, the heart and soul behind Lumina Rise. After over a decade of diving deep into my own self-development journey, I felt a powerful pull to create a space where women could feel truly seen, supported, and empowered to grow into the most radiant version of themselves. I’ve walked through tough seasons, rediscovered my inner strength, and learned firsthand the life-changing power of resilience, mindset, and self-care. That’s why I’m so passionate about helping others do the same.</p>
-                        
-                        <p>With a background in Positive Psychology Coaching, a Yale certificate in Well-being and an unshakable love for personal growth, I now guide women toward lives filled with purpose, confidence, and joy. Lumina Rise isn’t just a brand, it’s a movement. One rooted in authenticity, growth, and deep compassion. Whether you're here to heal, evolve, or reconnect with your true self, I’m honored to walk this path beside you.</p>
-                        
-                        <p>In a world that’s always rushing, Lumina Rise offers a different pace, one that blends self-care with self-growth, and inner work with real-life action. I’m here to equip you with tools, insights, and soulful support that help you flourish, not just function.</p>
-
- 			 <p>What truly lights up my soul is witnessing that spark, the moment a woman realizes her own power and starts showing up fully for her life. That’s the kind of magic I live for.</p>
-
- 			 <p>I’m endlessly curious about how mindset, emotions, and intentional action create lasting transformation. I’m always exploring new ideas, old wisdom, and evidence-based practices that help women thrive from the inside out. That’s why I’m so drawn to positive psychology, it combines the science of well-being with the heart of meaningful living.</p>
-
- 			 <p>At my core, I’m driven by a simple but powerful passion: helping women reclaim their joy, confidence, and sense of possibility. No matter what stage of the journey you’re on, know this... you’re not alone. And your rise? It starts right here.</p>
-
-                    </div>
-                    <div class="column">
-    <div class="image-container">
-        <img src="images/about-founder.jpg" alt="Founder of Lumina Rise" style="width: 60%; margin: 0 auto; display: block;">
+<section class="hero">
+    <div class="container">
+        <h2>My Story</h2>
+        <p>Empowering women to discover their inner strength and transform their lives, through the experience and journey I've walked myself.</p>
+        <a href="#mission" class="btn">Learn More</a>
     </div>
-</div>
-        </div>
-    </section>
+</section>
 
-    <!-- Mission Section -->
-<section class="mission-section" id="mission">
+<section class="content-section">
     <div class="container">
         <div class="section-title">
-            <h2>The heart of Lumina Rise</h2>
-            <p>Transform your potential into power at every step of your journey</p>
-        </div>
-        
+            <h2>The Journey That Led to Lumina Rise Self-Growth</h2>
+            <p>Through my personal and professional experiences, I've come to understand that growth is not a luxury but rather a responsibility to oneself. Lumina Rise has become the space I wish I had during certain moments of my life.</p>
+        </div>            
         <div class="content-block">
             <div class="two-columns">
                 <div class="column">
-                    <h3>Mission</h3>
-                    <p>To provide women with innovative, actionable, and inspiring tools that support mental health, encourage personal growth, and foster a community of empowered, confident women.</p>
-                    
-                    <h3>Vision</h3>
-                    <p>To become a leading resource in female self-development, transforming everyday self-care practices into a powerful journey of personal evolution.</p>
-                    
-                    <h3>Core Values</h3>
-                    <ul>
-                        <li>Authenticity - Encouraging genuine self-expression and growth</li>
-                        <li>Empowerment - Providing tools that build independence and confidence while enabling women to realize their full potential</li>
-                        <li>Compassion - Approaching all interactions with kindness and understanding</li>
-                        <li>Growth Mindset - Embracing challenges as opportunities for development</li>                   
-                    </ul>
-
-                    <div style="margin-top: 15px;"></div>
-
-                    <h3>Where Self-Care Meets Self-Growth</h3>
-                    <p>This powerful statement reflects our holistic approach to women's empowerment. We recognize that self-care is not just about pampering yourself or taking a break from life's demands. It's about creating a strong foundation of physical, emotional, and mental well-being that enables you to pursue your goals and dreams with vigor and resilience.</p>
-
-                    <p>Similarly, self-growth isn't just about pushing yourself to achieve more. It's about expanding your horizons, challenging your limitations, and evolving into the best version of yourself – all while maintaining a compassionate and nurturing attitude towards your own journey.</p>
-
-                    <p>Our slogan embodies the idea that self-care and self-growth are not mutually exclusive, but rather complementary forces. When you learn to care for yourself deeply and grow intentionally, you create a positive feedback loop that propels you towards your highest potential. This is the essence of what I offer at Lumina Rise... a journey where every step towards growth is also an act of self-love and care.</p>
-
-                    <p>This journey is about creating a space where you are not just surviving but thriving. When you care for yourself, you build resilience, emotional intelligence, and physical well-being, all of which are essential for sustainable growth.</p>
-
-                    <p>This philosophy promotes the idea that growth doesn't have to be painful or overwhelming. It can be uplifting, healing, and deeply personal. When self-care is woven into your growth journey, you'll find that both become easier and more fulfilling, leading to a more meaningful life.</p>
+                    <h3>Passion for Self-Development</h3>
+                    <p>Hi, I’m Gina-Line, the heart and soul behind Lumina Rise. After over a decade of diving deep into my own self-development journey, I felt a powerful pull to create a space where women could feel truly seen, supported, and empowered to grow into the most radiant version of themselves.</p>
+                    <p>With a background in Positive Psychology Coaching, a Yale certificate in Well-being and an unshakable love for personal growth, I now guide women toward lives filled with purpose, confidence, and joy.</p>
+                    <p>In a world that’s always rushing, Lumina Rise offers a different pace, one that blends self-care with self-growth, and inner work with real-life action.</p>
                 </div>
-                
                 <div class="column">
-                    <div class="image-container" style="margin-top: 225px;">
-                        <img src="images/mission-vision.jpg" alt="Women supporting each other">
+                    <div class="image-container">
+                        <img src="images/about-founder.jpg" alt="Founder of Lumina Rise" style="width: 85%; margin: 0 auto; display: block;">
                     </div>
                 </div>
             </div>
@@ -786,230 +537,82 @@ Lumina Rise has become the space I wish I had during certain moments of my life.
     </div>
 </section>
 
-    <!-- Toolbox Section -->
-    <section class="toolbox-section" id="toolbox-concept">
-        <div class="container">
-            <div class="section-title">
-                <h2>The Toolbox Concept</h2>
-                <p>Different tools for different jobs</p>
-            </div>
-            
-            <div class="content-block">
-                <p>Just as a craftsperson selects the right tools for each project, creating a fulfilling and empowered life begins with building your own personalized toolbox.Because every woman’s path is different, your toolbox is customized to meet your specific challenges, amplify your strengths, and nurture your deepest aspirations. With the right tools in hand, you’re equipped to rise, rebuild, and thrive; no matter what comes your way.</p>
-
- <p>Each toolkit I’ve created is thoughtfully designed to support specific areas of your life, helping you overcome challenges, celebrate your uniqueness, and cultivate lasting happiness from the inside out. If you're ready to transform your life and step boldly into your power, it all begins with one simple step.
-</p>
-            </div>
-            
-            
+<section class="mission-section" id="mission">
+    <div class="container">
+        <div class="section-title">
+            <h2>The heart of Lumina Rise</h2>
+            <p>Transform your potential into power at every step of your journey</p>
         </div>
-    </section>
-<!-- Replace your existing Education Section with this -->
+        <div class="two-columns">
+            <div class="column">
+                <h3>Mission</h3>
+                <p>To provide women with innovative, actionable, and inspiring tools that support mental health, encourage personal growth, and foster a community of empowered, confident women.</p>
+                <h3>Vision</h3>
+                <p>To become a leading resource in female self-development, transforming everyday self-care practices into a powerful journey of personal evolution.</p>
+                <h3>Core Values</h3>
+                <ul>
+                    <li>Authenticity - Encouraging genuine self-expression and growth</li>
+                    <li>Empowerment - Providing tools that build independence and confidence</li>
+                    <li>Compassion - Approaching all interactions with kindness</li>
+                    <li>Growth Mindset - Embracing challenges as opportunities</li>                   
+                </ul>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <img src="images/mission-vision.jpg" alt="Women supporting each other">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="education-section" id="education" style="background-color: #f5f1e8; padding: 80px 0;">
-    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-        <div class="section-title" style="text-align: center; margin-bottom: 60px;">
-            <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px;">Education & Credentials</h2>
-            <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto; color: var(--slate-blue);">My commitment to continuous learning and professional development</p>
+    <div class="container">
+        <div class="section-title">
+            <h2>Education & Credentials</h2>
         </div>
-        
-        <div class="row" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
-            
-            <!-- First Education Card - Formal Education -->
-            <div class="education-card" style="background: white; border-radius: 20px; padding: 40px 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 3px solid #ff8c42; flex: 1; min-width: 300px; max-width: 500px;">
-                <div style="font-size: 40px; margin-bottom: 20px; text-align: center;">🎓</div>
-                <h3 style="color: #ff8c42; font-size: 24px; font-weight: bold; margin-bottom: 25px; text-align: center;">Formal Education</h3>
-                <ul style="list-style: none; padding: 0; color: #6b7280; font-size: 16px; line-height: 1.8;">
-                    <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                        <span style="position: absolute; left: 0; font-size: 18px;">📚</span>
-                        <strong>Delinquency Intervention Techniques</strong><br>
-                        Comprehensive training in psychology, sociology, and criminology, focused on understanding human behavior, social dynamics, and criminal patterns. This diploma emphasizes practical intervention strategies, conflict resolution, and relational tools for working with individuals in vulnerable or at-risk situations.
-                    </li>
-                    <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                        <span style="position: absolute; left: 0; font-size: 18px;">💼</span>
-                        <strong>Office Management</strong><br>
-                       It prepares to work in positions with administrative responsibilities in order to effectively manage the tasks and activities of an office and to efficiently use various software. It provides the knowledge and skills necessary to apply new technologies, perform project management, and carry out various office tasks. It also allows individuals to enhance their knowledge and thus participate in the operation of a business.
-                    </li>
-                </ul>
+        <div class="two-columns">
+            <div class="interest-card" style="flex: 1;">
+                <h3>Formal Education</h3>
+                <p><strong>Delinquency Intervention Techniques</strong><br>Psychology, sociology, and criminology focused training.</p>
+                <p><strong>Office Management</strong><br>Administrative and project management skills.</p>
             </div>
-
-            <!-- Second Education Card - Professional Certifications -->
-            <div class="education-card" style="background: white; border-radius: 20px; padding: 40px 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 3px solid #ff8c42; flex: 1; min-width: 300px; max-width: 500px;">
-                <div style="font-size: 40px; margin-bottom: 20px; text-align: center;">🏆</div>
-                <h3 style="color: #ff8c42; font-size: 24px; font-weight: bold; margin-bottom: 25px; text-align: center;">Professional Certifications</h3>
-                <ul style="list-style: none; padding: 0; color: #6b7280; font-size: 16px; line-height: 1.8;">
-                    <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                        <span style="position: absolute; left: 0; font-size: 18px;">💪</span>
-                        <strong>Positive Psychology Coach Certification</strong><br>
-                        Specialized training in evidence-based approaches to well-being, strengths-based development, and positive interventions that foster growth and resilience.
-                    </li>
-                    <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                        <span style="position: absolute; left: 0; font-size: 18px;">🎯</span>
-                        <strong>The Science of Well-Being – Yale University</strong><br>
-                        An evidence-based course exploring the psychological science behind happiness, well-being, and human flourishing. This certification focuses on cognitive and behavioral strategies proven to increase life satisfaction and promote sustainable personal growth.
-                    </li>
-                    <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-                        <span style="position: absolute; left: 0; font-size: 18px;">🤖</span>
-                        <strong>Ethics in the Age of Generative AI</strong><br>
-                        Focused on the ethical considerations and responsible implementation of generative artificial intelligence technologies. This certification covers computer ethics, generative AI principles, and responsible AI practices.
-                    </li>
-                </ul>
-            </div>
-            
-   <!-- Third Education Card - Continuous Learning -->
-<div class="education-card" style="background: white; border-radius: 20px; padding: 40px 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 3px solid #ff8c42; flex: 1; min-width: 300px; max-width: 500px;">
-    <div style="font-size: 40px; margin-bottom: 20px; text-align: center;">🌱</div>
-    <h3 style="color: #ff8c42; font-size: 24px; font-weight: bold; margin-bottom: 25px; text-align: center;">Continuous Learning</h3>
-    <ul style="list-style: none; padding: 0; color: #6b7280; font-size: 16px; line-height: 1.8;">
-        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-            <span style="position: absolute; left: 0; font-size: 18px;">🧠</span>
-            I've always been incredibly curious... the kind of person who asks why and how about everything. I'd definitely describe myself as a serial learner.
-        </li>
-        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-            <span style="position: absolute; left: 0; font-size: 18px;">🌟</span>
-            Since I was in a self-development journey for over a decade, it allowed me to develop lots of skills, habits and hobbies and got me curious into knowing more always.
-        </li>
-        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-            <span style="position: absolute; left: 0; font-size: 18px;">📖</span>
-            Whether it's diving into a new book, exploring emerging research, or taking specialized training, I genuinely love to learn.
-        </li>
-        <li style="margin-bottom: 15px; padding-left: 35px; position: relative;">
-            <span style="position: absolute; left: 0; font-size: 18px;">🚀</span>
-            I'm constantly seeking out new insights that can elevate the work I do with women. Growth is a lifelong journey, and I'm here to walk it beside you. Always learning, always rising.
-        </li>
-    </ul>
-</div> 
-    <!-- Interests Section -->
-    <section class="interests-section" id="interests">
-        <div class="container">
-            <div class="section-title">
-                <h2>Personal Interests</h2>
-                <p>The passions that fuel my creativity and perspective</p>
-            </div>
-            
-            <div class="interests-grid">
-                <div class="interest-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Reading</h4>
-                   <p>I've been a bookworm since I was young, finding magic in every page I turned. Working at a provincial library deepened my love for books even more - surrounded by thousands of stories, knowledge, and wisdom every day. Books aren't just entertainment for me; they're lifelines to growth, understanding, and endless possibilities.</p>
-</div>
-                
-                <div class="interest-card">
-                    <i class="fas fa-palette"></i>
-                    <h4>Coloring & Art</h4>
-                    <p>I love the meditative practice of coloring, especially Johanna Basford's intricate designs, which helps me practice mindfulness and creativity.</p>
-                </div>
-                
-                <div class="interest-card">
-                    <i class="fas fa-brain"></i>
-                    <h4>Learning</h4>
-                    <p>I'm endlessly curious about life and the world around me. I have a genuine passion for learning. Whether it's developing new skills, expanding my knowledge, or exploring diverse topics that spark inspiration and growth.</p>
-                </div>
-                
-                <div class="interest-card">
-                    <i class="fas fa-robot"></i>
-                    <h4>Artificial Intelligence</h4>
-                    <p>I'm fascinated by AI's potential to transform how we learn, grow, and solve complex problems in personal development.</p>
-                </div>                
-                      
-                <div class="interest-card">
-                    <i class="fas fa-star"></i>
-                    <h4>Self-Development</h4>
-                    <p> ongoing journey of becoming more aligned with who I truly am. It’s about evolving with intention, growing through challenges, and showing up for myself with purpose and compassion.</p>
-                </div>
+            <div class="interest-card" style="flex: 1;">
+                <h3>Professional Certifications</h3>
+                <p><strong>Positive Psychology Coach</strong><br>Evidence-based well-being approaches.</p>
+                <p><strong>The Science of Well-Being – Yale</strong><br>Psychological science behind human flourishing.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h3>Ready to Begin Your Journey?</h3>
-            <p>Let's work together to unlock your potential and create the life you deserve.</p>
-            <a href="index.html#contact" class="btn">Get in Touch</a>
-        </div>
-    </section>
+<section class="cta-section">
+    <div class="container">
+        <h3>Ready to Begin Your Journey?</h3>
+        <p>Let's work together to unlock your potential and create the life you deserve.</p>
+        <a href="index.html#contact" class="btn">Get in Touch</a>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2>Get in Touch</h2>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>Luminariseselfgrowth@gmail.com</p>
-                    </div>
-                  
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Virtual services available worldwide</p>
-                    </div>
-                    <div class="social-links">
-                                               <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
-                      
-                        <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/"><i class="fab fa-pinterest-p"></i></a>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <h2>Send a Message</h2>
-                    <form>
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="text" placeholder="Subject">
-                        <textarea placeholder="Your Message" required></textarea>
-                        <button type="submit" class="send-btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-              <div class="footer-container">
+<footer>
+    <div class="container">
+        <div class="footer-container">
             <div class="footer-col">
                 <h4>About</h4>
                 <ul>
                     <li><a href="about-me.html">My Story</a></li>
-                    <li><a href="#mission">Mission & Vision</a></li>
-                    <li><a href="#toolbox-concept">Toolbox Concept</a></li>
+                    <li><a href="#mission">Mission</a></li>
                     <li><a href="#education">Education</a></li>
                 </ul>
             </div>
-            
-            <div class="footer-col">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="index.html#services">Coaching</a></li>
-                    <li><a href="index.html#services">Workshops</a></li>
-                    <li><a href="index.html#services">Resources</a></li>
-                    <li><a href="index.html#services">Community</a></li>
-                </ul>
-            </div>
-            
             <div class="footer-col">
                 <h4>Connect</h4>
-                <ul>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Newsletter</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h4>Follow</h4>
-                <p>Join our community on social media for daily inspiration and updates.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     <a href="#"><i class="fab fa-pinterest-p"></i></a>
                 </div>
             </div>
         </div>
-        
         <div class="copyright">
             <p>&copy; 2025 Lumina Rise Self-Growth. All rights reserved.</p>
         </div>
@@ -1017,14 +620,25 @@ Lumina Rise has become the space I wish I had during certain moments of my life.
 </footer>
 
 <script>
-    // Mobile menu toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    hamburger.addEventListener('click', () => {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
         navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+            navLinks.classList.remove('active');
+        }
     });
 </script>
 </body>
 </html>
-
