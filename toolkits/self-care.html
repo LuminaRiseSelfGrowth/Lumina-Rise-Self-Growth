@@ -929,7 +929,7 @@ li {
             <!-- Stripe Payment Button -->
             <div style="text-align: center; margin: 50px auto 30px; max-width: 300px;">
                 <a href="https://buy.stripe.com/00w4gz82kgTidd2343e3e00" class="btn" target="_blank">
-                    <span class="lang-en">Buy the Self-Care Toolkit – USD 28</span>
+                    <span class="lang-en">Buy the Self-Care Toolkit – 28</span>
                     <span class="lang-fr">Acheter la Boîte à Outils – USD 28</span>
                 </a>
                 <p style="font-size: 0.9rem; color: var(--slate-blue); margin-top: 10px; text-align: center;">
@@ -1064,6 +1064,19 @@ li {
                 header.style.boxShadow = 'none';
             }
         });
-    </script>
+
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Optional: Close menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+       </script>
 </body>
 </html>
