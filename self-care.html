@@ -28,9 +28,7 @@
             
             --heading-font-size: 2.5rem;
             --subheading-font-size: 1.8rem;
-            --subtitle-font-size: 1.1rem;
             --body-font-size: 1rem;
-            --small-font-size: 0.9rem;
         }
 
         * {
@@ -46,18 +44,7 @@
             background-color: var(--light-color);
         }
 
-        p {
-            color: var(--slate-blue);
-            line-height: 1.6;
-            font-size: var(--body-font-size);
-            margin-bottom: 15px;
-        }
-
-        li {
-            color: var(--slate-blue);
-            line-height: 1.6;
-            font-size: var(--body-font-size);
-        }
+        p { color: var(--slate-blue); margin-bottom: 15px; }
 
         .container {
             width: 90%;
@@ -66,14 +53,13 @@
             padding: 0 20px;
         }
         
-        /* Header Styles */
+        /* Header & Navigation */
         header {
             background: var(--header-gradient);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
-            z-index: 1000;
-            transition: all 0.3s ease;
+            z-index: 2000; /* Extremely high to stay on top */
         }
         
         nav {
@@ -81,6 +67,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
+            pointer-events: auto; /* Ensures clicks work */
         }
         
         .logo {
@@ -89,22 +76,10 @@
             text-decoration: none;
         }
         
-        .logo img {
-            height: 50px;
-            margin-right: 10px;
-        }
+        .logo img { height: 50px; margin-right: 10px; }
         
-        .logo-text h1 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin: 0;
-        }
-        
-        .logo-text p {
-            font-size: 0.8rem;
-            color: var(--dark-color);
-            margin-bottom: 0;
-        }
+        .logo-text h1 { font-size: 1.5rem; color: var(--primary-color); margin: 0; }
+        .logo-text p { font-size: 0.8rem; color: var(--dark-color); margin-bottom: 0; }
         
         .nav-links {
             display: flex;
@@ -112,9 +87,7 @@
             align-items: center;
         }
         
-        .nav-links li {
-            margin-left: 30px;
-        }
+        .nav-links li { margin-left: 30px; }
         
         .nav-links a {
             text-decoration: none;
@@ -123,23 +96,17 @@
             transition: color 0.3s;
         }
         
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
+        .nav-links a:hover { color: var(--primary-color); }
         
         .hamburger {
             display: none;
             cursor: pointer;
             font-size: 1.5rem;
             color: var(--dark-color);
+            z-index: 2100;
         }
 
-        /* Language Switcher */
-        .lang-switch {
-            margin-left: 30px;
-            display: flex;
-            gap: 10px;
-        }
+        .lang-switch { display: flex; gap: 10px; margin-left: 30px; }
 
         .lang-btn {
             background: none;
@@ -150,39 +117,28 @@
             cursor: pointer;
             font-size: 0.8rem;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: 0.3s;
         }
 
-        .lang-btn.active {
-            background: var(--primary-color);
-            color: white;
-        }
+        .lang-btn.active { background: var(--primary-color); color: white; }
 
         /* Hero Section */
         .hero {
             background: var(--dark-color);
-            color: var(--light-color);
             padding: 150px 0 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
         
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background: url('../images/self-care-bg.jpg') center/cover no-repeat;
             opacity: 0.3;
-            z-index: 0;
-        }
-        
-        .hero .container {
-            position: relative;
-            z-index: 1;
+            z-index: -1;
         }
         
         .hero h2 {
@@ -191,190 +147,25 @@
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            display: inline-block;
         }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: var(--soft-peach);
-        }
-        
+
         .btn {
             display: inline-block;
             padding: 12px 30px;
             background: var(--gradient);
-            color: var(--light-color);
+            color: white;
             text-decoration: none;
             border-radius: 30px;
             font-weight: 600;
-            transition: all 0.3s;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-        }
-        
-        /* Content Sections */
-        .content-section {
-            padding: 100px 0;
-            background-color: var(--soft-peach);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .content-block h3 {
-            font-size: 1.8rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-        }
-        
-        .two-columns {
-            display: flex;
-            gap: 50px;
-            align-items: center;
-            margin-top: 40px;
-        }
-        
-        .column {
-            flex: 1;
-        }
-        
-        .image-container {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .image-container img {
-            width: 100%;
-            display: block;
-        }
-        
-        /* Toolbox Grid */
-        .toolbox {
-            padding: 100px 0;
-            background: var(--soft-gradient);
-        }
-        
-        .toolkits {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .toolkit-card {
-            background: var(--light-color);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid var(--primary-color);
-        }
-        
-        .toolkit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-        
-        .toolkit-card i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .toolkit-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--accent-color);
+            transition: 0.3s;
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 100px 0;
-            background-color: var(--soft-peach);
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-        }
-        
-        .info-item {
-            display: flex;
-            margin-bottom: 20px;
-            align-items: center;
-        }
-        
-        .info-item i {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-right: 15px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: #bbb;
-            padding: 60px 0 20px;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-col h4 {
-            color: var(--accent-color);
-            margin-bottom: 20px;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-        }
-
-        /* Language Display Logic */
+        /* Language Toggle Logic */
         [lang="fr"] .lang-en { display: none !important; }
         [lang="en"] .lang-fr { display: none !important; }
 
-        /* Responsive */
-        @media (max-width: 992px) {
-            .two-columns { flex-direction: column; }
-        }
-        
+        /* Mobile Menu */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -384,17 +175,20 @@
                 right: 0;
                 background: var(--header-gradient);
                 flex-direction: column;
-                padding: 20px;
+                padding: 40px 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                z-index: 1500; /* Above the Hero section */
             }
             
             .nav-links.active { display: flex; }
+            .nav-links li { margin: 15px 0; text-align: center; }
             .hamburger { display: block; }
-            .lang-switch { margin: 10px 0; }
+            .lang-switch { margin: 20px 0 0 0; justify-content: center; }
         }
     </style>
 </head>
 <body lang="en">
-    <!-- Header -->
+
     <header>
         <div class="container">
             <nav>
@@ -407,194 +201,80 @@
                         <p class="lang-fr">Où le soin de soi rencontre l'épanouissement</p>
                     </div>
                 </a>
-                <ul class="nav-links">
+                <ul class="nav-links" id="navLinks">
                     <li class="lang-en"><a href="../index.html">Home</a></li>
                     <li class="lang-en"><a href="../index.html#about">About</a></li>
-                    <li class="lang-en"><a href="../index.html#toolbox">Toolbox</a></li>
-                    <li class="lang-en"><a href="../index.html#contact">Contact</a></li>
-                    
                     <li class="lang-fr"><a href="../index.html">Accueil</a></li>
                     <li class="lang-fr"><a href="../index.html#about">À propos</a></li>
-                    <li class="lang-fr"><a href="../index.html#toolbox">Boîte à outils</a></li>
-                    <li class="lang-fr"><a href="../index.html#contact">Contact</a></li>
 
                     <div class="lang-switch">
-                        <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
-                        <button class="lang-btn" onclick="setLanguage('fr')">FR</button>
+                        <button class="lang-btn active" id="btn-en" onclick="setLanguage('en')">EN</button>
+                        <button class="lang-btn" id="btn-fr" onclick="setLanguage('fr')">FR</button>
                     </div>
                 </ul>
-                <div class="hamburger">
+                <div class="hamburger" id="hamburger">
                     <i class="fas fa-bars"></i>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h2 class="lang-en">The Self-Care Toolkit</h2>
-            <h2 class="lang-fr">La Boîte à Outils de Soins Personnels</h2>
-            <p class="lang-en">Nurture your soul and recharge your spirit with daily practices, mindfulness guides, and self-nurturing routines.</p>
-            <p class="lang-fr">Nourrissez votre âme et rechargez votre esprit avec des pratiques quotidiennes et des routines d'auto-soin.</p>
+            <h2 class="lang-fr">La Boîte à Outils</h2>
+            <p class="lang-en">Nurture your soul and recharge your spirit.</p>
+            <p class="lang-fr">Nourrissez votre âme et rechargez votre esprit.</p>
             <a href="#tools" class="btn lang-en">Explore Tools</a>
             <a href="#tools" class="btn lang-fr">Explorer les outils</a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="content-section">
-        <div class="container">
-            <div class="section-title">
-                <h2 class="lang-en">About Self-Care</h2>
-                <h2 class="lang-fr">À propos des soins personnels</h2>
-                <p class="lang-en">Understanding the importance of prioritizing yourself and your well-being</p>
-                <p class="lang-fr">Comprendre l'importance de se donner la priorité et de veiller à son bien-être</p>
-            </div>
-            
-            <div class="content-block">
-                <h3 class="lang-en">What is Self-Care?</h3>
-                <h3 class="lang-fr">Qu'est-ce que le soin personnel ?</h3>
-                <p class="lang-en">Self-care is the practice of taking deliberate action to preserve or improve your physical, mental, and emotional health. At Lumina Rise, we believe self-care isn't selfish, it's necessary.</p>
-                <p class="lang-fr">Le soin personnel est la pratique consistant à prendre des mesures délibérées pour améliorer votre santé. Chez Lumina Rise, nous pensons que le soin de soi n'est pas égoïste, il est nécessaire.</p>
-                
-                <div class="two-columns">
-                    <div class="column">
-                        <h3 class="lang-en">Why It Matters</h3>
-                        <h3 class="lang-fr">Pourquoi c'est important</h3>
-                        <ul style="margin-left: 20px; margin-bottom: 20px;">
-                            <li class="lang-en">Reduced stress and anxiety</li>
-                            <li class="lang-fr">Réduction du stress</li>
-                            <li class="lang-en">Improved mood regulation</li>
-                            <li class="lang-fr">Meilleure gestion de l'humeur</li>
-                            <li class="lang-en">Enhanced immune function</li>
-                            <li class="lang-fr">Immunité renforcée</li>
-                        </ul>
-                    </div>
-                    <div class="column">
-                        <div class="image-container">
-                            <img src="../images/self-care-importance.jpg" alt="Self-care">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tools Section -->
-    <section class="toolbox" id="tools">
-        <div class="container">
-            <div class="section-title">
-                <h2 class="lang-en">Self-Care Tools</h2>
-                <h2 class="lang-fr">Outils de soins personnels</h2>
-            </div>
-            
-            <div class="toolkits">
-                <div class="toolkit-card">
-                    <i class="fas fa-sun"></i>
-                    <h3 class="lang-en">Morning Rituals</h3>
-                    <h3 class="lang-fr">Rituels du matin</h3>
-                    <p class="lang-en">Start your day with intention and positive tone.</p>
-                    <p class="lang-fr">Commencez votre journée avec intention.</p>
-                </div>
-
-                <div class="toolkit-card">
-                    <i class="fas fa-brain"></i>
-                    <h3 class="lang-en">Mindfulness</h3>
-                    <h3 class="lang-fr">Pleine conscience</h3>
-                    <p class="lang-en">Learn to be fully present in the moment.</p>
-                    <p class="lang-fr">Apprenez à être présent dans l'instant.</p>
-                </div>
-                
-                <div class="toolkit-card">
-                    <i class="fas fa-moon"></i>
-                    <h3 class="lang-en">Evening Wind-Down</h3>
-                    <h3 class="lang-fr">Détente du soir</h3>
-                    <p class="lang-en">Calming routines for restful sleep.</p>
-                    <p class="lang-fr">Routines apaisantes pour le sommeil.</p>
-                </div>
-            </div>
-
-            <!-- Payment Button -->
-            <div style="text-align: center; margin: 50px auto;">
-                <a href="https://buy.stripe.com/00w4gz82kgTidd2343e3e00" class="btn" target="_blank">
-                    <span class="lang-en">Buy the Toolkit – USD 28</span>
-                    <span class="lang-fr">Acheter la Boîte – USD 28</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3 class="lang-en">Contact Us</h3>
-                    <h3 class="lang-fr">Contactez-nous</h3>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>LuminaRiseSelfGrowth@gmail.com</p>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form action="https://formsubmit.co/LuminaRiseSelfGrowth@gmail.com" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" placeholder="Name / Nom" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" class="form-control" placeholder="Email" required>
-                        </div>
-                        <button type="submit" class="btn lang-en">Send Message</button>
-                        <button type="submit" class="btn lang-fr">Envoyer</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="copyright">
-                <p>&copy; 2025 Lumina Rise Self-Growth. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // Language Toggle
+        // 1. Language Toggle
         function setLanguage(lang) {
             document.body.setAttribute('lang', lang);
             document.documentElement.lang = lang;
             
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
-                if(btn.innerText.toLowerCase() === lang) {
-                    btn.classList.add('active');
-                }
             });
+            
+            if(lang === 'en') document.getElementById('btn-en').classList.add('active');
+            else document.getElementById('btn-fr').classList.add('active');
         }
 
-        // Mobile Nav
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        // 2. Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
 
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevents click from bubbling
             navLinks.classList.toggle('active');
         });
 
+        // 3. Close menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
         });
 
-        // Header Scroll Effect
+        // 4. Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // 5. Header Scroll Effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            header.style.background = window.scrollY > 50 
-                ? 'linear-gradient(135deg, rgba(255,242,217,0.95), rgba(255,230,187,0.95))' 
-                : 'var(--header-gradient)';
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(255, 242, 217, 0.98)';
+            } else {
+                header.style.background = 'var(--header-gradient)';
+            }
         });
     </script>
 </body>
