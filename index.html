@@ -635,33 +635,36 @@ font-size: 2.5rem;
 <header>
     <div class="container">
         <nav>
+            <!-- Language Toggle moved to the left -->
+            <div class="language-selector">
+                <button class="lang-btn active" id="btn-en" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+            </div>
+
             <div class="logo">
                 <img src="../images/logo.png" alt="Lumina Rise Logo">
                 <div class="logo-text">
                     <h1 class="lang-en">Lumina Rise Self-Growth</h1>
+                    <h1 class="lang-fr" style="display:none;">Lumina Rise Croissance Personnelle</h1>
                     <p class="lang-en">Where Self-Care Meets Self-Growth</p>
+                    <p class="lang-fr" style="display:none;">Où le soin de soi rencontre la croissance personnelle</p>
                 </div>
             </div>
-            <ul class="nav-links">
-                <li class="lang-en"><a href="../index.html">Home</a></li>
-                <li class="lang-en"><a href="../index.html#about">About</a></li>
-                <li class="lang-en"><a href="../index.html#toolbox">Toolbox</a></li>
-                <li class="lang-en"><a href="../index.html#services">Services</a></li>
-                <li class="lang-en"><a href="../index.html#testimonials">Testimonials</a></li>
-                <li class="lang-en"><a href="../index.html#contact">Contact</a></li>
 
-                <div class="lang-switch">
-                    <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
-                    <button class="lang-btn" onclick="setLanguage('fr')">FR</button>
-                </div>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="lang-en">Home</a><a href="../index.html" class="lang-fr" style="display:none;">Accueil</a></li>
+                <li><a href="../index.html#about" class="lang-en">About</a><a href="../index.html#about" class="lang-fr" style="display:none;">À propos</a></li>
+                <li><a href="../index.html#toolbox" class="lang-en">Toolbox</a><a href="../index.html#toolbox" class="lang-fr" style="display:none;">Boîte à outils</a></li>
+                <li><a href="../index.html#services" class="lang-en">Services</a><a href="../index.html#services" class="lang-fr" style="display:none;">Services</a></li>
+                <li><a href="../index.html#contact" class="lang-en">Contact</a><a href="../index.html#contact" class="lang-fr" style="display:none;">Contact</a></li>
             </ul>
+
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
         </nav>
     </div>
 </header>
-
 
 <!-- Hero Section -->
 <section class="hero" id="home">
@@ -905,6 +908,44 @@ transition: background-color 0.3s ease;
 .cta-button:hover {
 background-color: #5a3cc4;
 }
+
+/* Language Selector Positioning */
+.language-selector {
+display: flex;
+gap: 10px;
+margin-right: 20px;
+}
+.lang-btn {
+padding: 5px 12px;
+background: #fff;
+border: 2px solid var(--primary-color);
+color: var(--primary-color);
+border-radius: 20px;
+cursor: pointer;
+font-weight: 700;
+font-size: 0.8rem;
+transition: all 0.3s;
+}
+.lang-btn.active {
+background: var(--gradient);
+color: white;
+border: 2px solid transparent;
+}
+/* Adjust Nav to accommodate the left toggle /
+nav {
+display: flex;
+justify-content: flex-start; / Aligns items to the left */
+align-items: center;
+padding: 15px 0;
+}
+.logo {
+margin-right: auto; /* Pushes the nav-links to the right */
+}
+@media (max-width: 768px) {
+.language-selector {
+margin-right: 10px;
+}
+}
 </style>
 
 
@@ -1052,29 +1093,28 @@ navLinks.classList.remove('active');
 });
 
 function setLanguage(lang) {
-    // 1. Update the active state of the buttons
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    // Find the button that was clicked and make it active
-    event.currentTarget.classList.add('active');
+    // Update button styles
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    if (lang === 'en') {
+        document.getElementById('btn-en').classList.add('active');
+    } else {
+        document.getElementById('btn-fr').classList.add('active');
+    }
 
-    // 2. Toggle visibility of text elements
+    // Toggle visibility of elements
     const enElements = document.querySelectorAll('.lang-en');
     const frElements = document.querySelectorAll('.lang-fr');
 
     if (lang === 'fr') {
         enElements.forEach(el => el.style.display = 'none');
         frElements.forEach(el => el.style.display = 'block');
-        document.documentElement.lang = 'fr';
     } else {
         enElements.forEach(el => el.style.display = 'block');
         frElements.forEach(el => el.style.display = 'none');
-        document.documentElement.lang = 'en';
     }
 }
 
-// Set default view on page load
+// Optional: Initialize on page load
 window.onload = () => setLanguage('en');
 });
 </script>
