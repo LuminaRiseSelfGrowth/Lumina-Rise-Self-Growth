@@ -1050,6 +1050,32 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 link.addEventListener('click', () => {
 navLinks.classList.remove('active');
 });
+
+function setLanguage(lang) {
+    // 1. Update the active state of the buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    // Find the button that was clicked and make it active
+    event.currentTarget.classList.add('active');
+
+    // 2. Toggle visibility of text elements
+    const enElements = document.querySelectorAll('.lang-en');
+    const frElements = document.querySelectorAll('.lang-fr');
+
+    if (lang === 'fr') {
+        enElements.forEach(el => el.style.display = 'none');
+        frElements.forEach(el => el.style.display = 'block');
+        document.documentElement.lang = 'fr';
+    } else {
+        enElements.forEach(el => el.style.display = 'block');
+        frElements.forEach(el => el.style.display = 'none');
+        document.documentElement.lang = 'en';
+    }
+}
+
+// Set default view on page load
+window.onload = () => setLanguage('en');
 });
 </script>
 </body>
