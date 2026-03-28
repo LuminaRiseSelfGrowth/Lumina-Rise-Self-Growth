@@ -20,12 +20,10 @@
 --soft-gradient: linear-gradient(135deg, #fff2d9, #ffcfcf, #ffe6bb); /* Soft background gradient */
 --header-gradient: linear-gradient(135deg, #fff2d9, #ffe6bb, #ffcfad); /* Pale orange/yellow gradient for header */
 }
-
 /* Sélecteur de langue */
 .language-selector {
 margin-left: 20px;
 }
-
 .lang-btn {
 display: inline-flex;
 align-items: center;
@@ -40,16 +38,13 @@ font-size: 0.9rem;
 transition: all 0.3s;
 box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
 .lang-btn:hover {
 transform: translateY(-2px);
 box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
-
 .lang-btn i {
 font-size: 1rem;
 }
-
 /* Responsive */
 @media (max-width: 768px) {
 .language-selector {
@@ -57,13 +52,13 @@ position: absolute;
 top: 20px;
 right: 60px;
 }
-
 .lang-btn {
 padding: 6px 12px;
 font-size: 0.85rem;
 }
 }
-* {
+
+{
 margin: 0;
 padding: 0;
 box-sizing: border-box;
@@ -74,16 +69,14 @@ body {
 color: var(--text-color);
 line-height: 1.6;
 }
-
 .container {
 width: 90%;
 max-width: 1200px;
 margin: 0 auto;
 padding: 0 20px;
 }
-
-/* Header Styles */
-/* Header & Navigation Styling */
+/* Header Styles /
+/ Header & Navigation Styling */
 header {
 background: var(--header-gradient);
 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -139,7 +132,21 @@ padding-bottom: 2px;
 color: var(--primary-color);
 border-bottom: 2px solid var(--primary-color);
 }
-/* Language Button Pill */
+/* Social Header Icons */
+.header-socials {
+display: flex;
+gap: 12px;
+margin-left: 20px;
+}
+.header-socials a {
+color: var(--primary-color);
+font-size: 1.1rem;
+transition: transform 0.2s;
+}
+.header-socials a:hover {
+transform: scale(1.2);
+}
+/* Language Button Pill /
 .language-selector {
 margin-left: 15px;
 }
@@ -159,8 +166,8 @@ transition: transform 0.2s;
 }
 .lang-btn:hover {
 transform: scale(1.05);
-}    
-/* Hero Section */
+}
+/ Hero Section */
 .hero {
 background: var(--dark-color);
 color: var(--light-color);
@@ -169,7 +176,6 @@ text-align: center;
 position: relative;
 overflow: hidden;
 }
-
 .hero::before {
 content: '';
 position: absolute;
@@ -181,12 +187,10 @@ background: url('images/hero-bg.jpg') center/cover no-repeat;
 opacity: 0.3;
 z-index: 0;
 }
-
 .hero .container {
 position: relative;
 z-index: 1;
 }
-
 .hero h2 {
 font-size: 3rem;
 margin-bottom: 20px;
@@ -195,14 +199,12 @@ background: var(--gradient);
 -webkit-text-fill-color: transparent;
 display: inline-block;
 }
-
 .hero p {
 font-size: 1.2rem;
 max-width: 700px;
 margin: 0 auto 30px;
 color: var(--soft-peach);
 }
-
 .btn {
 display: inline-block;
 padding: 12px 30px;
@@ -216,81 +218,67 @@ box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 border: none;
 cursor: pointer;
 }
-
 .btn:hover {
 transform: translateY(-3px);
 box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
-
 /* About Section */
 .about {
 padding: 100px 0;
 background-color: var(--soft-peach);
 }
-
 .section-title {
 text-align: center;
 margin-bottom: 60px;
 }
-
 .section-title h2 {
 font-size: 2.5rem;
 color: var(--primary-color);
 margin-bottom: 15px;
 }
-
 .section-title p {
 font-size: 1.1rem;
 max-width: 700px;
 margin: 0 auto;
 color: var(--slate-blue);
 }
-
 .about-content {
 display: flex;
 align-items: center;
 justify-content: space-between;
 gap: 50px;
 }
-
 .about-image {
 flex: 1;
 }
-
 .about-image img {
 width: 100%;
 border-radius: 10px;
 box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
-
 .about-text {
 flex: 1;
 }
-
 .about-text h3 {
 font-size: 1.8rem;
 color: var(--accent-color);
 margin-bottom: 20px;
 }
-
 .about-text p {
 color: var(--slate-blue);
 margin-bottom: 15px;
 }
-
 /* Toolbox Section */
 .toolbox {
 padding: 100px 0;
 background: var(--soft-gradient);
 }
-
 .toolkits {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 gap: 30px;
 margin-top: 50px;
 }
-
 .toolkit-card {
 background: var(--light-color);
 border-radius: 10px;
@@ -299,41 +287,34 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 transition: transform 0.3s, box-shadow 0.3s;
 border-top: 4px solid var(--primary-color);
 }
-
 .toolkit-card:hover {
 transform: translateY(-5px);
 box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
-
 .toolkit-card i {
 font-size: 2.5rem;
 color: var(--primary-color);
 margin-bottom: 20px;
 }
-
 .toolkit-card h3 {
 font-size: 1.5rem;
 margin-bottom: 15px;
 color: var(--accent-color);
 }
-
 .toolkit-card p {
 color: var(--slate-blue);
 }
-
 /* Services Section */
 .services {
 padding: 100px 0;
 background-color: var(--light-color);
 }
-
 .services-grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 gap: 30px;
 margin-top: 50px;
 }
-
 .service-card {
 background: var(--soft-peach);
 border-radius: 10px;
@@ -341,53 +322,43 @@ overflow: hidden;
 box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 transition: transform 0.3s;
 }
-
 .service-card:hover {
 transform: translateY(-5px);
 }
-
 .service-image {
 height: 200px;
 overflow: hidden;
 }
-
 .service-image img {
 width: 100%;
 height: 100%;
 object-fit: cover;
 transition: transform 0.3s;
 }
-
 .service-card:hover .service-image img {
 transform: scale(1.1);
 }
-
 .service-content {
 padding: 25px;
 }
-
 .service-content h3 {
 font-size: 1.5rem;
 margin-bottom: 15px;
 color: var(--primary-color);
 }
-
 .service-content p {
 color: var(--slate-blue);
 }
-
 /* Testimonials Section */
 .testimonials {
 padding: 100px 0;
 background: var(--soft-gradient);
 }
-
 .testimonial-container {
 max-width: 800px;
 margin: 0 auto;
 position: relative;
 }
-
 .testimonial-card {
 background: var(--light-color);
 padding: 40px;
@@ -397,19 +368,16 @@ text-align: center;
 margin: 20px 0;
 border-left: 4px solid var(--accent-color);
 }
-
 .testimonial-card p {
 font-style: italic;
 margin-bottom: 20px;
 color: var(--slate-blue);
 }
-
 .client {
 display: flex;
 align-items: center;
 justify-content: center;
 }
-
 .client-image {
 width: 60px;
 height: 60px;
@@ -418,68 +386,56 @@ overflow: hidden;
 margin-right: 15px;
 border: 3px solid var(--accent-color);
 }
-
 .client-image img {
 width: 100%;
 height: 100%;
 object-fit: cover;
 }
-
 .client-info h4 {
 color: var(--primary-color);
 }
-
 .client-info p {
 font-size: 0.9rem;
 margin: 0;
 font-style: normal;
 color: var(--slate-blue);
 }
-
 /* Contact Section */
 .contact {
 padding: 100px 0;
 background-color: var(--soft-peach);
 }
-
 .contact-container {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 gap: 50px;
 }
-
 .contact-info h3 {
 font-size: 1.8rem;
 color: var(--accent-color);
 margin-bottom: 30px;
 }
-
 .contact-info p {
 margin-bottom: 20px;
 color: var(--slate-blue);
 }
-
 .contact-info .info-item {
 display: flex;
 margin-bottom: 20px;
 }
-
 .contact-info i {
 font-size: 1.3rem;
 color: var(--primary-color);
 margin-right: 15px;
 }
-
 .contact-form h3 {
 font-size: 1.8rem;
 color: var(--accent-color);
 margin-bottom: 30px;
 }
-
 .form-group {
 margin-bottom: 20px;
 }
-
 .form-control {
 width: 100%;
 padding: 12px 15px;
@@ -488,26 +444,23 @@ border-radius: 5px;
 font-size: 1rem;
 transition: border-color 0.3s;
 }
-
 .form-control:focus {
 outline: none;
 border-color: var(--accent-color);
 }
-
 textarea.form-control {
 min-height: 150px;
 }
-
-/* Footer */
+/* Footer /
 footer {
 background-color: var(--dark-color);
 color: var(--light-color);
 padding: 60px 0 20px;
-background-image: url('images/footer-bg.jpg'); /* Add this line */
-background-size: cover; /* Add this line */
-background-position: center; /* Add this line */
-background-blend-mode: overlay; /* Add this line - blends with background color */
-position: relative; /* Add this line if you want to add overlay */
+background-image: url('images/footer-bg.jpg'); / Add this line /
+background-size: cover; / Add this line /
+background-position: center; / Add this line /
+background-blend-mode: overlay; / Add this line - blends with background color /
+position: relative; / Add this line if you want to add overlay /
 }
 footer::before {
 content: '';
@@ -516,53 +469,43 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background-color: rgba(51, 51, 51, 0.7); /* Adjust opacity as needed */
+background-color: rgba(51, 51, 51, 0.7); / Adjust opacity as needed */
 z-index: 0;
 }
-
 .footer-container, .copyright {
 position: relative;
 z-index: 1;
 }
-
-
 .footer-container {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 gap: 40px;
 margin-bottom: 40px;
 }
-
 .footer-col h4 {
 font-size: 1.2rem;
 margin-bottom: 20px;
 color: var(--accent-color);
 }
-
 .footer-col ul {
 list-style: none;
 }
-
 .footer-col ul li {
 margin-bottom: 10px;
 }
-
 .footer-col ul a {
 color: #bbb;
 text-decoration: none;
 transition: color 0.3s;
 }
-
 .footer-col ul a:hover {
 color: var(--accent-color);
 }
-
 .social-links {
 display: flex;
 gap: 15px;
 margin-top: 20px;
 }
-
 .social-links a {
 color: var(--light-color);
 background-color: rgba(255,255,255,0.1);
@@ -574,12 +517,10 @@ height: 40px;
 border-radius: 50%;
 transition: all 0.3s;
 }
-
 .social-links a:hover {
 background: var(--gradient);
 transform: translateY(-3px);
 }
-
 .copyright {
 text-align: center;
 padding-top: 20px;
@@ -587,19 +528,16 @@ border-top: 1px solid rgba(255,255,255,0.1);
 font-size: 0.9rem;
 color: #bbb;
 }
-
 /* Responsive Design */
 @media (max-width: 992px) {
 .about-content {
 flex-direction: column;
 }
-
 .about-image, .about-text {
 flex: none;
 width: 100%;
 }
 }
-
 @media (max-width: 768px) {
 .nav-links {
 display: none;
@@ -612,19 +550,15 @@ flex-direction: column;
 padding: 20px;
 box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
-
 .nav-links.active {
 display: flex;
 }
-
 .nav-links li {
 margin: 10px 0;
 }
-
 .hamburger {
 display: block;
 }
-
 .hero h2 {
 font-size: 2.5rem;
 }
@@ -643,7 +577,6 @@ font-size: 2.5rem;
 <p>Where Self-Care Meets Self-Growth</p>
 </div>
 </div>
-
 <ul class="nav-links">
 <li><a href="index.html">Home</a></li>
 <li><a href="about-me.html">About</a></li>
@@ -652,11 +585,14 @@ font-size: 2.5rem;
 <li><a href="Q&A.html#Q&A">Q&A</a></li>
 <li><a href="index.html#contact">Contact</a></li>
 </ul>
-
 <div class="hamburger">
 <i class="fas fa-bars"></i>
 </div>
-
+<!-- Small Social Icons in Header -->
+<div class="header-socials">
+    <a href="https://www.facebook.com/yourfacebookpage" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+</div>
 <div class="language-selector">
 <a href="index-fr.html" class="lang-btn">
 <i class="fas fa-globe"></i> FR
@@ -673,7 +609,6 @@ font-size: 2.5rem;
 <a href="#contact" class="btn">Start Your Journey</a>
 </div>
 </section>
-
 <!-- Updated Credibility Bar with orange Font Awesome icons (font-based emojis) -->
 <section class="credibility-bar" style="background: white; padding: 40px 0; text-align: center; border-bottom: 1px solid #f0f0f0;">
 <div class="container">
@@ -696,7 +631,6 @@ font-size: 2.5rem;
 </div>
 </div>
 </section>
-
 <!-- About Section -->
 <section class="about" id="about">
 <div class="container">
@@ -715,16 +649,13 @@ font-size: 2.5rem;
 <p>Whether you're seeking to improve your mental health, boost your confidence, or discover your true purpose, Lumina Rise is here to guide you every step of the way.</p>
 <a href="about-me.html" class="btn">About the Founder</a>
 </div>
-
 </div> <!-- This closes the about-content div -->
 </div> <!-- This closes the about section container -->
 </section> <!-- This closes the about section -->
-
 <!-- ADD THE QUALIFICATION SECTION HERE -->
 <section class="qualification-section" style="background-color: #f5f1e8; padding: 80px 0;">
 <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
 <div class="row" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
-
 <!-- This is for you if - Card -->
 <div class="qualification-card" style="background: white; border-radius: 20px; padding: 40px 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 3px solid #ff8c42; flex: 1; min-width: 300px; max-width: 500px;">
 <div style="font-size: 40px; margin-bottom: 20px; text-align: center;">💪</div>
@@ -764,7 +695,6 @@ You value quality over quick fixes
 </li>
 </ul>
 </div>
-
 <!-- This is not for you if - Card -->
 <div class="qualification-card" style="background: white; border-radius: 20px; padding: 40px 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 3px solid #ff8c42; flex: 1; min-width: 300px; max-width: 500px;">
 <div style="font-size: 40px; margin-bottom: 20px; text-align: center;">🚫</div>
@@ -807,7 +737,6 @@ You're looking for the cheapest option regardless of value
 </div>
 </div>
 </section>
-
 <!-- Services Section -->
 <section class="services" id="services">
 <div class="container">
@@ -849,11 +778,7 @@ You're looking for the cheapest option regardless of value
 <!-- Add this line below -->
 <a href="webinars.html" class="btn">Learn More</a>
 </div>
-
-
 </section>
-
-
 <!-- Book a One-on-One Consultation Section -->
 <section class="consultation" style="padding: 100px 0; background-color: var(--soft-peach);">
 <div class="container">
@@ -867,7 +792,6 @@ You're looking for the cheapest option regardless of value
 </div>
 </div>
 </section>
-
 <style>
 .consultation-section {
 padding: 60px 20px;
@@ -909,8 +833,6 @@ transition: background-color 0.3s ease;
 background-color: #5a3cc4;
 }
 </style>
-
-
 <!-- Toolbox Section -->
 <section class="toolbox" id="toolbox">
 <div class="container">
@@ -946,7 +868,6 @@ background-color: #5a3cc4;
 <div class="container">
 <div class="section-title">
 <h2>Q&A: Understanding Your Journey</h2>
-
 </div>
 <div style="text-align: center; margin-top: 50px;">
 <a href="Q&A.html" class="btn">View Full Q&A Guide</a>
@@ -973,11 +894,11 @@ background-color: #5a3cc4;
 <p>Virtual services available worldwide</p>
 </div>
 <div class="social-links">
+<a href="https://www.facebook.com/yourfacebookpage" target="_blank"><i class="fab fa-facebook-f"></i></a>
 <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
 <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
 </div>
 </div>
-
 <div class="contact-form">
 <h3>Send a Message</h3>
 <form action="https://formsubmit.co/Luminariseselfgrowth@gmail.com" method="POST">
@@ -1000,13 +921,11 @@ background-color: #5a3cc4;
 <div class="form-group">
 <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
 </div>
-
 <!-- FormSubmit Configuration -->
 <input type="hidden" name="_next" value="https://luminarise.ca/thank-you.html">
 <input type="hidden" name="_subject" value="New Contact Form Submission">
 <input type="text" name="_honey" style="display:none">
 <input type="hidden" name="_captcha" value="true">
-
 <button type="submit" class="btn">Send Message</button>
 </form>
 </div>
@@ -1021,6 +940,7 @@ background-color: #5a3cc4;
 <h4>Lumina Rise Self-Growth</h4>
 <p>Empowering women through self-care and personal growth tools, resources, and support.</p>
 <div class="social-links">
+<a href="https://www.facebook.com/yourfacebookpage" target="_blank"><i class="fab fa-facebook-f"></i></a>
 <a href="https://www.instagram.com/luminarise_selfgrowth/" target="_blank"><i class="fab fa-instagram"></i></a>
 <a href="https://ca.pinterest.com/LuminariseSelfGrowth/mind-health/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
 </div>
@@ -1043,11 +963,9 @@ background-color: #5a3cc4;
 <script>
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
-
 hamburger.addEventListener('click', () => {
 navLinks.classList.toggle('active');
 });
-
 // Optional: Close menu when a link is clicked
 document.querySelectorAll('.nav-links a').forEach(link => {
 link.addEventListener('click', () => {
@@ -1056,3 +974,4 @@ navLinks.classList.remove('active');
 });
 </script>
 </body>
+</html>
