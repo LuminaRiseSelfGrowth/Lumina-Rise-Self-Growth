@@ -678,45 +678,40 @@ display: flex; /* This shows the menu when you click the lines */
 .hero h2 { font-size: 2.5rem; }
 }
 
-/* Prevents the EN button and Hamburger from overlapping */
-.nav-controls {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* This creates the physical space between them */
-    margin-left: auto; /* Pushes both to the right side */
-}
-
-/* Ensures the logo stays on the left and controls stay on the right */
+/* 1. Ensure the main nav spreads things out */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    position: relative;
 }
 
-/* Mobile specific fix */
+/* 2. Group the EN button and Hamburger together */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* This creates the physical space between them */
+    margin-left: auto; /* Pushes them to the right side */
+    z-index: 1000;
+}
+
+/* 3. Remove any old absolute positioning that might be causing the overlap */
+.language-selector, .hamburger {
+    position: static !important; 
+    display: block;
+}
+
+/* 4. Mobile adjustments */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Keeps the main menu hidden until clicked */
+        display: none; /* Hidden until hamburger is clicked */
     }
     
-    .nav-links.active {
-        display: flex; /* Shows the menu when active */
+    /* Ensure the logo doesn't take up too much space */
+    .logo-text h1 {
+        font-size: 1.2rem;
     }
-}
-/* This forces the EN button and Hamburger to stay 15px apart /
-.nav-controls {
-display: flex;
-align-items: center;
-gap: 15px;
-margin-left: auto; / Pushes the group to the right side of the header */
-}
-/* Ensures your logo stays left and the new controls stay right */
-nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-width: 100%;
 }
 </style>
 </head>
@@ -724,23 +719,37 @@ width: 100%;
 <!-- En-tête -->
 <header>
     <div class="container">
-        <nav>
-            <div class="logo">
-                <img src="images/logo.png" alt="Logo Lumina Rise">
-                <div class="logo-text">
-                    <h1>Lumina Rise</h1>
-                    <p>Où le bien-être rencontre le développement personnel</p>
-                </div>
-            </div>
+ <nav>
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo Lumina Rise">
+        <div class="logo-text">
+            <h1>Lumina Rise</h1>
+            <p>Où le bien-être rencontre le développement personnel</p>
+        </div>
+    </div>
 
-            <ul class="nav-links">
-                <li><a href="index-fr.html">Accueil</a></li>
-                <li><a href="about-me-fr.html">À propos</a></li>
-                <li><a href="index-fr.html#toolbox">Boîte à outils</a></li>
-                <li><a href="index-fr.html#services">Services</a></li>
-                <li><a href="Q&A-fr.html">FAQ</a></li>
-                <li><a href="index-fr.html#contact">Contact</a></li>
-            </ul>
+    <!-- This new div "nav-controls" is the key fix -->
+    <div class="nav-controls">
+        <div class="language-selector">
+            <a href="index.html" class="lang-btn">
+                <i class="fas fa-globe"></i> EN
+            </a>
+        </div>
+        
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index-fr.html">Accueil</a></li>
+        <li><a href="about-me-fr.html">À propos</a></li>
+        <li><a href="index-fr.html#toolbox">Boîte à outils</a></li>
+        <li><a href="index-fr.html#services">Services</a></li>
+        <li><a href="Q&A-fr.html">FAQ</a></li>
+        <li><a href="index-fr.html#contact">Contact</a></li>
+    </ul>
+</nav>
 <!-- Grouping these ensures they stay side-by-side on your phone -->
 <div class="nav-controls">
     <div class="language-selector">
