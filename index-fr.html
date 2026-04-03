@@ -704,6 +704,20 @@ nav {
         display: flex; /* Shows the menu when active */
     }
 }
+/* This forces the EN button and Hamburger to stay 15px apart /
+.nav-controls {
+display: flex;
+align-items: center;
+gap: 15px;
+margin-left: auto; / Pushes the group to the right side of the header */
+}
+/* Ensures your logo stays left and the new controls stay right */
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+}
 </style>
 </head>
 <body>
@@ -727,18 +741,18 @@ nav {
                 <li><a href="Q&A-fr.html">FAQ</a></li>
                 <li><a href="index-fr.html#contact">Contact</a></li>
             </ul>
-<!-- This groups them so they stay together on your phone -->
-            <div class="nav-controls">
-                <div class="language-selector">
-                    <a href="index.html" class="lang-btn">
-                        <i class="fas fa-globe"></i> EN
-                    </a>
-                </div>
-                
-                <div class="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
+<!-- Grouping these ensures they stay side-by-side on your phone -->
+<div class="nav-controls">
+    <div class="language-selector">
+        <a href="index.html" class="lang-btn">
+            <i class="fas fa-globe"></i> EN
+        </a>
+    </div>
+    
+    <div class="hamburger">
+        <i class="fas fa-bars"></i>
+    </div>
+</div>
                  </nav>
     </div>
 </header>
