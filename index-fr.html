@@ -659,19 +659,51 @@ padding: 20px;
 text-align: center;
 }
 
-.hamburger {
-        display: block; /* Shows on mobile */
-        margin-right: 15px;
-    }
+.hamburger { 
+display: block; /* Shows on mobile */
+margin-right: 15px;
+}
 
-    /* This allows the JavaScript to show the menu */
+/* This allows the JavaScript to show the menu */
+.nav-links.active {
+display: flex;
+}
+
+.hero h2 { font-size: 2.5rem; }
+}
+.nav-links.active {
+display: flex; /* This shows the menu when you click the lines */
+}
+
+.hero h2 { font-size: 2.5rem; }
+}
+
+/* Prevents the EN button and Hamburger from overlapping */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* This creates the physical space between them */
+    margin-left: auto; /* Pushes both to the right side */
+}
+
+/* Ensures the logo stays on the left and controls stay on the right */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Mobile specific fix */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Keeps the main menu hidden until clicked */
+    }
+    
     .nav-links.active {
-        display: flex;
+        display: flex; /* Shows the menu when active */
     }
-
-    .hero h2 {
-        font-size: 2.5rem;
-    }
+}
 </style>
 </head>
 <body>
@@ -695,17 +727,19 @@ text-align: center;
                 <li><a href="Q&A-fr.html">FAQ</a></li>
                 <li><a href="index-fr.html#contact">Contact</a></li>
             </ul>
-
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+<!-- This groups them so they stay together on your phone -->
+            <div class="nav-controls">
+                <div class="language-selector">
+                    <a href="index.html" class="lang-btn">
+                        <i class="fas fa-globe"></i> EN
+                    </a>
+                </div>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
-
-            <div class="language-selector">
-                <a href="index.html" class="lang-btn">
-                    <i class="fas fa-globe"></i> EN
-                </a>
-            </div>
-        </nav>
+                 </nav>
     </div>
 </header>
 <!-- Section Héro -->
